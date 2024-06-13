@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import React from "react";
 
 const FullLayout = React.lazy(() => import("@layout/full/FullLayout"));
-const Home = React.lazy(() => import("@pages/Home"));
+const JudgmentsAndLawsPage = React.lazy(() => import("@pages/judgments-laws/JudgmentsAndLawsPage"));
 const ErrorPage = React.lazy(() => import("@pages/Error/ErrorPage"));
 const NotFoundPage = React.lazy(() => import("@pages/Error/NotFoundPage"));
 
@@ -10,7 +10,7 @@ const browserConfig = createBrowserRouter([
   {
     id: "layout-auth",
     path: "/",
-    element: <FullLayout />,
+    element: <FullLayout/>,
     children: [
       {
         id: "dashboard",
@@ -18,8 +18,8 @@ const browserConfig = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Home />,
-            errorElement: <ErrorPage />,
+            element: <JudgmentsAndLawsPage/>,
+            errorElement: <ErrorPage/>,
           },
         ],
       },
@@ -27,7 +27,7 @@ const browserConfig = createBrowserRouter([
       {
         id: "notFound",
         path: "*",
-        element: <NotFoundPage />,
+        element: <NotFoundPage/>,
       },
     ],
   },

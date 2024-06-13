@@ -1,6 +1,6 @@
 // project imports
 import './DefaultColors';
-import { Theme } from '@mui/material/styles';
+import {Theme} from '@mui/material/styles';
 
 const components: any = (theme: Theme) => {
   return {
@@ -93,7 +93,7 @@ const components: any = (theme: Theme) => {
             transform: 'translate3d(0, 0, 0)',
           },
           '100% ': {
-            transform:  'translate3d(-2086px, 0, 0)',
+            transform: 'translate3d(-2086px, 0, 0)',
           },
         },
       },
@@ -367,7 +367,7 @@ const components: any = (theme: Theme) => {
         root: {
           '& .MuiOutlinedInput-notchedOutline': {
             borderColor:
-              theme.palette.mode === 'dark' ? theme.palette.grey[200] : theme.palette.grey[300],
+                theme.palette.mode === 'dark' ? theme.palette.grey[200] : theme.palette.grey[300],
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
             borderColor: theme.palette.grey[300],

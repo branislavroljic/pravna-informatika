@@ -23,14 +23,14 @@ export interface ModalProps {
 }
 
 export default function FormModal({
-  isOpen,
-  closeModal,
-  children,
-  hasCancel,
-  title,
-  isLoading,
-  secondaryText,
-}: ModalProps) {
+                                    isOpen,
+                                    closeModal,
+                                    children,
+                                    hasCancel,
+                                    title,
+                                    isLoading,
+                                    secondaryText,
+                                  }: ModalProps) {
 
   const handleCloseModal = () => {
     if (!isLoading) {
@@ -39,17 +39,17 @@ export default function FormModal({
   };
 
   return (
-    <Dialog open={isOpen} onClose={handleCloseModal}>
-      <DialogTitle>{title}</DialogTitle>
-      <DialogContent>{children}</DialogContent>
-      <DialogActions>
-        {hasCancel && (
-          <Button onClick={handleCloseModal} disabled={isLoading}>
-            {secondaryText ? secondaryText : "Odustani"}
-          </Button>
-        )}
-        
-      </DialogActions>
-    </Dialog>
+      <Dialog open={isOpen} onClose={handleCloseModal}>
+        <DialogTitle>{title}</DialogTitle>
+        <DialogContent>{children}</DialogContent>
+        <DialogActions>
+          {hasCancel && (
+              <Button onClick={handleCloseModal} disabled={isLoading}>
+                {secondaryText ? secondaryText : "Odustani"}
+              </Button>
+          )}
+
+        </DialogActions>
+      </Dialog>
   );
 }

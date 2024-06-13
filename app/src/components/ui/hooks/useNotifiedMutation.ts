@@ -1,6 +1,6 @@
-import { useNotificationStore } from "@stores/notificationStore";
-import { useMutation } from "@tanstack/react-query";
-import { AxiosError, AxiosResponse } from "axios";
+import {useNotificationStore} from "@stores/notificationStore";
+import {useMutation} from "@tanstack/react-query";
+import {AxiosError, AxiosResponse} from "axios";
 
 export type ErrorMessage = {
   message: string;
@@ -14,10 +14,10 @@ export interface NotifiedMutationOptions<T> {
 }
 
 export default function useNotifiedMutation<T>(
-  options: NotifiedMutationOptions<T>
+    options: NotifiedMutationOptions<T>
 ) {
   const openNotification = useNotificationStore(
-    (state) => state.openNotification
+      (state) => state.openNotification
   );
 
   const {

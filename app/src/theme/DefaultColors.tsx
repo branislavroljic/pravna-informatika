@@ -132,4 +132,4 @@ const baseDarkTheme = {
   },
 };
 
-export { baseDarkTheme, baselightTheme };
+export {baseDarkTheme, baselightTheme};

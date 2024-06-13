@@ -1,9 +1,9 @@
-import { Alert, Slide, SlideProps, Snackbar } from "@mui/material";
+import {Alert, Slide, SlideProps, Snackbar} from "@mui/material";
 
 type TransitionProps = Omit<SlideProps, "direction">;
 
 function TransitionUp(props: TransitionProps) {
-  return <Slide {...props} direction="up" />;
+  return <Slide {...props} direction="up"/>;
 }
 
 export interface NotificationProps {
@@ -15,24 +15,24 @@ export interface NotificationProps {
 }
 
 export default function Notification({
-  isShowing,
-  closeNotification,
-  primaryText,
-  secondaryText,
-  isError,
-}: NotificationProps) {
+                                       isShowing,
+                                       closeNotification,
+                                       primaryText,
+                                       secondaryText,
+                                       isError,
+                                     }: NotificationProps) {
   return (
-    <Snackbar
-      anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      open={isShowing}
-      onClose={closeNotification}
-      TransitionComponent={TransitionUp}
+      <Snackbar
+          anchorOrigin={{vertical: "bottom", horizontal: "center"}}
+          open={isShowing}
+          onClose={closeNotification}
+          TransitionComponent={TransitionUp}
 
-      //   key={vertical + horizontal}
-    >
-      <Alert severity={isError ? "error" : "success"}>
-        {primaryText} <br /> {secondaryText}
-      </Alert>
-    </Snackbar>
+          //   key={vertical + horizontal}
+      >
+        <Alert severity={isError ? "error" : "success"}>
+          {primaryText} <br/> {secondaryText}
+        </Alert>
+      </Snackbar>
   );
 }

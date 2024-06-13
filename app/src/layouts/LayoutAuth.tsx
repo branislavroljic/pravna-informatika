@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Outlet} from "react-router-dom";
 import {
   Box,
   CSSObject,
@@ -13,16 +13,17 @@ import {
   styled,
   useTheme,
 } from "@mui/material";
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import MuiAppBar, {AppBarProps as MuiAppBarProps} from "@mui/material/AppBar";
 import MuiDrawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-import { AccountCircle } from "@mui/icons-material";
+import {AccountCircle} from "@mui/icons-material";
 import Notification from "@ui/Notification";
 
-import { useNotificationStore } from "@stores/notificationStore";
+import {useNotificationStore} from "@stores/notificationStore";
+
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -46,7 +47,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
   },
 });
 
-const DrawerHeader = styled("div")(({ theme }) => ({
+const DrawerHeader = styled("div")(({theme}) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
@@ -61,7 +62,7 @@ interface AppBarProps extends MuiAppBarProps {
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
-})<AppBarProps>(({ theme, open }) => ({
+})<AppBarProps>(({theme, open}) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -79,7 +80,7 @@ const AppBar = styled(MuiAppBar, {
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
+})(({theme, open}) => ({
   width: drawerWidth,
   flexShrink: 0,
   whiteSpace: "nowrap",
@@ -96,7 +97,7 @@ const Drawer = styled(MuiDrawer, {
 
 export default function LayoutAuth() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const { isOpen, data, closeNotification } = useNotificationStore();
+  const {isOpen, data, closeNotification} = useNotificationStore();
 
   // const location = useLocation();
 
@@ -129,71 +130,71 @@ export default function LayoutAuth() {
   // );
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
+      <Box sx={{display: "flex"}}>
+        <CssBaseline/>
 
-      <AppBar position="fixed" open={open}>
-        <Toolbar
-          sx={{
-            pr: "24px",
-          }}
-        >
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: "none" }),
-            }}
+        <AppBar position="fixed" open={open}>
+          <Toolbar
+              sx={{
+                pr: "24px",
+              }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="h1" color="inherit">
-            Klix Lead
-          </Typography>
-          <Box component="div" sx={{ ml: "auto" }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              color="inherit"
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                sx={{
+                  marginRight: 5,
+                  ...(open && {display: "none"}),
+                }}
             >
-              <AccountCircle />
+              <MenuIcon/>
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorEl)}
-              onClose={() => setAnchorEl(null)}
-            ></Menu>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        {/* <List component="nav">
+            <Typography variant="h6" noWrap component="h1" color="inherit">
+              Klix Lead
+            </Typography>
+            <Box component="div" sx={{ml: "auto"}}>
+              <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="inherit"
+              >
+                <AccountCircle/>
+              </IconButton>
+              <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorEl)}
+                  onClose={() => setAnchorEl(null)}
+              ></Menu>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <Drawer variant="permanent" open={open}>
+          <DrawerHeader>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "rtl" ? (
+                  <ChevronRightIcon/>
+              ) : (
+                  <ChevronLeftIcon/>
+              )}
+            </IconButton>
+          </DrawerHeader>
+          <Divider/>
+          {/* <List component="nav">
           {pages.map((item) => (
             <ListItem
               key={item.name}
@@ -230,19 +231,19 @@ export default function LayoutAuth() {
             </ListItem>
           ))}
         </List> */}
-      </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        {/* content */}
-        <Outlet />
-        <Notification
-          isShowing={isOpen}
-          primaryText={data.primaryText ?? ""}
-          secondaryText={data.secondaryText}
-          isError={data.isError}
-          closeNotification={closeNotification}
-        />
+        </Drawer>
+        <Box component="main" sx={{flexGrow: 1, p: 3}}>
+          <DrawerHeader/>
+          {/* content */}
+          <Outlet/>
+          <Notification
+              isShowing={isOpen}
+              primaryText={data.primaryText ?? ""}
+              secondaryText={data.secondaryText}
+              isError={data.isError}
+              closeNotification={closeNotification}
+          />
+        </Box>
       </Box>
-    </Box>
   );
 }

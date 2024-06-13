@@ -1,6 +1,6 @@
-import { Card } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import { useCustomizerStore } from "@stores/customizerStore";
+import {Card} from "@mui/material";
+import {useTheme} from "@mui/material/styles";
+import {useCustomizerStore} from "@stores/customizerStore";
 
 type Props = {
   className?: string;
@@ -8,7 +8,7 @@ type Props = {
   sx?: any;
 };
 
-const BlankCard = ({ children, className, sx }: Props) => {
+const BlankCard = ({children, className, sx}: Props) => {
   // const customizer = useSelector((state: AppState) => state.customizer);
   const isCardShadow = useCustomizerStore((state) => state.isCardShadow);
 
@@ -16,19 +16,19 @@ const BlankCard = ({ children, className, sx }: Props) => {
   const borderColor = theme.palette.divider;
 
   return (
-    <Card
-      sx={{
-        p: 0,
-        border: !isCardShadow ? `1px solid ${borderColor}` : "none",
-        position: "relative",
-        sx,
-      }}
-      className={className}
-      elevation={isCardShadow ? 9 : 0}
-      variant={!isCardShadow ? "outlined" : undefined}
-    >
-      {children}
-    </Card>
+      <Card
+          sx={{
+            p: 0,
+            border: !isCardShadow ? `1px solid ${borderColor}` : "none",
+            position: "relative",
+            sx,
+          }}
+          className={className}
+          elevation={isCardShadow ? 9 : 0}
+          variant={!isCardShadow ? "outlined" : undefined}
+      >
+        {children}
+      </Card>
   );
 };
 

@@ -1,16 +1,16 @@
 import _ from "lodash";
-import { createTheme } from "@mui/material/styles";
+import {createTheme} from "@mui/material/styles";
 import components from "./Components";
 import typography from "./Typography";
-import { shadows } from "./Shadows";
-import { LightThemeColors } from "./LightThemeColors";
-import { baselightTheme } from "./DefaultColors";
+import {shadows} from "./Shadows";
+import {LightThemeColors} from "./LightThemeColors";
+import {baselightTheme} from "./DefaultColors";
 import * as locales from "@mui/material/locale";
-import { useCustomizerStore } from "@stores/customizerStore";
+import {useCustomizerStore} from "@stores/customizerStore";
 
 export const BuildTheme = (config: any = {}) => {
   const themeOptions = LightThemeColors.find(
-    (theme) => theme.name === config.theme
+      (theme) => theme.name === config.theme
   );
   const customizer = useCustomizerStore();
   const defaultTheme = baselightTheme;
@@ -27,9 +27,9 @@ export const BuildTheme = (config: any = {}) => {
     typography: typography,
   };
   const theme = createTheme(
-    _.merge({}, baseMode, defaultTheme, locales, themeSelect, {
-      direction: config.direction,
-    })
+      _.merge({}, baseMode, defaultTheme, locales, themeSelect, {
+        direction: config.direction,
+      })
   );
   theme.components = components(theme);
 
@@ -45,4 +45,4 @@ const ThemeSettings = () => {
   return theme;
 };
 
-export { ThemeSettings };
+export {ThemeSettings};

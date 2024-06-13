@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import {create} from 'zustand';
 
 export interface NotificationData {
   primaryText?: string;
@@ -16,8 +16,8 @@ export interface NotificationState {
 export const useNotificationStore = create<NotificationState>((set) => ({
   isOpen: false,
   data: {} as NotificationData,
-  openNotification: (data) => set(() => ({ isOpen: true, data })),
+  openNotification: (data) => set(() => ({isOpen: true, data})),
   closeNotification: () =>
-    set(() => ({ isOpen: false, data: {} as NotificationData })),
+      set(() => ({isOpen: false, data: {} as NotificationData})),
 }));
 

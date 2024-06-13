@@ -1,4 +1,4 @@
-package security;
+package api.security;
 
 import java.util.Arrays;
 import java.util.List;
@@ -63,7 +63,7 @@ public class JwtSecurityConfiguration {
   @Bean
   public SecurityFilterChain filterChain1(
       HttpSecurity http, CorsConfigurationSource corsConfigurationSource) throws Exception {
-
+    System.out.println("Tu samm");
     http.cors(configuration -> configuration.configurationSource(corsConfigurationSource()))
         .csrf(AbstractHttpConfigurer::disable)
         .sessionManagement(
@@ -73,10 +73,10 @@ public class JwtSecurityConfiguration {
                 authorize
 //                    .requestMatchers(HttpMethod.GET, AUTH_WHITELIST)
 //                    .permitAll()
-                   .requestMatchers(HttpMethod.GET, "/cbr/**").permitAll()
+//                   .requestMatchers(HttpMethod.GET, "/cbr/**").permitAll()
 //                    .permitAll()
                     .anyRequest()
-                    .authenticated());
+                    .permitAll());
 
     return http.build();
   }

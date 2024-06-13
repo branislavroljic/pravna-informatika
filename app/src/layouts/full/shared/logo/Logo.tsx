@@ -1,8 +1,8 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import {FC} from "react";
+import {Link} from "react-router-dom";
 import LogoLight from "/src/assets/images/logos/light-logo.svg?react";
-import { styled } from "@mui/material";
-import { useCustomizerStore } from "@stores/customizerStore";
+import {styled} from "@mui/material";
+import {useCustomizerStore} from "@stores/customizerStore";
 
 const Logo: FC = () => {
   const customizer = useCustomizerStore();
@@ -15,9 +15,9 @@ const Logo: FC = () => {
   }));
 
   return (
-    <LinkStyled to="/">
-      <LogoLight />
-    </LinkStyled>
+      <LinkStyled to="/">
+        <LogoLight/>
+      </LinkStyled>
   );
 };
 

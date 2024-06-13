@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import {create} from "zustand";
+import {persist} from "zustand/middleware";
 
 export interface StateType {
   activeDir?: string | any;
@@ -25,36 +25,36 @@ export interface StateType {
 }
 
 export const useCustomizerStore = create<StateType>()(
-  persist(
-    (set) => ({
-      activeDir: "ltr",
-      activeMode: localStorage.getItem("my_benefit_theme") ?? "light",
-      activeTheme: "ORANGE_THEME",
-      SidebarWidth: 270,
-      MiniSidebarWidth: 87,
-      TopbarHeight: 70,
-      isLayout: "full",
-      isCollapse: false,
-      isSidebarHover: false,
-      isMobileSidebar: false,
-      isHorizontal: false,
-      isLanguage: localStorage.getItem("my_benefit_lang") ?? "en",
-      isCardShadow: true,
-      borderRadius: 7,
-      setDarkMode: (mode: string) => {
-        localStorage.setItem("my_benefit_theme", mode);
-        set(() => ({ activeMode: mode }));
-      },
-      setLanguage: (language: string) => {
-        localStorage.setItem("my_benefit_lang", language);
-        set(() => ({ isLanguage: language }));
-      },
-      toggleSidebar: () => set((state) => ({ isCollapse: !state.isCollapse })),
-      hoverSidebar: (value: boolean) => set(() => ({ isSidebarHover: value })),
-      toggleMobileSidebar: () =>
-        set((state) => ({ isMobileSidebar: !state.isMobileSidebar })),
-      toggleLayout: (layout: string) => set(() => ({ isLayout: layout })),
-    }),
-    { name: "customizer-storage" }
-  )
+    persist(
+        (set) => ({
+          activeDir: "ltr",
+          activeMode: localStorage.getItem("my_benefit_theme") ?? "light",
+          activeTheme: "ORANGE_THEME",
+          SidebarWidth: 270,
+          MiniSidebarWidth: 87,
+          TopbarHeight: 70,
+          isLayout: "full",
+          isCollapse: false,
+          isSidebarHover: false,
+          isMobileSidebar: false,
+          isHorizontal: false,
+          isLanguage: localStorage.getItem("my_benefit_lang") ?? "en",
+          isCardShadow: true,
+          borderRadius: 7,
+          setDarkMode: (mode: string) => {
+            localStorage.setItem("my_benefit_theme", mode);
+            set(() => ({activeMode: mode}));
+          },
+          setLanguage: (language: string) => {
+            localStorage.setItem("my_benefit_lang", language);
+            set(() => ({isLanguage: language}));
+          },
+          toggleSidebar: () => set((state) => ({isCollapse: !state.isCollapse})),
+          hoverSidebar: (value: boolean) => set(() => ({isSidebarHover: value})),
+          toggleMobileSidebar: () =>
+              set((state) => ({isMobileSidebar: !state.isMobileSidebar})),
+          toggleLayout: (layout: string) => set(() => ({isLayout: layout})),
+        }),
+        {name: "customizer-storage"}
+    )
 );

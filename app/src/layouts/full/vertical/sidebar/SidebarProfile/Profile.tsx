@@ -23,7 +23,7 @@ export const Profile = () => {
 
           <Box>
             <Typography variant="h6" color={"white"}>
-              {"PRAVNA INFORMATIKA"}
+              {"Pravna informatika"}
             </Typography>
           </Box>
         </>

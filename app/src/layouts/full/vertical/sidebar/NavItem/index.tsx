@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 // mui imports
 import {
@@ -11,7 +11,7 @@ import {
   Typography,
   ListItemButton,
 } from "@mui/material";
-import { useCustomizerStore } from "@stores/customizerStore";
+import {useCustomizerStore} from "@stores/customizerStore";
 
 type NavGroup = {
   [x: string]: any;
@@ -38,16 +38,16 @@ interface ItemType {
   pathDirect: string;
 }
 
-const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
+const NavItem = ({item, level, pathDirect, hideMenu, onClick}: ItemType) => {
   const customizer = useCustomizerStore();
   const Icon = item?.icon;
   const theme = useTheme();
   const itemIcon =
-    level > 1 ? (
-      <Icon stroke={1.5} size="1rem" />
-    ) : (
-      <Icon stroke={1.5} size="1.3rem" />
-    );
+      level > 1 ? (
+          <Icon stroke={1.5} size="1rem"/>
+      ) : (
+          <Icon stroke={1.5} size="1.3rem"/>
+      );
 
   const ListItemStyled = styled(ListItemButton)(() => ({
     whiteSpace: "nowrap",
@@ -56,9 +56,9 @@ const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
     borderRadius: `${customizer.borderRadius}px`,
     backgroundColor: level > 1 ? "transparent !important" : "inherit",
     color:
-      level > 1 && pathDirect === item?.href
-        ? `${theme.palette.primary.main}!important`
-        : theme.palette.text.secondary,
+        level > 1 && pathDirect === item?.href
+            ? `${theme.palette.primary.main}!important`
+            : theme.palette.text.secondary,
     paddingLeft: hideMenu ? "10px" : level > 2 ? `${level * 15}px` : "10px",
     "&:hover": {
       backgroundColor: theme.palette.primary.light,
@@ -87,48 +87,48 @@ const NavItem = ({ item, level, pathDirect, hideMenu, onClick }: ItemType) => {
   };
 
   return (
-    <List component="li" disablePadding key={item?.id && item.title}>
-      <ListItemStyled
-        {...listItemProps}
-        disabled={item?.disabled}
-        selected={pathDirect === item?.href}
-        onClick={onClick}
-      >
-        <ListItemIcon
-          sx={{
-            minWidth: "36px",
-            p: "3px 0",
-            color:
-              level > 1 && pathDirect === item?.href
-                ? `${theme.palette.primary.main}!important`
-                : "inherit",
-          }}
+      <List component="li" disablePadding key={item?.id && item.title}>
+        <ListItemStyled
+            {...listItemProps}
+            disabled={item?.disabled}
+            selected={pathDirect === item?.href}
+            onClick={onClick}
         >
-          {itemIcon}
-        </ListItemIcon>
-        <ListItemText>
-          {hideMenu ? "" : <>{`${item?.title}`}</>}
-          {/* {hideMenu ? '' : <>{"ccc"}</>} */}
-          <br />
-          {item?.subtitle ? (
-            <Typography variant="caption">
-              {hideMenu ? "" : item?.subtitle}
-            </Typography>
-          ) : (
-            ""
-          )}
-        </ListItemText>
+          <ListItemIcon
+              sx={{
+                minWidth: "36px",
+                p: "3px 0",
+                color:
+                    level > 1 && pathDirect === item?.href
+                        ? `${theme.palette.primary.main}!important`
+                        : "inherit",
+              }}
+          >
+            {itemIcon}
+          </ListItemIcon>
+          <ListItemText>
+            {hideMenu ? "" : <>{`${item?.title}`}</>}
+            {/* {hideMenu ? '' : <>{"ccc"}</>} */}
+            <br/>
+            {item?.subtitle ? (
+                <Typography variant="caption">
+                  {hideMenu ? "" : item?.subtitle}
+                </Typography>
+            ) : (
+                ""
+            )}
+          </ListItemText>
 
-        {!item?.chip || hideMenu ? null : (
-          <Chip
-            color={item?.chipColor}
-            variant={item?.variant ? item?.variant : "filled"}
-            size="small"
-            label={item?.chip}
-          />
-        )}
-      </ListItemStyled>
-    </List>
+          {!item?.chip || hideMenu ? null : (
+              <Chip
+                  color={item?.chipColor}
+                  variant={item?.variant ? item?.variant : "filled"}
+                  size="small"
+                  label={item?.chip}
+              />
+          )}
+        </ListItemStyled>
+      </List>
   );
 };
 
