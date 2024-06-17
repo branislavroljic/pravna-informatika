@@ -1,2 +1,5 @@
-package api.enumeration;public enum JudgmentType {
+package api.enumeration;
+
+public enum JudgmentType {
+  SUSPENDED, ACQUITTAL, CONVICTION, WARNING
 }

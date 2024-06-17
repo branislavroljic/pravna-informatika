@@ -63,7 +63,6 @@ public class JwtSecurityConfiguration {
   @Bean
   public SecurityFilterChain filterChain1(
       HttpSecurity http, CorsConfigurationSource corsConfigurationSource) throws Exception {
-    System.out.println("Tu samm");
     http.cors(configuration -> configuration.configurationSource(corsConfigurationSource()))
         .csrf(AbstractHttpConfigurer::disable)
         .sessionManagement(

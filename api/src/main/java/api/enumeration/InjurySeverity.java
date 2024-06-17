@@ -1,2 +1,5 @@
-package api.enumeration;public class InjurySeverity {
+package api.enumeration;
+
+public enum InjurySeverity {
+  NONE, MINOR, SERIOUS
 }
