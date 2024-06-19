@@ -1,6 +1,6 @@
 package api.controller;
 
-import api.service.CbrService;
+import api.service.CaseService;
 import java.io.IOException;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -16,29 +16,29 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cbr")
 public class CbrController {
 
-  private final CbrService cbrService;
+  private final CaseService caseService;
 
   @GetMapping("/cases")
   public ResponseEntity<List<String>> getCases() throws IOException {
-    return ResponseEntity.ok().body(cbrService.getDocumentList("cases"));
+    return ResponseEntity.ok().body(caseService.getDocumentList("cases"));
   }
 
   @GetMapping("/cases/{caseName:.+}")
   public ResponseEntity<byte[]> getCase(@PathVariable String caseName) throws IOException {
     return ResponseEntity.ok()
         .contentType(MediaType.APPLICATION_PDF)
-        .body(cbrService.getDocument("cases", caseName));
+        .body(caseService.getDocument("cases", caseName));
   }
 
   @GetMapping("/laws")
   public ResponseEntity<List<String>> getLaws() throws IOException {
-    return ResponseEntity.ok().body(cbrService.getDocumentList("laws"));
+    return ResponseEntity.ok().body(caseService.getDocumentList("laws"));
   }
 
   @GetMapping("/laws/{lawName:.+}")
   public ResponseEntity<byte[]> getLaw(@PathVariable String lawName) throws IOException {
     return ResponseEntity.ok()
         .contentType(MediaType.APPLICATION_PDF)
-        .body(cbrService.getDocument("laws", lawName));
+        .body(caseService.getDocument("laws", lawName));
   }
 }
