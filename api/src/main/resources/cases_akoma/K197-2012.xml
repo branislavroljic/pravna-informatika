@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Bijelom Polju
+                    </FRBRauthor>
+                    <FRBRdate date="2012-06-13">
+						2012-06-13
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 197/2012
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osbp" href="/ontology/organization/OsnovniSud.Bar" showAs="Osnovni sud u Bijelom Polju" />
+                <TLCOrganization eId="odtbp" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.BijeloPolje" showAs="Osnovno drzavno tuzilastvo u Bijelom Polju" />
+                <TLCPerson eId="vraicevic" href="/ontology/person/vraicevic" showAs="Violeta Raičević" />
+                <TLCPerson eId="ljjoksimovic" href="/ontology/person/ljjoksimovic" showAs="Ljiljana Joksimović" />
+                <TLCPerson eId="fd" href="/ontology/person/fd" showAs="F.D." />
+                <TLCPerson eId="kkljajevic" href="/ontology/person/kkljajevic" showAs="Katarina Kljajević" />
+                <TLCPerson eId="js" href="/ontology/person/js" showAs="J. S." />
+                <TLCPerson eId="mb" href="/ontology/person/mb" showAs="M.B." />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="osbp" refersTo="#osbp">
+                    OSNOVNI SUD U BIJELOM POLJU
+                </organization>
+                , po sudiji pojedincu 
+                <party id="vraicevic" refersTo="#vraicevic" as="#judge">
+                    Raičević Violeti
+                </party>
+                 uz učešće namještenika suda 
+                <party id="ljjoksimovic" refersTo="#ljjoksimovic" as="#clerk">
+                    Ljiljane Joksimović
+                </party>
+                 kao zapisničara u krivičnom predmetu protiv okrivljenog 
+                <party id="fd" refersTo="#fd" as="#defendant">
+                    F.D.a
+                </party>
+                 iz Bijelog Polja, zbog krivičnog djela teška tjelesna povreda iz 
+                <ref href="/krivicni#art_151">
+                    čl.151.st.1.KZ
+                </ref>
+                , po optužnom predlogu 
+                <organization id="odtbp" refersTo="#odtbp">
+                    ODT-a u B.Polju
+                </organization>
+                 Kt.br.132/12 od 18.05.2012.godine, nakon održanog usmenog glavnog i javnog pretresa u prisustvu zamjenika 
+                <organization id="odtbp" refersTo="#odtbp">
+                    ODT-a
+                </organization>
+                <party id="kkljajevic" refersTo="#kkljajevic" as="#prosecutor">
+                    Kljajević Katarine
+                </party>
+                , okrivljenog 
+                <party id="fd" refersTo="#fd" as="#defendant">
+                    F.D.a
+                </party>
+                 i njegovog branicoa adv. 
+                <party id="js" refersTo="#js" as="#defenseAttorney">
+                    J.S.a
+                </party>
+                 te oštećenog 
+                <party id="mb" refersTo="#mb" as="#victim">
+                    M.B.a
+                </party>
+                 , dana 13.06.2012.godine donio je i javno objavio:</p>
+            <p style="text-align: center;">P R E S U D U </p>
+            <p>Okrivljeni 
+                <party>
+                    F.D.
+                </party>
+                , jmbg...., od oca Ć. i majke Z., rodjene B., rodjen ....godine, u Bijelom Polju, sa prebivalištem u mjestu rodjenja, R., nezaposlen, neoženjen, pismen, sa završenom srednjom školom - mašinski tehničar, državljani CG, osudjivan.</p>
+            <p style="text-align: center;">K R I V J E</p>
+            <p>Što je:</p>
+            <p>Dana 04.04.2012.godine, oko 16,20 h, u mjestu R., opština B.Polje, teško tjelesno povrijedio oštećenog 
+                <party id="mb" refersTo="#mb" as="#victim">
+                    M.B.a
+                </party>
+                 iz B.Polja, na način što ga je stisnutom pesnicom udario u predjelu glave - nosa kojom prilikom mu je nanio tešku tjelesnu povredu u vidu preloma nosnih kostiju sa dislokacijom.</p>
+            <p>-čime je izvršio krivično djelo teška tjelesna povreda iz 
+                <ref href="/krivicni#art_151">
+                    čl. 151 st. 1 Krivičnog zakonika Crne Gore
+                </ref>
+                ,
+            </p>
+            <conclusions>
+                <p>- pa ga 
+                    <organization id="osbp" refersTo="#osbp">
+                        sud
+                    </organization>
+                     primjenom citiranog zakonskog propisa i 
+                    <ref href="/krivicni#art_2">
+                        čl. 2
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_4">
+                        4
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_5">
+                        5
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_13">
+                        13
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_15">
+                        15
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_32">
+                        32
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_36">
+                        36
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_42">
+                        42
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_45">
+                        45
+                    </ref>
+                     i 
+                    <ref href="/krivicni#art_46">
+                        46 Krivičnog zakonika Crne Gore /KZ/
+                    </ref>
+                     i 
+                    <ref href="/postupak#art_226">
+                        čl. 226
+                    </ref>
+                    , 
+                    <ref href="/postupak#art_229">
+                        229
+                    </ref>
+                    , 
+                    <ref href="/postupak#art_239">
+                        239
+                    </ref>
+                     i 
+                    <ref href="/postupak#art_374">
+                        374 Zakonika o krivičnom postupku Crne Gore / ZKP/
+                    </ref>
+                </p>
+                <p style="text-align: center;">O S U Đ U J E</p>
+                <p>Na kaznu zatvora u trajanju od 30/trideset/ dana.</p>
+                <p>
+                    <party>
+                        Okrivljeni
+                    </party>
+                     se obavezuje na plaćanje paušala ovom 
+                    <organization id="osbp" refersTo="#osbp">
+                        sudu
+                    </organization>
+                     u iznosu od 30 € i na ime troškova krivičnog postupka u iznosu od 71,50 /sedamdeset jedan eur i pedeset centi/ € na račun Depozita novčanih kazni, troškova postupka i paušala CG broj 832-151-35, u roku od 15 dana po pravosnažnosti presude, pod prijetnjom prinudnog izvršenja.</p>
+                <p>Oštećeni 
+                    <party id="mb" refersTo="#mb" as="#victim">
+                        M.B.o
+                    </party>
+                     se upućuje na parnični postupak, radi ostvarenja imovinsko-pravnog zahtjeva.</p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

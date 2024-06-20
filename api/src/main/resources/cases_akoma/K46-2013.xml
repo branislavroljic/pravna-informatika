@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Kolašinu
+                    </FRBRauthor>
+                    <FRBRdate date="2013-12-20">
+						2013-12-20
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 46/2013
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="oskl" href="/ontology/organization/OsnovniSud.Kolasin" showAs="Osnovni sud u Kolašinu" />
+                <TLCOrganization eId="odtkl" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Kolasinu" showAs="Osnovno drzavno tuzilastvo Kolašin" />
+                <TLCOrganization eId="zhmpkl" href="/ontology/organization/HitnaMedicinskaPomoc.Kolasin" showAs="Zavoda za hitnu medicinsku pomoć u Kolašinu" />
+                <TLCOrganization eId="upkl" href="/ontology/organization/UpravaPolicije.Kolasin" showAs="Uprava policije - Ispostava Kolašin" />
+                <TLCPerson eId="apopovic" href="/ontology/person/apopovic" showAs="Arsen Popović" />
+                <TLCPerson eId="ljmrdak" href="/ontology/person/ljmrdak" showAs="Ljiljana Mrdak" />
+                <TLCPerson eId="mraketic" href="/ontology/person/mraketic" showAs="Matija Raketić" />
+                <TLCPerson eId="mscepanovic" href="/ontology/person/mscepanovic" showAs="Maja Šćepanović" />
+                <TLCPerson eId="vbulatovic" href="/ontology/person/vbulatovic" showAs="Velibor Bulatović" />
+                <TLCPerson eId="ncoguric" href="/ontology/person/ncoguric" showAs="Novak Čogurić" />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="oskl" refersTo="#oskl">
+                    Osnovni sud u Kolašinu
+                </organization>
+                 kao prvostepeni krivični po predsjedniku suda 
+                <party id="apopovic" refersTo="#apopovic" as="#judge">
+                    Arsenu Popoviću
+                </party>
+                 kao sudiji pojedincu uz učešće zapisničara 
+                <party id="ljmrdak" refersTo="#ljmrdak" as="#clerk">
+                    Mrdak Ljiljane
+                </party>
+                 u krivičnom predmetu protiv optuženog 
+                <party id="mraketic" refersTo="#mraketic" as="#defendant">
+                    Raketić Matije
+                </party>
+                 iz Kolašina zbog krivičnog djela napad na službeno lice u vršenju službene dužnosti iz 
+                <ref href="/krivicni#art_376">čl.376.st.2. u vezi st.1. Krivičnog zakonika</ref>
+                 i krivičnog djela napad na službeno lice u vršenju službene dužnosti iz 
+                <ref href="/krivicni#art_376">
+                    čl.376.st.3. u vezi st.1. Krivičnog zakonika
+                </ref>
+                , po optužnom predlogu 
+                <organization id="odtkl" refersTo="#odtkl"> 
+                    ODT iz Kolašina
+                </organization>
+                 Kt.br.44/13 od 12.09.2013. godine, nakon održanog glavnog javnog pretresa dana 20.12.2013. godine u prisustvu zamjenika 
+                <organization id="odtkl" refersTo="#odtkl"> 
+                    ODT Kolašin
+                </organization>
+                <party id="mscepanovic" refersTo="#mscepanovic" as="#prosecutor">
+                    Šćepanović Maje
+                </party>
+                 i optuženog 
+                <party id="mraketic" refersTo="#mraketic" as="#defendant">
+                    Raketić Matije
+                </party>
+                 donio je i javno objavio,-</p>
+            <p style="text-align: center;">P R E S U D U</p>
+            <p>Optuženi:</p>
+            <p>
+                <party id="mraketic" refersTo="#mraketic" as="#defendant">
+                    RAKETIĆ MATIJA
+                </party>
+                , jmbg.1609990212986, od oca Dragana i majke Svetlane rodj. Dukić, rodjen 16.09.1990. godine u Podgorici, gdje je i nastanjen - Dajbabe bb, Crnogorac, Državljanin CG, student, neoženjen, pismen, završio srednju školu, govori crnogorskim jezikom, srednjeg imovnog stanja, neosudjivan.</p>
+            <p style="text-align: center;">K r i v j e:</p>
+            <p>Zato što je:</p>
+            <p>a) dana 16.06.2013. godine, oko 03,43 časa u prostorijama 
+                 Hitne medicinske pomoći u Kolašinu
+                , napao službeno lice 
+                <organization id="zhmpkl" refersTo="#zhmpkl">
+                    Zavoda za hitnu medicinsku pomoć
+                </organization>
+                 doktora 
+                <party id="vbulatovic" refersTo="#vbulatovic" as="#victim">
+                    Bulatović Velibora
+                </party>
+                 u vršenju službene dužnosti, prilikom ukazivanja medicinske pomoći 
+                <party id="mraketic" refersTo="#mraketic" as="#defendant">
+                    okrivljenom
+                </party>
+                 i to tako što je udario oštećenog 
+                <party id="vbulatovic" refersTo="#vbulatovic" as="#victim">
+                    Bulatović Velibora
+                </party>
+                 nogom u predjelu zadnjeg dijela lijeve nadkoljenice, nanijevši mu tom prilikom lake tjelesne povrede manifestovane u vidu nagnječine kože i mekog potkožnog tkiva zadnje strane nadkoljenice lijeve noge,</p>
+            <p>- čime je izvršio krivično djelo napad na službeno lice u vršenju službene dužnosti iz 
+                <ref href="/krivicni#art_376">
+                    čl.376.st.2. u vezi st.1. Krivičnog zakonika
+                </ref>
+                .
+            </p>
+            <p>b) istog dana, kao pod tačkom a), ispred objekta Hitne medicinske pomoći u Kolašinu, napao službeno lice - policajca 
+                <organization id="upkl" refersTo="#upkl">
+                    Uprave policije - Ispostave Kolašin
+                </organization>
+                <party id="ncoguric" refersTo="#ncoguric" as="#victim">
+                    Čogurić Novaka
+                </party>
+                , u vršenju poslova javne bezbjednosti prilikom preduzimanja radnje privodjenja okrivljenog u prostorije dežurne službe Ispostave Kolašin i to tako što je udario oštećenog nekoliko puta nogom u predjelu ledja,</p>
+            <p>- čime je izvršio krivično djelo napad na službeno lice u vršenju službene dužnosti iz 
+                <ref href="/krivicni#art_376">
+                    čl.376.st.3. u vezi st.1. Krivičog zakonika
+                </ref>
+                .
+            </p>
+            <conclusions>
+                <p>Pa 
+                    <organization id="oskl" refersTo="#oskl">
+                        sud
+                    </organization>
+                     okrivljenom primjenom citiranih zakonskih odredbi te 
+                    <ref href="/krivicni#art_48">
+                        čl. 48.st.1. Krivičnog zakonika
+                    </ref>
+                     , -
+                </p>
+                <p style="text-align: center;">U T V R DJ U J E</p>
+                <p>- za krivično djelo napad na službeno lice u vršenju službene dužnosti iz 
+                    <ref href="/krivicni#art_376">
+                        čl.376.st.2. u vezi st.1. Krivičnog zakonika
+                    </ref>
+                    , kaznu zatvora u trajanju od 3 (tri) mjeseca,</p>
+                <p>- za krivično djelo napad na službeno lice u vršenju službene dužnosti iz 
+                    <ref href="/krivicni#art_376">
+                        čl. 376.st.3. u vezi st.1. Krivičnog zakonika
+                    </ref>
+                    , kaznu zatvora u trajanju od 5 (pet) mjeseci.</p>
+                <p>Pa mu 
+                    <organization id="oskl" refersTo="#oskl">
+                        sud
+                    </organization>
+                     za izvršena krivična djela, primjenom citiranih zakonskih odredbi te 
+                    <ref href="/krivicni#art_52">
+                        čl.52
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_53">
+                        53
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_54">
+                        54
+                    </ref>
+                     i 
+                    <ref href="/krivicni#art_48">
+                        48.st.2. Krivičnog zakonika
+                    </ref>
+                     te 
+                    <ref href="/postupak#art_229">
+                        čl.229
+                    </ref>
+                     i 
+                    <ref href="/postupak#art_374">
+                        374 ZKP
+                    </ref>
+                    -
+                    , i z r i č e,-</p>
+                <p style="text-align: center;">USLOVNU OSUDU</p>
+                <p>Kojom 
+                    <party id="mraketic" refersTo="#mraketic" as="#defendant">
+                        okrivljenom
+                    </party>
+                     utvrdjuje kaznu zatvora u trajanju od 6 (šest) mjeseci i istovremeno odredjuje da se ista neće izvršiti ukoliko 
+                    <party id="mraketic" refersTo="#mraketic" as="#defendant">
+                        okrivljeni
+                    </party>
+                     u roku od 2 (dvije) godine ne počini novo krivično djelo.</p>
+                <p>Obavezuje se 
+                    <party id="mraketic" refersTo="#mraketic" as="#defendant">
+                        okrivljeni
+                    </party>
+                     da plati troškove krivičnog postupka u iznosu od 60,50 €, te da plati sudski paušal u iznosu od 30,00 €, uplatom na žiro-račun br. 832-196-94 koji se vodi na ime 
+                    <organization id="oskl" refersTo="#oskl">
+                        Osnovnog suda Kolašin
+                    </organization>
+                     i to u roku od 15 dana od dana pravosnažnosti ove presude pod prijetnjom prinudnog izvršenja</p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

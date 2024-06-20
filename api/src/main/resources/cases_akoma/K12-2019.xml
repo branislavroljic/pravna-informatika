@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Rožajama
+                    </FRBRauthor>
+                    <FRBRdate date="2019-01-29">
+						2019-01-29
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 12/2019
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osro" href="/ontology/organization/OsnovniSud.Rožaje" showAs="Osnovni Sud u Rožajama" />
+                <TLCOrganization eId="odtro" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Rožaje" showAs="Osnovno drzavno tuzilastvo iz Rožaja" />
+                <TLCPerson eId="zcamic" href="/ontology/person/zcamic" showAs="Zahit Camić" />
+                <TLCPerson eId="aburdzovic" href="/ontology/person/aburdzovic" showAs="Adisa Burdžović" />
+                <TLCPerson eId="hh" href="/ontology/person/hh" showAs="H.H." />
+                <TLCPerson eId="aselmanovic" href="/ontology/person/aselmanovic" showAs="Armin Selmanović" />
+                <TLCPerson eId="ao" href="/ontology/person/ao" showAs=" A.O." />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="osro" refersTo="#osro">
+                    OSNOVNI SUD U ROŽAJAMA
+                </organization>
+                 i to Predsjednik suda 
+                <party id="zcamic" refersTo="#zcamic" as="#judge">
+                    Camić Zahit
+                </party>
+                , kao sudija pojedinac, sa zapisničarem 
+                <party id="aburdzovic" refersTo="#aburdzovic" as="#clerk">
+                    Adisom Burdžović
+                </party>
+                , odlučujući po optužnom predlogu 
+                <organization id="odtro" refersTo="#odtro">
+                    Osnovnog Državnog Tužilaštva iz Rožaja
+                </organization>
+                 Kt.br.210/18. od 03.01.2019. godine protiv okrivljenog 
+                <party id="hh" refersTo="#hh" as="#defendant">
+                    H. H.
+                </party>
+                 iz R., zbog krivičnog djela teška tjelesna povreda iz 
+                <ref href="/krivicni#art_151">
+                    čl. 151.st.1 Krivičnog Zakonika Crne Gore
+                </ref>
+                , nakon održanog glavnog i javnog pretresa u prisustvu Državnog Tužioca 
+                <party id="aselmanovic" refersTo="#aselmanovic" as="#prosecutor">
+                    Armina Selmanovića
+                </party>
+                , zakonskog zastupnika maloljetnog oštećenog 
+                <party id="ao" refersTo="#ao" as="#victim">
+                    A.O.
+                </party>
+                 oca H. O. i 
+                <party id="hh" refersTo="#hh" as="#defendant">
+                    okrivljenog
+                </party>
+                 dana  29.01.2019. godine donio je i javno objavio,</p>
+            <p style="text-align: center;">P R E S U D U</p>
+            <p>Okrivljeni 
+                <party id="hh" refersTo="#hh" as="#defendant">
+                    H. H.
+                </party>
+                 JMB .... od oca F. i majke M. rođene M., rođen .... godine, u R., sa prebivalištem u ul. O. bb, o. R.,državljanin Crne Gore, razumije crnogorski jezik koji mu je i maternji jezik, učenik trećeg razreda Srednje stručne škole, neoženjen, pismen, sa završena dva razreda SSS, siromašnog imovnog stanja, neosuđivan </p>
+            <p style="text-align: center;">K R I V  J E</p>
+            <p>Što je:</p>
+            <p>dana 07.12.2018. godine, oko 10,20 h, u fiskulturnoj sali Srednje stručne škole u Rožajama, u uračunljivom stanju, svjestan svog djela čije je izvršenje htio, iako je znao da je njegovo djelo zabranjeno, teško tjelesno povrijedio 
+                <party id="ao" refersTo="#ao" as="#victim">
+                    A.O.
+                </party>
+                , na način što ga je pesnicom udario u predjelu glave - lica lijevo, nanoseći mu tom prilikom tešku tjelesnu povredu u vidu multrifragmentalne impresivne frakture prednjeg zida frontalnog sinusa lijevo,</p>
+            <p>-čime je izvršio krivično djelo teška tjelesna povreda iz 
+                <ref href="/krivicni#art_151">
+                    čl. 151.st.1. Krivičnog Zakonika Crne Gore
+                </ref>
+                .
+            </p>
+            <conclusions>
+                <p>Pa ga 
+                    <organization id="osro" refersTo="#osro">
+                        sud
+                    </organization>
+                     na osnovu pomenutog zakonskog propisa, primjenom 
+                    <ref href="/krivicni#art_3">čl. 3.</ref>
+                    <ref href="/krivicni#art_4">4.</ref>
+                    <ref href="/krivicni#art_13">13.</ref>
+                    <ref href="/krivicni#art_15">15. </ref>
+                    <ref href="/krivicni#art_32">32.</ref>
+                    <ref href="/krivicni#art_36">36. </ref>
+                    <ref href="/krivicni#art_36a">36 a </ref>
+                    <ref href="/krivicni#art_42">42</ref>
+                    , 
+                    <ref href="/krivicni#art_45">45</ref>
+                    , 
+                    <ref href="/krivicni#art_46">46 st. 1 tač. 5 Krivičnog Zakonika Crne Gore</ref>
+                    , 
+                    <ref href="/postupak#art_226">čl. 226.</ref>
+
+                    <ref href="/postupak#art_229">229. st. 4</ref>
+                     i 
+                    <ref href="/postupak#art_374">čl. 374. Zakonika o Krivičnom Postupku</ref>
+                </p>
+                <p style="text-align: center;">O S U DJ U J E</p>
+                <p>NA KAZNU ZATVORA u trajanju od 4 (četiri) mjeseca i istovremeno određuje da će se ova kazna izvršiti tako što će je osuđeni izdržavati u prostorijama u kojima stanuje.</p>
+                <p>
+                    <party id="hh" refersTo="#hh" as="#defendant">
+                        Okrivljeni
+                    </party>
+                     se oslobađa plaćanja troškova krivičnog postupka u iznosu od 105,00 eura,kao i plaćanja paušala usled slabog imovnog stanja.
+                </p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

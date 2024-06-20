@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Nikšiću
+                    </FRBRauthor>
+                    <FRBRdate date="2013-12-23">
+						2013-12-23
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 338/2013
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osnk" href="/ontology/organization/OsnovniSud.Niksic" showAs="Osnovni sud u Niksicu" />
+                <TLCOrganization eId="odtnk" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Niksic" showAs="Osnovno drzavno tuzilastvo Niksic" />
+                <TLCPerson eId="dbabovic" href="/ontology/person/dbabovic" showAs="Dragan Babovic" />
+                <TLCPerson eId="skristof" href="/ontology/person/skristof" showAs="Stanka Kristof" />
+                <TLCPerson eId="vmicunovic" href="/ontology/person/vmicunovic" showAs="Vjera Micunovic" />
+                <TLCPerson eId="djf" href="/ontology/person/djf" showAs="DJ. F." />
+                <TLCPerson eId="ka" href="/ontology/person/ka" showAs="K A" />
+                <TLCPerson eId="tm" href="/ontology/person/tm" showAs="T M" />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="osnk" refersTo="#osnk">
+                    OSNOVNI SUD U NIKŠIĆU
+                </organization>
+                , kao prvostepeni krivični po sudiji 
+                <party id="dbabovic" refersTo="#dbabovic" as="#judge">
+                    Babović Draganu
+                </party>
+                 uz sudelovanje 
+                <party id="skristof" refersTo="#skristof" as="#clerk">
+                    Krištof Stanke
+                </party>
+                ,kao zapisničara u krivičnom predmetu protiv okrivljenog
+                <party id="djf" refersTo="#djf" as="#defendant">
+                    DJ. F.A
+                </party>
+                 , zbog dva krivična djela laka tjelesna povreda iz 
+                <ref href="/krivicni#art_152">
+                    čl. 152.st.2.u vezi st.1. KZ
+                </ref>
+                , po optužnom predlogu 
+                <organization id="odtnk" refersTo="#odtnk">
+                    ODT-a Nikšić
+                </organization>
+                 Kt.br.30/13 od 11.07.2013 nakon dovršenog glavnog i javnog pretresa, dana 23.12.2013.godine u prisustvu 
+                <party id="djf" refersTo="#djf" as="#defendant">
+                    okrivljenog
+                </party>
+                 i zamjenika 
+                <organization>
+                    ODT-a iz Nikšića
+                </organization>
+                <party id="vmicunovic" refersTo="#vmicunovic" as="#prosecutor">
+                    Mićunović Vjere
+                </party>
+                , donio je i istog dana javno objavio</p>
+            <p style="text-align: center;">P R E S U D U </p>
+            <p>Okrivljeni:
+                <party id="djf" refersTo="#djf" as="#defendant">
+                    DJ. F.
+                </party>
+                 od oca V i majke Z rodjene Š rodjenog 27.07.1992.godine u N nastanjen u N – R br.x, državljanin CG, neoženjen, pismen, završio srednju školu, lošeg imovnog stanja, ranije neosudjivan.
+            </p>
+            <p style="text-align: center;">K r i v j e</p>
+            <p>Što je: </p>
+            <p>Dana 25.12.2012.godine u Nikšiću u ul. xxxxx ispred kafe bara »G «, svjestan svog djela i htio njegovo izvršenje, metalnom šipkom dužine oko 50 cm i debljine oko 1 cm, kao sredstvom podobnim da tijelo teško povrijedi ili zdravlje teško naruši, više puta udario u predjelu glave oštećenog maloljetnog 
+                <party id="ka" refersTo="#ka" as="#victim">
+                    K. A.a
+                </party>
+                , a oštećenog 
+                <party id="tm" refersTo="#tm" as="#victim">
+                    T. M.a
+                </party>
+                 udariou predjelu lijeve noge, kojom prilikom je oštećenim 
+                <party id="ka" refersTo="#ka" as="#victim">
+                    K. A.u
+                </party>
+                 i 
+                <party id="tm" refersTo="#tm" as="#victim">
+                    T. M.u
+                </party>
+                 nanio lake tjelesne povrede i to: oštećenom 
+                <party id="ka" refersTo="#ka" as="#victim">
+                    K. A.u
+                </party>
+                 u vidu razderne rane u tjemenom predjelu poglavine sa lijeve strane dužine oko 5 cm, a oštećenom 
+                <party id="tm" refersTo="#tm" as="#victim">
+                    T. M.u
+                </party>
+                 u vidu nagnječenja u predjelu lijeve nadkoljenice,
+            </p>
+            <p>čime je počinio dva krivična djela laka tjelesna povreda iz 
+                <ref href="/krivicni#art_152">
+                    čl.152.st.2. u vezi .st.1. Krivičnog zakonika
+                </ref>
+                .
+            </p>
+            <conclusions>
+                <p>-pa 
+                    <organization id="osnk" refersTo="#osnk">
+                        sud
+                    </organization>
+                     okrivljenom primjenom citiranih zakonskih odredbi kao i odredbi iz 
+                    <ref href="/krivicni#art_4">
+                        čl. 4 st. 2,
+                    </ref>
+                    <ref href="/krivicni#art_42">
+                        42
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_52">
+                        52
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_53">
+                        53
+                    </ref>
+                     i 
+                    <ref href="/krivicni#art_54">
+                        54 Krivičnog zakonika
+                    </ref>
+                    ‚ za svako krivično djelo laka tjelesna povreda iz 
+                    <ref href="/krivicni#art_152">
+                        čl. 152 st. 2 u vezi st. 1 Krivičnog zakonika okrivljenom
+                    </ref>
+                    <party id="djf" refersTo="#djf" as="#defendant">
+                        Đ. F.u
+                    </party>
+                     prethodno utvrdjuje kazne zatvora u trajanju od po 2(dva) mjeseca, pa zatim primjenom 
+                    <ref href="/krivicni#art_48">
+                        čl. 48 Krivičnog zakonika
+                    </ref>
+                    <ref href="/postupak#art_226">
+                        čl. 226
+                    </ref>
+                    , 
+                    <ref href="/postupak#art_229">
+                        229
+                    </ref>
+                     i 
+                    <ref href="/postupak#art_374">
+                        čl. 374 Zakonika o krivičnom postupku
+                    </ref>
+                     izriče
+                </p>
+                <p style="text-align: center;">USLOVNU OSUDU</p>
+                <p>Kojom mu utvrdjuje jedinstvenu kaznu zatvora u trajanju od 3 (tri) mjeseca i istovremeno odredjuje da se ova kazna neće izvršiti ako 
+                    <party id="djf" refersTo="#djf" as="#defendant">
+                        okrivljeni
+                    </party>
+                     u roku od 1(jedne) godine po pravosnažnosti presude ne učini novo krivično djelo.</p>
+                <p>
+                    <party id="djf" refersTo="#djf" as="#defendant">
+                        Okrivljeni
+                    </party>
+                     je dužan u roku od 15 dana, po prijemu presude , plati iznos od 118,oo eura od čega 88,oo € na ime nagrade vještaku medicinske struke B V i 30,oo€ na ime paušala, kao dijela troškova postupka, na žiro račun 
+                    <organization id="osnk" refersTo="#osnk">
+                        Osnovnog suda
+                    </organization>
+                     br. 832-152-32.
+                </p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>
