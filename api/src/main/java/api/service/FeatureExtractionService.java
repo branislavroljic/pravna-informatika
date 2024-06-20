@@ -57,7 +57,8 @@ public class FeatureExtractionService {
     Pattern pattern = Pattern.compile(
         "\\bK(?:.*[Bb]r(oj)?\\.?\\s*|\\.\\s*)?([0-9]+/[0-9]+)\\b");
     Matcher matcher = pattern.matcher(pdfContent);
-    return matcher.find() ? matcher.group(0).trim() : null;
+    return matcher.find() ? matcher.group(0).trim().replaceAll("\\.?\\s*(br(oj)?)?\\.?\\s*", "") :
+        null;
   }
 
   private String getDate(String pdfContent) {
@@ -81,7 +82,7 @@ public class FeatureExtractionService {
 
   private String getJudge(String pdfContent) {
     Pattern pattern = Pattern.compile(
-        "(sudij[ai]|[Pp]redsjednik\\ssuda)(([a-z]* )*)(([A-ZŠĐČĆŽ][a-zšđžćč\\.]+[ ,-]*)+)");
+        "(sudij[ai]|[Pp]redsjednik[au]?\\ssuda)(([a-z]* )*)(([A-ZŠĐČĆŽ][a-zšđžćč\\.]+[ ,-]*)+)");
     Matcher matcher = pattern.matcher(pdfContent);
     if (matcher.find()) {
       return matcher.group(4).trim().replaceAll("[,\\s]+$", "");
@@ -116,7 +117,7 @@ public class FeatureExtractionService {
   //ne radi za k43 2020, iako radi u Regexu
   private String getCriminalOffense(String pdfContent) {
     Pattern pattern = Pattern.compile(
-        "(?:zbog.*?krivičn(?:a|og|ih)\\s*djela[\\s-]*)([A-ZŽĐŠČĆa-zžđšćčć0-9.\\s]*(?:,))",
+        "(?:zbog.*?krivičn(?:a|og|ih)\\s*djela[\\s-]*)([A-ZŽĐŠČĆa-zžđšćčć0-9.\\s]*(?:Kr?ivičnog zakonika|KZ))",
         Pattern.CASE_INSENSITIVE);
     Matcher matcher = pattern.matcher(pdfContent);
     return matcher.find() ? matcher.group(1).trim().replaceAll("[,\\s]+$", "") : null;
@@ -135,13 +136,17 @@ public class FeatureExtractionService {
     return InjurySeverity.NONE;
   }
 
-  //TODO: ovje nisam uzeo u obzir specijalno sluzbeno lice
   private PublicOfficial getPublicOfficial(String pdfContent) {
     Pattern pattern = Pattern.compile(
         "napad\\s*na\\s*službeno\\s*lice");
     Matcher matcher = pattern.matcher(pdfContent);
+
+    Pattern patternSpecialPublicOfficial = Pattern.compile("((službenik[ae]?) Uprave "
+        + "policije|inspektor[ae]|tužioc[ae])");
     if (matcher.find()) {
-      return PublicOfficial.PUBLIC_OFFICIAL;
+      Matcher matcherSpecialPublicOfficial = patternSpecialPublicOfficial.matcher(pdfContent);
+      return matcherSpecialPublicOfficial.find() ? PublicOfficial.SPECIAL_PUBLIC_OFFICIAL
+          : PublicOfficial.PUBLIC_OFFICIAL;
     }
     return PublicOfficial.NONE;
   }
@@ -241,17 +246,27 @@ public class FeatureExtractionService {
     sentenceString = sentenceString.substring(judgmentMatcher.start());
 
     Pattern sentencePattern = Pattern.compile(
-        "kaznu zatvora u trajanju od (\\d+)\\s*[\\/\\(]\\s*[a-zšđžćč:]+\\s*[\\/\\)]\\s*(mjesec[aieou]?|dana?|godin[aeiou]?)(?: i (\\d+)\\s*[\\(\\[]\\s*[a-zšđžćč:]+\\s*[\\)\\]]\\s*(godin[aeiou]?|mjesec[aieou]?|dana?))?",
+        "kaznu zatvora u trajanju od (\\d+)\\s*[\\/\\(]\\s*[a-zšđžćč:]+\\s*[\\/\\)]\\s*(mjesec[aieou]?|dana?|godin[aeiou]?)"
+            + "(?: i (\\d+)\\s*[\\(\\[]\\s*[a-zšđžćč:]+\\s*[\\)\\]]\\s*(godin[aeiou]?|mjesec[aieou]?|dana?))?",
         Pattern.CASE_INSENSITIVE);
     Matcher sentenceMatcher = sentencePattern.matcher(sentenceString);
+
+    Pattern fineSentencePattern = Pattern.compile(
+        "(?:Na novčanu kaznu (?:u iznosu )?od)\\s*([1-9]{1}\\d*\\s*€)");
+    Matcher fineSentenceMatcher = fineSentencePattern.matcher(sentenceString);
+
     StringBuilder stringBuilder = new StringBuilder();
 
-    if(sentenceMatcher.find()){
+    if (sentenceMatcher.find()) {
       stringBuilder.append(sentenceMatcher.group(1)).append(" ").append(sentenceMatcher.group(2));
-      if(sentenceMatcher.group(3) != null)
-        stringBuilder.append(" i ").append(sentenceMatcher.group(3)).append(" ").append(sentenceMatcher.group(4));
+      if (sentenceMatcher.group(3) != null) {
+        stringBuilder.append(" i ").append(sentenceMatcher.group(3)).append(" ")
+            .append(sentenceMatcher.group(4));
+      }
 
       return stringBuilder.toString();
+    } else if (fineSentenceMatcher.find()) {
+      return fineSentenceMatcher.group(1);
     }
 
     return null;

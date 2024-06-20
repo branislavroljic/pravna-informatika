@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Podgorici
+                    </FRBRauthor>
+                    <FRBRdate date="2013-06-28">
+						2013-06-28
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 43/2012
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="ospg" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici" />
+                <TLCOrganization eId="osct" href="/ontology/organization/OsnovniSud.Cetinje" showAs="Osnovni sud u Cetinju" />
+                <TLCOrganization eId="odtpg" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno drzavno tuzilastvo Podgorica" />
+                <TLCPerson eId="jpkovacevic" href="/ontology/person/jpkovacevic" showAs="Jelena Perović Kovačević" />
+                <TLCPerson eId="svlahovic" href="/ontology/person/svlahovic" showAs="Slađana Vlahović" />
+                <TLCPerson eId="scadjenovic" href="/ontology/person/scadjenovic" showAs="Sasa Cadjenovic" />
+                <TLCPerson eId="gm" href="/ontology/person/gm" showAs="G.M." />
+                <TLCPerson eId="of" href="/ontology/person/of" showAs="O.F." />
+                <TLCPerson eId="zb" href="/ontology/person/zb" showAs="Z.B." />
+                <TLCRole eId="plaintiff" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="ospg" refersTo="#ospg">
+                    OSNOVNI SUD U P
+                </organization>
+                , prvostepeni, krivični, po sudiji 
+                <party id="jpkovacevic" refersTo="#jpkovacevic" as="#judge">
+                Jeleni Perović Kovačević
+                </party>
+                , uz učešće zapisničara 
+                <party id="svlahovic" refersTo="#svlahovic" as="#clerk">
+                    Slađane Vlahović
+                </party>
+                , u krivičnom predmetu protiv okrivljenog 
+                <party id="gm" refersTo="#gm" as="#defendant">
+                    G.M
+                </party>
+                 sa C, zbog krivičnog djela teška tjelesna povreda iz 
+                <ref href="/krivicni#art_151">
+                    člana 151 st. 2 Krivičnog zakonika
+                </ref>
+                , koga je na glavnom pretresu branio 
+                <party id="zb" refersTo="#zb" as="#defenseAttorney">
+                    Z.B
+                </party>
+                , advokat iz P, odlučujući o optužnici 
+                <organization id="odtpg" refersTo="#odtpg">
+                    ODT-a P
+                </organization>
+                 Kt.br. 947/05 od 19.05.2005. godine koju je na glavnom pretresu zastupao 
+                <party id="scadjenovic" refersTo="#scadjenovic" as="#prosecutor">
+                    Čađenović Saša
+                </party>
+                 , zamjenik 
+                <organization id="odtpg" refersTo="#odtpg">
+                    ODT-a P
+                </organization>
+                 , nakon glavnog i javnog pretresa održanog dana 28.06.2013. godine u prisustvu stranaka i 
+                <party id="scadjenovic" refersTo="#scadjenovic" as="#prosecutor">
+                    branioca
+                </party>
+                 , donio je, a dana 01.07.2013. godine i javno objavio</p>
+            <p style="text-align: center;">PRESUDU</p>
+            <p>Okrivljeni:</p>
+            <p>
+                <party id="gm" refersTo="#gm" as="#defendant">
+                    G.M
+                </party>
+                 , od oca M i majke R, rođene S, rođen 08.06.1980. godine na C, gdje mu je i prebivalište –nezaposlen, oženjen, otac dvoje djece, ranije osuđivan: presudom 
+                <organization id="osct" refersTo="#osct">
+                    Osnovnog suda na Cetinju
+                </organization>
+                 K.br. 15/99 od 11.03.1999. godine zbog krivičnog djela iz 
+                <ref href="/krivicni#art_150">
+                    člana 150 st. 1 KZ RCG
+                </ref>
+                 na novčanu kaznu u visini od 500,00 dinara, u pritvoru proveo vrijeme od 15.04.2005. godine do 20.05.2005. godine</p>
+            <p style="text-align: center;">K R I V J E</p>
+            <p>Zato što je:</p>
+            <p>Dana 17. februara 2005. godine, oko 02:00 časa, svjestan svog djela čije izvršenje je htio, ispred kafane „P“ na Z u P, teško tjelesno povrijedio oštećenog 
+                <party id="of" refersTo="#of" as="victim">
+                    O.F
+                </party>
+                  i zdravlje mu teško narušio da mu je usljed toga doveden u opasnost život i trajno i u znatnoj mjeri oštećen važan organ na način što je prišao oštećenom u trenutku kada je isti izlazio iz označenog lokala i bezjbol palicom mu zadao udarac u predjelu glave od kojeg udarca je 
+                <party id="of" refersTo="#of" as="victim">
+                    oštećeni
+                </party>
+                 pao na zemlju nanoseći mu tom prilikom tešku tjelesnu povredu u vidu preloma nosnih kostiju sa pomakom koštanih odlomaka, potresa mozga i preloma kompleksa lijeve jagodične kosti i lijeve gornjovilične kosti sa nagnječenjem lijeve očne duplje sa krvarenjem veznice, te sa zapaljenjem rožnjače lijevog oka, što je dovelo do direktnog ugrožavanja vitalnih moždanih centara u predjelu osnovične strane lijevog čeonog režnja, kao i vida oštećenog </p>
+            <p>-​ čime je izvršio krivično djelo teška tjelesna povreda iz 
+                <ref href="/krivicni#art_151">
+                    člana 151 st. 2 Krivičnog zakonika
+                </ref>
+            </p>
+
+            <conclusions>
+                <p>
+                Pa ga
+                    <organization id="ospg" refersTo="#ospg">
+                    sud
+                    </organization>
+                primjenom citiranih odredbi te 
+                    <ref href="/krivicni#art_3">čl.3</ref>
+                ,
+                    <ref href="/krivicni#art_4">4</ref>
+                ,
+                    <ref href="/krivicni#art_5">5</ref>
+                ,
+                    <ref href="/krivicni#art_15">15</ref>
+                ,
+                    <ref href="/krivicni#art_32">32</ref>
+                ,
+                    <ref href="/krivicni#art_33">33</ref>
+                ,
+                    <ref href="/krivicni#art_36">36</ref>
+                ,
+                    <ref href="/krivicni#art_42">42</ref>
+                ,
+                    <ref href="/krivicni#art_51">51 Krivičnog zakonika</ref>
+                , te 
+                    <ref href="/postupak#art_226">čl.226</ref>
+                , 
+                    <ref href="/postupak#art_229">229</ref>
+                , 
+                    <ref href="/postupak#art_229">239</ref>
+                 i 
+                    <ref href="/postupak#art_374">374 Zakonika o krivičnom postupku</ref>
+                </p>
+                <p style="text-align: center;">OSUDJUJE</p>
+                <p>Na kaznu zatvora u trajanju od 1 (jedne) godine i 6 (šest) mjeseci, u koju kaznu mu se uračunava vrijeme provedeno u pritvoru od 15.04.2005. godine do 20.05.2005. godine.</p>
+                <p>Obavezuje se 
+                    <party id="gm" refersTo="#gm" as="#defendant">
+                    okrivljeni
+                    </party>
+                 da na ime troškova krivičnog postupka uplati na račun budžetskih sredstava Crne Gore iznos od 749,00 eura, te na ime sudskog paušala iznos od 50,00 eura, sve prednje u roku od 15 dana po pravosnažnosti presude, pod prijetnjom prinudnom izvršenja.</p>
+                <p>Svjedok oštećeni 
+                    <party id="of" refersTo="#of" as="victim">
+                    O.F
+                    </party>
+                 se u pogledu postavljenog imovinsko pravog zahtjeva upućuje na redovnu građansku parnicu.</p>
+
+            </conclusions>
+        </judgementBody>
+    </judgement>
+
+</akomaNtoso>

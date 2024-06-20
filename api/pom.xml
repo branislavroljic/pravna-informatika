@@ -65,13 +65,18 @@
       <version>2.0.27</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/es.ucm.fdi.gaia/jCOLIBRI -->
     <dependency>
       <groupId>es.ucm.fdi.gaia</groupId>
       <artifactId>jCOLIBRI</artifactId>
       <version>3.2</version>
     </dependency>
 
-
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
   </dependencies>
 
   <build>

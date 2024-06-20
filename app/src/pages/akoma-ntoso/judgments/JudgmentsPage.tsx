@@ -3,49 +3,41 @@ import {
   Divider,
   Grid,
   InputAdornment,
+  Stack,
   TextField,
   Typography,
 } from "@mui/material";
 import PageContainer from "@ui/container/PageContainer";
 import { useState } from "react";
-import { getFile } from "@api/cbr/cbr";
-import { useQuery } from "@tanstack/react-query";
-import { Worker, Viewer, SpecialZoomLevel } from "@react-pdf-viewer/core";
 
 // Import styles
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import { IconSearch } from "@tabler/icons-react";
 import Scrollbar from "@ui/custom-scroll/Scrollbar";
 import DocumentsList from "@pages/shared/DocumentsList";
+import Judgment from "./Judgment";
 
 export default function JudgmentsAndLawsPage() {
-  const [selectedDocumentType, setSelectedDocumentType] = useState<
-    "cases" | "laws"
-  >("cases");
   const [selectedDocument, setSelectedDocument] = useState<string | undefined>(
     undefined
   );
   const [searchTerm, setSearchTerm] = useState("");
 
-  const { data: pdfUrl, isLoading } = useQuery({
-    queryKey: ["document", selectedDocumentType, selectedDocument],
-    queryFn: async () => {
-      if (selectedDocument != undefined)
-        return getFile(selectedDocumentType, selectedDocument + ".pdf");
-    },
-    enabled: !!selectedDocument,
-  });
+  //   const { data, isLoading } = useQuery({
+  //     queryKey: ["akoma-document", selectedDocument],
+  //     queryFn: async () => {
+  //       if (selectedDocument != undefined)
+  //         return getFile("cases-akoma", selectedDocument, "application/xml");
+  //     },
+  //     enabled: !!selectedDocument,
+  //   });
 
-  const handleDocumentSelection = (
-    documentName: string,
-    documentType: "cases" | "laws"
-  ) => {
-    setSelectedDocumentType(documentType);
+  const handleDocumentSelection = (documentName: string) => {
     setSelectedDocument(documentName);
   };
 
   return (
-    <PageContainer title="Predrasude i zakoni" description="this is innerpage">
+    <PageContainer title="Presude" description="this is innerpage">
       <Grid
         container
         spacing={0}
@@ -82,27 +74,11 @@ export default function JudgmentsAndLawsPage() {
               maxHeight: "800px",
             }}
           >
-            <Typography>Zakoni</Typography>
-            <Divider />
-            <DocumentsList
-              documentType="laws"
-              selectedDocument={
-                selectedDocumentType === "laws" ? selectedDocument : undefined
-              }
-              setSelectedDocument={(documentName: string) =>
-                handleDocumentSelection(documentName, "laws")
-              }
-              searchTerm={searchTerm}
-            />
-            <Typography>Presude</Typography>
-            <Divider />
             <DocumentsList
               documentType="cases"
-              selectedDocument={
-                selectedDocumentType === "cases" ? selectedDocument : undefined
-              }
+              selectedDocument={selectedDocument}
               setSelectedDocument={(documentName: string) =>
-                handleDocumentSelection(documentName, "cases")
+                handleDocumentSelection(documentName)
               }
               searchTerm={searchTerm}
             />
@@ -118,18 +94,14 @@ export default function JudgmentsAndLawsPage() {
             overflowY: "auto",
             justifyContent: "center",
             display: "flex",
-            alignItems: "center",
           }}
         >
           {!selectedDocument ? (
             <Typography>Slučaj nije odabran</Typography>
-          ) : isLoading ? null : (
-            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-              <Viewer
-                fileUrl={pdfUrl}
-                defaultScale={SpecialZoomLevel.PageWidth}
-              />
-            </Worker>
+          ) : (
+            <Stack>
+              <Judgment selectedDocument={selectedDocument} />
+            </Stack>
           )}
         </Grid>
       </Grid>

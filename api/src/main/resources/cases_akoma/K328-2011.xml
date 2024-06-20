@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Baru
+                    </FRBRauthor>
+                    <FRBRdate date="2012-12-30">
+						2012-12-30
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 328/2011
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osbr" href="/ontology/organization/OsnovniSud.Bar" showAs="Osnovni sud u Baru" />
+                <TLCOrganization eId="odtbr" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Bar" showAs="Osnovno drzavno tuzilastvo Bar" />
+                <TLCPerson eId="gs" href="/ontology/person/gs" showAs="G.Š." />
+                <TLCPerson eId="mm" href="/ontology/person/mm" showAs="M.M." />
+                <TLCPerson eId="ca" href="/ontology/person/ca" showAs="C.A." />
+                <TLCPerson eId="sa" href="/ontology/person/sa" showAs="S.A." />
+                <TLCPerson eId="jr" href="/ontology/person/jr" showAs="J.R." />
+                <TLCPerson eId="pf" href="/ontology/person/pf" showAs="P.F." />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="osbr" refersTo="#osbr">
+                    OSNOVNI SUD U BARU
+                </organization>
+                , kao prvostepeni krivični, sudija 
+                <party id="gs" refersTo="#gs" as="#judge">
+                    G. Š.
+                </party>
+                , kao sudija pojedinac, sa zapisničarom 
+                <party id="mm" refersTo="#mm" as="#clerk">
+                    M. M.
+                </party>
+                , u krivičnom predmetu okrivljenog 
+                <party id="jr" refersTo="#jr" as="#defendant">
+                    J. R.
+                </party>
+                , zbog krivičnog djela teška tjelesna povreda iz 
+                <ref href="/krivicni#art_151">
+                    čl. 151 st.1 Krivičnog zakonika
+                </ref>
+                , u vezi 
+                <ref href="/krivicni#art_23">
+                    čl. 23 Krivičnog zakonika
+                </ref>
+                , po optužnom predlogu 
+                <organization id="odtbr" refersTo="#odtbr">
+                    Osnovnog državnog tužilaštva u Baru
+                </organization>
+                 Kt.br. 405/10 od 09.11.2011. godine, nakon održanog glavnog javnog pretresa u prisustvu savjetnika Osnovnog državnog tužioca 
+                <party id="ca" refersTo="#ca" as="#prosecutor">
+                    C. A.
+                </party>
+                 i branioca okrivljenog po službenoj dužnosti 
+                <party id="sa" refersTo="#sa" as="#defenseAttorney">
+                    S. A.
+                </party>
+                , advokata iz B., u odsustvu okrivljenog, dana 30.01.2012. godine donio je i javno objavio,</p>
+            <p style="text-align: center;">P R E S U D U</p>
+            <p>Okrivljeni 
+                <party id="jr" refersTo="#jr" as="#defendant">
+                    J. R.
+                </party>
+                 JMBG ..., od oca M. i majke Z., rođene P., rođen ... godine u Č., sa prebivalištem u Č. ul. V. N. V. br. .., sa boravištem u S., B. bb,</p>
+            <p style="text-align: center;">K r i v j e</p>
+            <p>Što je:</p>
+            <p>U noći 27.07.2010. godine oko 01,10 časova u ugostiteljskom objektu »M.« u Sutomoru, Opština Bar, sa dva nepoznata lica teško tjelesno povrijedio oštećenog 
+                <party id="pf" refersTo="#pf" as="#victim">
+                    P. F.
+                </party>
+                , na način što su istog stisnutom šakom u pesnicu više puta udarili u predjelu glave i šake lijeve ruke, nanijevši mu sledeće povrede: krvni podliv kože sa otokom u predjelu čela promjera 2 x 2 cm i dugi kosi prelom četvrte kosti lijevog ručja sa skraćenjem četvrte kosti lijevog ručja na bazi i sa otokom lijeve šake;</p>
+            <p>- čime je kao saizvršilac učinio krivično djelo - teška tjelesna povreda iz 
+                <ref href="/krivicni#art_151">
+                    čl. 151 st. 1. Krivičnog zakonika
+                </ref>
+                , u vezi 
+                <ref href="/krivicni#art_23">
+                    čl. 23 Krivičnog zakonika
+                </ref>
+            </p>
+            <conclusions>
+                <p>Pa ga 
+                    <organization>
+                        sud
+                    </organization>
+                     primjenom 
+                    <ref href="/krivicni#art_4">
+                        čl. 4
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_32">
+                        32
+                    </ref>
+                    , 
+                    <ref href="/krivicni#art_36">
+                        36
+                    </ref>
+                     i 
+                    <ref href="/krivicni#art_42">
+                        42 Krivičnog zakonika
+                    </ref>
+                     i 
+                    <ref href="/postupak#art_369">
+                        čl. 369
+                    </ref>
+                    , 
+                    <ref href="/postupak#art_370">
+                        370
+                    </ref>
+                     i 
+                    <ref href="/postupak#art_374">
+                        374 ZKP-a
+                    </ref>
+                    ,
+                </p>
+                <p style="text-align: center;">OSUĐUJE</p>
+                <p>Na kaznu zatvora u trajanju od 6 (šest) mjeseci.</p>
+                <p>Oštećeni 
+                    <party id="pf" refersTo="#pf" as="#victim">
+                        P. F.
+                    </party>
+                     se radi ostvarivanja imovinsko pravnog zahtjeva upućuje na parnični postupak. 
+                </p>
+                <p>
+                    <party id="jr" refersTo="#jr" as="#defendant">
+                        Optuženi
+                    </party>
+                     je dužan da plati troškove krivičnog postupka u iznosu od 200,00 € u roku od 15 dana od dana pravosnažnosti, pod prijetnjom izvršenja.
+                </p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

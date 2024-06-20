@@ -1,155 +1,80 @@
 package api.service.cbr;
 
+import api.dto.CaseFeatures;
 import api.enumeration.InjurySeverity;
 import api.enumeration.JudgmentType;
 import api.enumeration.PublicOfficial;
 import es.ucm.fdi.gaia.jcolibri.cbrcore.Attribute;
 import es.ucm.fdi.gaia.jcolibri.cbrcore.CaseComponent;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class CaseDescription implements CaseComponent {
 
-    private String caseNumber;
-    private String date;
-    private String court;
-    private String judge;
-    private String courtReporter;
-    private String defendant;
-    private String criminalOffense;
-    private InjurySeverity injurySeverity;
-    private PublicOfficial publicOfficial;
-    private Boolean isUsedWeapon;
-    private Boolean isPermanentDamage;
-    private Boolean isProvoked;
-    private JudgmentType judgmentType;
-    private Boolean isRecidivist;
-    private String sentence;
+  private int id;
+  private String caseNumber;
+  private String date;
+  private String court;
+  private String judge;
+  private String courtReporter;
+  private String defendant;
+  private String criminalOffense;
+  private JudgmentType judgmentType;
+  private String sentence;
 
-    public String getCaseNumber() {
-        return caseNumber;
-    }
+  private InjurySeverity injurySeverity;
+  private PublicOfficial publicOfficial;
+  private Boolean isUsedWeapon;
+  private Boolean isPermanentDamage;
+  private Boolean isProvoked;
+  private Boolean isRecidivist;
 
-    public void setCaseNumber(String caseNumber) {
-        this.caseNumber = caseNumber;
-    }
 
-    public String getDate() {
-        return date;
-    }
+  public CaseDescription(int id, CaseFeatures features) {
+    this.id = id;
+    this.caseNumber = features.getCaseNumber();
+    this.date = features.getDate();
+    this.court = features.getCourt();
+    this.judge = features.getJudge();
+    this.courtReporter = features.getCourtReporter();
+    this.defendant = features.getDefendant();
+    this.criminalOffense = features.getCriminalOffense();
+    this.judgmentType = features.getJudgmentType();
+    this.sentence = features.getSentence();
+    this.injurySeverity = features.getInjurySeverity();
+    this.publicOfficial = features.getPublicOfficial();
+    this.isUsedWeapon = features.getIsUsedWeapon();
+    this.isPermanentDamage = features.getIsPermanentDamage();
+    this.isProvoked = features.getIsProvoked();
+    this.isRecidivist = features.getIsRecidivist();
+  }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+  @Override
+  public String toString() {
+    return id + ";"
+        + caseNumber + ";"
+        + date + ";"
+        + court + ";"
+        + judge + ";"
+        + courtReporter + ";"
+        + defendant + ";"
+        + criminalOffense + ";"
+        + judgmentType + ";"
+        + sentence + ";"
+        + injurySeverity + ";"
+        + publicOfficial + ";"
+        + isUsedWeapon + ";"
+        + isPermanentDamage + ";"
+        + isProvoked + ";"
+        + isRecidivist;
+  }
 
-    public String getCourt() {
-        return court;
-    }
-
-    public void setCourt(String court) {
-        this.court = court;
-    }
-
-    public String getJudge() {
-        return judge;
-    }
-
-    public void setJudge(String judge) {
-        this.judge = judge;
-    }
-
-    public String getCourtReporter() {
-        return courtReporter;
-    }
-
-    public void setCourtReporter(String courtReporter) {
-        this.courtReporter = courtReporter;
-    }
-
-    public String getDefendant() {
-        return defendant;
-    }
-
-    public void setDefendant(String defendant) {
-        this.defendant = defendant;
-    }
-
-    public String getCriminalOffense() {
-        return criminalOffense;
-    }
-
-    public void setCriminalOffense(String criminalOffense) {
-        this.criminalOffense = criminalOffense;
-    }
-
-    public InjurySeverity getInjurySeverity() {
-        return injurySeverity;
-    }
-
-    public void setInjurySeverity(InjurySeverity injurySeverity) {
-        this.injurySeverity = injurySeverity;
-    }
-
-    public PublicOfficial getPublicOfficial() {
-        return publicOfficial;
-    }
-
-    public void setPublicOfficial(PublicOfficial publicOfficial) {
-        this.publicOfficial = publicOfficial;
-    }
-
-    public Boolean getUsedWeapon() {
-        return isUsedWeapon;
-    }
-
-    public void setUsedWeapon(Boolean usedWeapon) {
-        isUsedWeapon = usedWeapon;
-    }
-
-    public Boolean getPermanentDamage() {
-        return isPermanentDamage;
-    }
-
-    public void setPermanentDamage(Boolean permanentDamage) {
-        isPermanentDamage = permanentDamage;
-    }
-
-    public Boolean getProvoked() {
-        return isProvoked;
-    }
-
-    public void setProvoked(Boolean provoked) {
-        isProvoked = provoked;
-    }
-
-    public JudgmentType getJudgmentType() {
-        return judgmentType;
-    }
-
-    public void setJudgmentType(JudgmentType judgmentType) {
-        this.judgmentType = judgmentType;
-    }
-
-    public Boolean getRecidivist() {
-        return isRecidivist;
-    }
-
-    public void setRecidivist(Boolean recidivist) {
-        isRecidivist = recidivist;
-    }
-
-    public String getSentence() {
-        return sentence;
-    }
-
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
-    }
-
-    @Override
-    public Attribute getIdAttribute() {
-        return new Attribute("caseNumber", this.getClass());
-    }
-    @Override
-    public String toString(){
-        return ""; //TODO: ToString metoda
-    }
+  @Override
+  public Attribute getIdAttribute() {
+    return new Attribute("id", this.getClass());
+  }
 }
