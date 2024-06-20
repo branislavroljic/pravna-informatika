@@ -1,19 +1,15 @@
+import { getDocuments } from "@api/cbr/cbr";
 import {
   Box,
-  InputAdornment,
   List,
   ListItemButton,
   ListItemText,
   Stack,
-  TextField,
   Typography,
 } from "@mui/material";
-import { IconSearch } from "@tabler/icons-react";
 import { useQuery } from "@tanstack/react-query";
-import Scrollbar from "@ui/custom-scroll/Scrollbar";
 import Spinner from "@ui/view/spinner/Spinner";
-import { useState, useMemo } from "react";
-import { getCases, getLaws } from "@api/cbr/cbr";
+import { useMemo } from "react";
 
 type DocumentListItemProps = {
   documentName: string;
@@ -40,7 +36,7 @@ const DocumentListItem = ({
               {documentName}
             </Typography>
             <Typography variant="body2" color="text.secondary" noWrap>
-              PDF dokument
+              Dokument
             </Typography>
           </Box>
         </Stack>
@@ -50,7 +46,7 @@ const DocumentListItem = ({
 };
 
 type DocumentsListProps = {
-  documentType: "cases" | "laws";
+  documentType: "cases" | "laws" | "cases-xml";
   selectedDocument: string | undefined;
   setSelectedDocument: (documentName: string) => void;
   searchTerm: string;
@@ -62,14 +58,7 @@ const DocumentsList = ({
   setSelectedDocument,
   searchTerm,
 }: DocumentsListProps) => {
-  const fetchDocuments = async () => {
-    if (documentType === "cases") {
-      return getCases();
-    } else {
-      return getLaws();
-    }
-  };
-
+  const fetchDocuments = async () => getDocuments(documentType);
   const { data, isLoading } = useQuery({
     queryKey: [documentType],
     queryFn: fetchDocuments,
@@ -77,7 +66,7 @@ const DocumentsList = ({
 
   const filteredDocuments = useMemo(() => {
     if (!data) return [];
-    return data.filter((documentItem) =>
+    return data.filter((documentItem: string) =>
       documentItem.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [data, searchTerm]);

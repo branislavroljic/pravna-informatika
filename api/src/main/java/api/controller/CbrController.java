@@ -1,5 +1,6 @@
 package api.controller;
 
+import api.dto.Case;
 import api.service.CaseService;
 import java.io.IOException;
 import java.util.List;
@@ -28,6 +29,19 @@ public class CbrController {
     return ResponseEntity.ok()
         .contentType(MediaType.APPLICATION_PDF)
         .body(caseService.getDocument("cases", caseName));
+  }
+
+//  @GetMapping("/cases-akoma/{caseName:.+}")
+//  public ResponseEntity<byte[]> getCaseAkoma(@PathVariable String caseName) throws IOException {
+//    return ResponseEntity.ok()
+//        .contentType(MediaType.APPLICATION_XML)
+//        .body(caseService.getDocument("cases_akoma", caseName + ".xml"));
+//  }
+
+  @GetMapping("/cases-akoma/{caseName}")
+  public ResponseEntity<Case> getCaseAkoma(@PathVariable String caseName) throws IOException {
+    return ResponseEntity.ok()
+        .body(caseService.getCase(caseName));
   }
 
   @GetMapping("/laws")

@@ -1,5 +1,6 @@
 package api.service;
 
+import api.dto.Case;
 import api.dto.CaseFeatures;
 import api.service.cbr.CaseDescription;
 import java.io.BufferedReader;
@@ -8,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,6 +19,8 @@ import java.util.List;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -35,7 +39,7 @@ public class CaseService {
   public List<String> getDocumentList(String folder) throws IOException {
     Resource[] resources = resourcePatternResolver.getResources("classpath:" + folder + "/*.pdf");
     return Arrays.stream(resources)
-        .map(Resource::getFilename)
+        .map(Resource::getFilename).map(FilenameUtils::removeExtension)
         .toList();
   }
 
@@ -43,6 +47,14 @@ public class CaseService {
     Resource resource = resourceLoader.getResource("classpath:" + folder + "/" + fileName);
     Path path = Paths.get(resource.getURI());
     return Files.readAllBytes(path);
+  }
+
+  public Case getCase(String caseName) throws IOException {
+    String caseContent =
+        FileUtils.readFileToString(ResourceUtils.getFile("classpath:cases_akoma/" + caseName +
+            ".xml"), String.valueOf(StandardCharsets.UTF_8));
+    CaseFeatures caseFeatures = featureExtractionService.extractFeatures(caseName + ".pdf");
+    return Case.builder().xmlContent(caseContent).caseFeatures(caseFeatures).build();
   }
 
   public void addAllJudgmentsFromPdfToCsv() throws IOException {
@@ -62,7 +74,6 @@ public class CaseService {
               + "prouzrokovala trajno ostecenje"
               + " povredjenog;Napad je usledio kao posledica vredjanja,provociranja, grubog "
               + "ponasanja ostecenog;Okrivljeni je bio ranije osudjivan\n";
-
 
       StringBuilder content = new StringBuilder();
       content.append(header);
