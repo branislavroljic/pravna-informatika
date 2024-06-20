@@ -97,4 +97,10 @@ public class CbrController {
     }
     return ResponseEntity.ok(recommender);
   }
+  @GetMapping("/laws-akoma/{lawName}")
+  public ResponseEntity<String> getLawAkoma(@PathVariable String lawName) throws IOException {
+    return ResponseEntity.ok()
+        .body(caseService.readXMLFile("laws_akoma", lawName));
+  }
+
 }

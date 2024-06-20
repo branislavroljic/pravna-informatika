@@ -1,302 +1,393 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd">
-    <act id="krivicni" name="Krivicni zakonik Crne Gore">
-        <meta>
-            <identification source="#palmirani">
-                <identification source="#palmirani">
-                    <FRBRWork>
-                        <FRBRthis value="/akn/krivicni/!main" />
-                        <FRBRuri value="/krivicni" />
-                        <FRBRdate date="2021-03-31" name="Generation" />
-                        <FRBRauthor href="#congress" as="#author" />
-                        <FRBRcountry value="cg" />
-                        <FRBRnumber value="3/20" />
-                        <FRBRname value="krivicniZakonikCrneGore" />
-                        <FRBRprescriptive value="true" />
-                        <FRBRauthoritative value="true" />
-                    </FRBRWork>
-                    <FRBRExpression>
-                        <FRBRdate date="2021-03-31" name="Generation" />
-                        <FRBRauthor href="#palmirani" as="#editor" />
-                        <FRBRlanguage language="cg" />
-                    </FRBRExpression>
-                    <FRBRManifestation>
-                        <FRBRdate date="2021-03-31" name="Generation" />
-                        <FRBRauthor href="#palmirani" as="#editor" />
-                        <FRBRformat value="xml" />
-                    </FRBRManifestation>
-                </identification>
-                <publication name="sl" date="2008-08-11" showAs="Službeni list Crne Gore" number="76/2008" />
-                <classification source="#palmirani">
-                    <keyword value="krivicni" showAs="Krivicni" dictionary="CG" />
-                </classification>
-                <references>
-                    <TLCOrganization eId="sl" href="/akn/rs/ontology/organization/sg" showAs="Službeni list Crne Gore" />
-                </references>
-            </meta>
-            <body>
-                <heading>Krivicni zakonik Crne Gore</heading>
-                <chapter eId="chp_14">
-                    <num>GLAVA ČETRNAESTA</num>
-                    <heading>KRIVIČNA DJELA PROTIV ŽIVOTA I TIJELA</heading>
-                    <article eId="art_151">
-                        <num>Član 151</num>
-                        <heading>Teška tjelesna povreda</heading>
-                        <paragraph eId="art_151_para_1">
-                            <point eId="art_151_para_1_point_1">
-                                <num>1)</num>
-                                <content eId="art_151_para_1_point_1_content">
-                                    <p>
-                                    Ko drugog teško tjelesno povrijedi ili mu zdravlje teško naruši, kazniće se zatvorom od šest mjeseci do pet godina.
-                                    </p>
-                                </content>
-                            </point>
-                            <point eId="art_151_para_1_point_2">
-                                <num>2)</num>
-                                <content eId="art_151_para_1_point_2_content">
-                                    <p>
-                                    Ko drugog teško tjelesno povrijedi ili mu zdravlje naruši tako teško da je usljed toga doveden u opasnost život povrijeđenog ili je uništen ili trajno i u znatnoj mjeri oštećen ili oslabljen neki važan dio njegovog tijela ili važan organ ili je prouzrokovana trajna nesposobnost za rad povrijeđenog ili trajno i teško narušenje njegovog zdravlja ili unakaženost, kazniće se zatvorom od jedne do osam godina.
-                                    </p>
-                                </content>
-                            </point>
-                            <point eId="art_151_para_1_point_3">
-                                <num>3)</num>
-                                <content eId="art_151_para_1_point_3_content">
-                                    <p>
-                                     Ako je usljed djela iz st. 
-                                        <href="/krivicni/art_151_para_1_point_1">1 </href> 
-                                    i <href="/krivicni/art_151_para_1_point_2">2 </href> 
-                                    ovog člana nastupila smrt povrijeđenog lica, učinilac će se kazniti zatvorom od dvije do dvanaest godina.
-                                    </p>
-                                </content>
-                            </point>
-                            <point eId="art_151_para_1_point_4">
-                                <num>4)</num>
-                                <content eId="art_151_para_1_point_4_content">
-                                    <p>
-                                    Ko djelo iz st. 
-                                        <href="/krivicni/art_151_para_1_point_1">1 </href> 
-                                    i <href="/krivicni/art_151_para_1_point_2">2 </href> 
-                                    ovog člana učini iz nehata, kazniće se zatvorom do tri godine.
-                                    </p>
-                                </content>
-                            </point>
-                            <point eId="art_151_para_1_point_5">
-                                <num>5)</num>
-                                <content eId="art_151_para_1_point_5_content">
-                                    <p>
-                                    Ko djelo iz st.
-                                        <href="/krivicni/art_151_para_1_point_1">1 </href> 
-                                    do <href="/krivicni/art_151_para_1_point_3">3 </href> 
-                                    ovog člana učini na mah, doveden bez svoje krivice u jaku razdraženost napadom, zlostavljanjem ili teškim vrijeđanjem od strane povrijeđenog, 
-                                    kazniće se za djelo iz stava <href="/krivicni/art_151_para_1_point_1">1 </href> zatvorom do tri godine, 
-                                    za djelo iz stava <href="/krivicni/art_151_para_1_point_2">2 </href> zatvorom od tri mjeseca do četiri godine, 
-                                    a za djelo iz stava <href="/krivicni/art_151_para_1_point_3">3 </href> zatvorom od šest mjeseci do pet godina.
-                                    </p>
-                                </content>
-                            </point>
-                        </paragraph>
-                    </article>
-                    <article eId="art_152">
-                        <num>Član 152</num>
-                        <heading>Laka tjelesna povreda</heading>
-                        <paragraph eId="art_152_para_1">
-                            <point eId="art_152_para_1_point_1">
-                                <num>1)</num>
-                                <content eId="art_152_para_1_point_1_content">
-                                    <p>Ko drugog lako tjelesno povrijedi ili mu zdravlje lako naruši, kazniće se novčanom kaznom ili zatvorom do jedne godine.</p>
-                                </content>
-                            </point>
-                            <point eId="art_152_para_1_point_2">
-                                <num>2)</num>
-                                <content eId="art_152_para_1_point_2_content">
-                                    <p>Ako je takva povreda nanesena oružjem, opasnim oruđem ili drugim sredstvom podobnim da tijelo teško povrijedi ili zdravlje teško naruši, učinilac će se kazniti zatvorom do tri godine.</p>
-                                </content>
-                            </point>
-                            <point eId="art_152_para_1_point_3">
-                                <num>3)</num>
-                                <content eId="art_152_para_1_point_3_content">
-                                    <p>Sud može učiniocu djela iz stava <href="/krivicni/art_152_para_1_point_2">2</href> ovog člana izreći sudsku opomenu, ako je učinilac bio izazvan nepristojnim ili grubim ponašanjem oštećenog.</p>
-                                </content>
-                            </point>
-                            <point eId="art_152_para_1_point_4">
-                                <num>4)</num>
-                                <content eId="art_152_para_1_point_4_content">
-                                    <p>Gonjenje za djelo iz stava <href="/krivicni/art_152_para_1_point_1">1</href> ovog člana preduzima se po privatnoj tužbi.</p>
-                                </content>
-                            </point>
-                        </paragraph>
-                    </article>
-                </chapter>
-                <chapter eId="chp_30">
-                    <num>GLAVA TRIDESETA</num>
-                    <heading>KRIVIČNA DJELA PROTIV DRŽAVNIH ORGANA</heading>
-                    <article eId="art_376">
-                        <num>Član 376</num>
-                        <heading>Napad na službeno lice u vršenju službene dužnosti</heading>
-                        <paragraph eId="art_376_para_1">
-                            <point eId="art_376_para_1_point_1">
-                                <num>1)</num>
-                                <content eId="art_376_para_1_point_1_content">
-                                    <p>
-                                    Ko napadne ili prijeti da će napasti službeno lice u vršenju službene dužnosti, kazniće se zatvorom do tri godine.
-                                    </p>
-                                </content>
-                            </point>
-                            <point eId="art_376_para_1_point_2">
-                                <num>2)</num>
-                                <content eId="art_376_para_1_point_2_content">
-                                    <p>
-                                    Ako je pri izvršenju djela iz stava <href="/krivicni/art_376_para_1_point_1">1</href> ovog člana službenom licu nanesena laka tjelesna povreda ili je prijećeno upotrebom oružja, učinilac će se kazniti zatvorom od tri mjeseca do pet godina.
-                                    </p>
-                                </content>
-                            </point>
-                            <point eId="art_376_para_1_point_3">
-                                <num>3)</num>
-                                <content eId="art_376_para_1_point_3_content">
-                                    <p>
-                                    Ako je djelo iz st. <href="/krivicni/art_376_para_1_point_1">1</href> i <href="/krivicni/art_376_para_1_point_2">2</href> ovog člana učinjeno prema sudiji ili državnom tužiocu u vezi sa vršenjem njihove sudijske, odnosno tužilačke dužnosti ili službenom licu u vezi sa vršenjem poslova javne ili nacionalne bezbjednosti, učinilac će se kazniti zatvorom od šest mjeseci do pet godina.
-                                    </p>
-                                </content>
-                            </point>
-                            <point eId="art_376_para_1_point_4">
-                                <num>4)</num>
-                                <content eId="art_376_para_1_point_4_content">
-                                    <p>
-                                    Za pokušaj djela iz stava <href="/krivicni/art_376_para_1_point_1">1</href> ovog člana kazniće se.
-                                    </p>
-                                </content>
-                            </point>
-                            <point eId="art_376_para_1_point_5">
-                                <num>5)</num>
-                                <content eId="art_376_para_1_point_5_content">
-                                    <p>
-                                    Učinilac djela iz st. <href="/krivicni/art_376_para_1_point_1">1</href> do <href="/krivicni/art_376_para_1_point_3">3</href> ovog člana koji je bio izazvan nezakonitim ili grubim postupanjem službenog lica može se osloboditi od kazne.
-                                    </p>
-                                </content>
-                            </point>
-                        </paragraph>
-                    </article>
-                </chapter>
-            </body>
-        </act>
-        <act id="javniRedIMir" name="Zakon o javnom redu i miru">
-            <meta>
-                <identification source="#palmirani">
-                    <identification source="#palmirani">
-                        <FRBRWork>
-                            <FRBRthis value="/akn/javniRedIMir/!main" />
-                            <FRBRuri value="/javniRedIMir" />
-                            <FRBRdate date="1994-12-16" name="Generation" />
-                            <FRBRauthor href="#congress" as="#author" />
-                            <FRBRcountry value="cg" />
-                            <FRBRnumber value="01-786" />
-                            <FRBRname value="zakonOJavnomReduIMiru" />
-                            <FRBRprescriptive value="true" />
-                            <FRBRauthoritative value="true" />
-                        </FRBRWork>
-                        <FRBRExpression>
-                            <FRBRdate date="1994-12-16" name="Generation" />
-                            <FRBRauthor href="#palmirani" as="#editor" />
-                            <FRBRlanguage language="cg" />
-                        </FRBRExpression>
-                        <FRBRManifestation>
-                            <FRBRdate date="1994-12-16" name="Generation" />
-                            <FRBRauthor href="#palmirani" as="#editor" />
-                            <FRBRformat value="xml" />
-                        </FRBRManifestation>
-                    </identification>
-                    <publication name="sl" date="1994-12-22" showAs="Službeni list Crne Gore" number="41/94" />
-                    <classification source="#palmirani">
-                        <keyword value="javniRedIMir" showAs="javniRedIMir" dictionary="CG" />
-                    </classification>
-                    <references>
-                        <TLCOrganization eId="sl" href="/akn/rs/ontology/organization/sg" showAs="Službeni list Crne Gore" />
-                    </references>
-                </meta>
-                <body>
-                    <heading>Zakon o javnom redu i miru</heading>
-                    <chapter eId="chp_2">
-                        <num>II.</num>
-                        <heading>PREKRŠAJI KOJIMA SE NARUŠAVA JAVNI RED I MIR</heading>
-                        <article eId="art_7">
-                            <num>Član 7.</num>
-                            <paragraph eId="art_7_para_1">
-                                <point eId="art_7_para_1_point_1">
-                                    <content eId="art_7_para_1_point_1_content">
-                                        <p>
-                                            Ko na javnom mjestu vrijeđa drugoga ili svojim ponašanjem ugrožava sigurnost građana
-                                            ili izaziva uznemirenost ili negodovanje građana ili se na drugi način drsko ponaša,
-                                            kazniće se novčanom kaznom od trostrukog do petnaestostrukog iznosa minimalne
-                                            zarade u Republici ili zatvorom do 30 dana. 
-                                        </p>
-                                    </content>
-                                </point>
-                                <point eId="art_7_para_1_point_2">
-                                    <content eId="art_7_para_1_point_2_content">
-                                        <p>
-                                            Ko na javnom mjestu grubo vrijeđa drugoga ili svojim bezobzirnim ponašanjem ugrožava
-                                            sigurnost građana ili izaziva osjećanje ugroženosti ili uznemirenosti ili se na drugi način
-                                            ponaša naročito drsko, bestidno ili uvredljivo,
-                                            kazniće se novčanom kaznom od petostrukog do dvadesetostrukog iznosa minimalne
-                                            zarade u Republici ili zatvorom do 60 dana.
-                                        </p>
-                                    </content>
-                                </point>
-                                <point eId="art_7_para_1_point_3">
-                                    <content eId="art_7_para_1_point_3_content">
-                                        <p>
-                                            Lice koje prekršaj iz stava <href="/javniRedIMir/art_7_para_1_point_2">2</href> ovog člana izvrši u grupi, kazniće se zatvorom od 30 do 60 dana. 
-                                        </p>
-                                    </content>
-                                </point>
-                            </paragraph>
-                        </article>
-                        <article eId="art_8">
-                            <num>Član 8.</num>
-                            <paragraph eId="art_8_para_1">
-                                <point eId="art_8_para_1_point_1">
-                                    <content eId="art_8_para_1_point_1_content">
-                                        Ko na javnom mjestu podstrekava ili izaziva drugoga na tuču, kazniće se novčanom
-                                        kaznom od trostrukog do osamnaestostrukog iznosa minimalne zarade u Republici ili
-                                        zatvorom do 30 dana. 
-                                    </content>
-                                </point>
-                                <point eId="art_8_para_1_point_2">
-                                    <content eId="art_8_para_1_point_2_content">
-                                        Ko na javnom mjestu fizički napadne ili zlostavi drugog ili učestvuje u tuči,
-                                        kazniće se novčanom kaznom od desetostrukog do dvadesetostrukog iznosa minimalne
-                                        zarade u Republici ili zatvorom do 60 dana.  
-                                    </content>
-                                </point>
-                                <point eId="art_8_para_1_point_3">
-                                    <content eId="art_8_para_1_point_3_content">
-                                        Lice koje prekršaj iz stava <href="/javniRedIMir/art_8_para_1_point_2">2</href> ovog člana izvrši kao član grupe, kazniće se zatvorom od 20
-                                        do 60 dana.
-                                    </content>
-                                </point>
-                            </paragraph>
-                        </article>
-                        <article eId="art_10">
-                            <num>Član 10.</num>
-                            <paragraph eId="art_10_para_1">
-                                <point eId="art_10_para_1_point_1">
-                                    <content eId="art_10_para_1_point_1_content">
-                                        Ko ometa ili omalovažava službeno lice državnog organa ili organizacije, ustanove,
-                                        preduzeća ili drugog pravnog lica koje na osnovu zakona vrši javna ovlašćenja, u vezi sa
-                                        vršenjem poslova iz njihove nadležnosti, kazniće se zatvorom do 60 dana.
-                                    </content>
-                                </point>
-                                <point eId="art_10_para_1_point_2">
-                                    <content eId="art_10_para_1_point_2_content">
-                                        Lice koje prekršaj iz stava <href="/javniRedIMir/art_10_para_1_point_1">1</href> ovog člana izvrši kao član grupe,
-                                        kazniće se zatvorom od 30 do 60 dana. 
-                                    </content>
-                                </point>
-                            </paragraph>
-                        </article>
-                    </chapter>
-                </body>
-            </act>
-        </akomaNtoso>
+  xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+  xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd">
+  <act id="krivicni" name="Krivicni zakonik Crne Gore">
+    <meta>
+      <identification source="#palmirani">
+        <FRBRWork>
+          <FRBRthis value="/akn/krivicni/!main"/>
+          <FRBRuri value="/krivicni"/>
+          <FRBRdate date="2021-03-31" name="Generation"/>
+          <FRBRauthor href="#congress" as="#author"/>
+          <FRBRcountry value="cg"/>
+          <FRBRnumber value="3/20"/>
+          <FRBRname value="krivicniZakonikCrneGore"/>
+          <FRBRprescriptive value="true"/>
+          <FRBRauthoritative value="true"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRdate date="2021-03-31" name="Generation"/>
+          <FRBRauthor href="#palmirani" as="#editor"/>
+          <FRBRlanguage language="cg"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRdate date="2021-03-31" name="Generation"/>
+          <FRBRauthor href="#palmirani" as="#editor"/>
+          <FRBRformat value="xml"/>
+        </FRBRManifestation>
+      </identification>
+      <publication name="sl" date="2008-08-11" showAs="Službeni list Crne Gore" number="76/2008"/>
+      <classification source="#palmirani">
+        <keyword value="krivicni" showAs="Krivicni" dictionary="CG"/>
+      </classification>
+      <references>
+        <TLCOrganization eId="sl" href="/akn/rs/ontology/organization/sg"
+          showAs="Službeni list Crne Gore"/>
+      </references>
+    </meta>
+    <body>
+      <heading>Krivicni zakonik Crne Gore</heading>
+      <chapter eId="chp_14">
+        <num>GLAVA ČETRNAESTA</num>
+        <heading>KRIVIČNA DJELA PROTIV ŽIVOTA I TIJELA</heading>
+        <article eId="art_151">
+          <num>Član 151</num>
+          <heading>Teška tjelesna povreda</heading>
+          <paragraph eId="art_151_para_1">
+            <point eId="art_151_para_1_point_1">
+              <num>1)</num>
+              <content eId="art_151_para_1_point_1_content">
+                <p>
+                  Ko drugog teško tjelesno povrijedi ili mu zdravlje teško naruši, kazniće se
+                  zatvorom od šest mjeseci do pet godina.
+                </p>
+              </content>
+            </point>
+            <point eId="art_151_para_1_point_2">
+              <num>2)</num>
+              <content eId="art_151_para_1_point_2_content">
+                <p>
+                  Ko drugog teško tjelesno povrijedi ili mu zdravlje naruši tako teško da je usljed
+                  toga doveden u opasnost život povrijeđenog ili je uništen ili trajno i u znatnoj
+                  mjeri oštećen ili oslabljen neki važan dio njegovog tijela ili važan organ ili je
+                  prouzrokovana trajna nesposobnost za rad povrijeđenog ili trajno i teško narušenje
+                  njegovog zdravlja ili unakaženost, kazniće se zatvorom od jedne do osam godina.
+                </p>
+              </content>
+            </point>
+            <point eId="art_151_para_1_point_3">
+              <num>3)</num>
+              <content eId="art_151_para_1_point_3_content">
+                <p>
+                  Ako je usljed djela iz st.
+                  <ref href="/krivicni/art_151_para_1_point_1">1
+                  </ref>
+                  i
+                  <ref href="/krivicni/art_151_para_1_point_2">2
+                  </ref>
+                  ovog člana nastupila smrt povrijeđenog lica, učinilac će se kazniti zatvorom od
+                  dvije
+                  do dvanaest godina.
+                </p>
+              </content>
+            </point>
+            <point eId="art_151_para_1_point_4">
+              <num>4)</num>
+              <content eId="art_151_para_1_point_4_content">
+                <p>
+                  Ko djelo iz st.
+                  <ref href="/krivicni/art_151_para_1_point_1">1
+                  </ref>
+                  i
+                  <ref href="/krivicni/art_151_para_1_point_2">2
+                  </ref>
+                  ovog člana učini iz nehata, kazniće se zatvorom do tri godine.
+                </p>
+              </content>
+            </point>
+            <point eId="art_151_para_1_point_5">
+              <num>5)</num>
+              <content eId="art_151_para_1_point_5_content">
+                <p>
+                  Ko djelo iz st.
+                  <ref href="/krivicni/art_151_para_1_point_1">1
+                  </ref>
+                  do
+                  <ref href="/krivicni/art_151_para_1_point_3">3
+                  </ref>
+                  ovog člana učini na mah, doveden bez svoje krivice u jaku razdraženost napadom,
+                  zlostavljanjem
+                  ili teškim vrijeđanjem od strane povrijeđenog,
+                  kazniće se za djelo iz stava
+                  <ref href="/krivicni/art_151_para_1_point_1">1
+                  </ref>
+                  zatvorom do tri godine,
+                  za djelo iz stava
+                  <ref href="/krivicni/art_151_para_1_point_2">2
+                  </ref>
+                  zatvorom od tri mjeseca do četiri godine,
+                  a za djelo iz stava<ref href="/krivicni/art_151_para_1_point_3">3
+                </ref> zatvorom od šest mjeseci do pet godina.
+                </p>
+              </content>
+            </point>
+          </paragraph>
+        </article>
+        <article eId="art_152">
+          <num>Član 152</num>
+          <heading>Laka tjelesna povreda</heading>
+          <paragraph eId="art_152_para_1">
+            <point eId="art_152_para_1_point_1">
+              <num>1)</num>
+              <content eId="art_152_para_1_point_1_content">
+                <p>Ko drugog lako tjelesno povrijedi ili mu zdravlje lako naruši, kazniće se
+                  novčanom kaznom
+                  ili zatvorom do jedne godine.
+                </p>
+              </content>
+            </point>
+            <point eId="art_152_para_1_point_2">
+              <num>2)</num>
+              <content eId="art_152_para_1_point_2_content">
+                <p>Ako je takva povreda nanesena oružjem, opasnim oruđem ili drugim sredstvom
+                  podobnim da
+                  tijelo teško povrijedi ili zdravlje teško naruši, učinilac će se kazniti zatvorom
+                  do tri
+                  godine.
+                </p>
+              </content>
+            </point>
+            <point eId="art_152_para_1_point_3">
+              <num>3)</num>
+              <content eId="art_152_para_1_point_3_content">
+                <p>Sud može učiniocu djela iz stava
+                  <ref href="/krivicni/art_152_para_1_point_2">2
+                  </ref>
+                  ovog člana izreći sudsku opomenu, ako je učinilac bio izazvan nepristojnim ili
+                  grubim
+                  ponašanjem oštećenog.
+                </p>
+              </content>
+            </point>
+            <point eId="art_152_para_1_point_4">
+              <num>4)</num>
+              <content eId="art_152_para_1_point_4_content">
+                <p>Gonjenje za djelo iz stava
+                  <ref href="/krivicni/art_152_para_1_point_1">1
+                  </ref>
+                  ovog člana preduzima se po privatnoj tužbi.
+                </p>
+              </content>
+            </point>
+          </paragraph>
+        </article>
+      </chapter>
+      <chapter eId="chp_30">
+        <num>GLAVA TRIDESETA</num>
+        <heading>KRIVIČNA DJELA PROTIV DRŽAVNIH ORGANA</heading>
+        <article eId="art_376">
+          <num>Član 376</num>
+          <heading>Napad na službeno lice u vršenju službene dužnosti</heading>
+          <paragraph eId="art_376_para_1">
+            <point eId="art_376_para_1_point_1">
+              <num>1)</num>
+              <content eId="art_376_para_1_point_1_content">
+                <p>
+                  Ko napadne ili prijeti da će napasti službeno lice u vršenju službene dužnosti,
+                  kazniće se
+                  zatvorom do tri godine.
+                </p>
+              </content>
+            </point>
+            <point eId="art_376_para_1_point_2">
+              <num>2)</num>
+              <content eId="art_376_para_1_point_2_content">
+                <p>
+                  Ako je pri izvršenju djela iz stava<ref href="/krivicni/art_376_para_1_point_1">1
+                </ref>
+                ovog člana službenom licu nanesena laka tjelesna povreda ili je prijećeno upotrebom
+                oružja,
+                učinilac će se kazniti zatvorom od tri mjeseca do pet godina.
+              </p>
+            </content>
+          </point>
+          <point eId="art_376_para_1_point_3">
+            <num>3)</num>
+            <content eId="art_376_para_1_point_3_content">
+              <p>
+                Ako je djelo iz st.
+                <ref href="/krivicni/art_376_para_1_point_1">1
+                </ref>
+                i
+                <ref href="/krivicni/art_376_para_1_point_2">2
+                </ref>
+                ovog člana učinjeno prema sudiji ili državnom tužiocu u vezi sa vršenjem njihove
+                sudijske,
+                odnosno tužilačke dužnosti ili službenom licu u vezi sa vršenjem poslova javne ili
+                nacionalne
+                bezbjednosti, učinilac će se kazniti zatvorom od šest mjeseci do pet godina.
+              </p>
+            </content>
+          </point>
+          <point eId="art_376_para_1_point_4">
+            <num>4)</num>
+            <content eId="art_376_para_1_point_4_content">
+              <p>
+                Za pokušaj djela iz stava
+                <ref href="/krivicni/art_376_para_1_point_1">1
+                </ref>
+                ovog člana kazniće se.
+              </p>
+            </content>
+          </point>
+          <point eId="art_376_para_1_point_5">
+            <num>5)</num>
+            <content eId="art_376_para_1_point_5_content">
+              <p>
+                Učinilac djela iz st.
+                <ref href="/krivicni/art_376_para_1_point_1">1
+                </ref>
+                do
+                <ref href="/krivicni/art_376_para_1_point_3">3
+                </ref>
+                ovog člana koji je bio izazvan nezakonitim ili grubim postupanjem službenog lica
+                može se osloboditi
+                od kazne.
+              </p>
+            </content>
+          </point>
+        </paragraph>
+      </article>
+    </chapter>
+  </body>
+</act>
+<act id="javniRedIMir" name="Zakon o javnom redu i miru">
+<meta>
+  <identification source="#palmirani">
+    <FRBRWork>
+      <FRBRthis value="/akn/javniRedIMir/!main"/>
+      <FRBRuri value="/javniRedIMir"/>
+      <FRBRdate date="1994-12-16" name="Generation"/>
+      <FRBRauthor href="#congress" as="#author"/>
+      <FRBRcountry value="cg"/>
+      <FRBRnumber value="01-786"/>
+      <FRBRname value="zakonOJavnomReduIMiru"/>
+      <FRBRprescriptive value="true"/>
+      <FRBRauthoritative value="true"/>
+    </FRBRWork>
+    <FRBRExpression>
+      <FRBRdate date="1994-12-16" name="Generation"/>
+      <FRBRauthor href="#palmirani" as="#editor"/>
+      <FRBRlanguage language="cg"/>
+    </FRBRExpression>
+    <FRBRManifestation>
+      <FRBRdate date="1994-12-16" name="Generation"/>
+      <FRBRauthor href="#palmirani" as="#editor"/>
+      <FRBRformat value="xml"/>
+    </FRBRManifestation>
+  </identification>
+  <publication name="sl" date="1994-12-22" showAs="Službeni list Crne Gore" number="41/94"/>
+  <classification source="#palmirani">
+    <keyword value="javniRedIMir" showAs="javniRedIMir" dictionary="CG"/>
+  </classification>
+  <references>
+    <TLCOrganization eId="sl" href="/akn/rs/ontology/organization/sg"
+      showAs="Službeni list Crne Gore"/>
+  </references>
+</meta>
+<body>
+  <heading>Zakon o javnom redu i miru</heading>
+  <chapter eId="chp_2">
+    <num>II.</num>
+    <heading>PREKRŠAJI KOJIMA SE NARUŠAVA JAVNI RED I MIR</heading>
+    <article eId="art_7">
+      <num>Član 7.</num>
+      <paragraph eId="art_7_para_1">
+        <point eId="art_7_para_1_point_1">
+          <content eId="art_7_para_1_point_1_content">
+            <p>
+              Ko na javnom mjestu vrijeđa drugoga ili svojim ponašanjem ugrožava sigurnost građana
+              ili izaziva uznemirenost ili negodovanje građana ili se na drugi način drsko ponaša,
+              kazniće se novčanom kaznom od trostrukog do petnaestostrukog iznosa minimalne
+              zarade u Republici ili zatvorom do 30 dana.
+            </p>
+          </content>
+        </point>
+        <point eId="art_7_para_1_point_2">
+          <content eId="art_7_para_1_point_2_content">
+            <p>
+              Ko na javnom mjestu grubo vrijeđa drugoga ili svojim bezobzirnim ponašanjem ugrožava
+              sigurnost građana ili izaziva osjećanje ugroženosti ili uznemirenosti ili se na drugi
+              način
+              ponaša naročito drsko, bestidno ili uvredljivo,
+              kazniće se novčanom kaznom od petostrukog do dvadesetostrukog iznosa minimalne
+              zarade u Republici ili zatvorom do 60 dana.
+            </p>
+          </content>
+        </point>
+        <point eId="art_7_para_1_point_3">
+          <content eId="art_7_para_1_point_3_content">
+            <p>
+              Lice koje prekršaj iz stava
+              <ref href="/javniRedIMir/art_7_para_1_point_2">2
+              </ref>
+              ovog člana izvrši u grupi, kazniće se zatvorom od 30 do 60 dana.
+            </p>
+          </content>
+        </point>
+      </paragraph>
+    </article>
+    <article eId="art_8">
+      <num>Član 8.</num>
+      <paragraph eId="art_8_para_1">
+        <point eId="art_8_para_1_point_1">
+          <content eId="art_8_para_1_point_1_content">
+            <p>
+            Ko na javnom mjestu podstrekava ili izaziva drugoga na tuču, kazniće se novčanom
+            kaznom od trostrukog do osamnaestostrukog iznosa minimalne zarade u Republici ili
+            zatvorom do 30 dana.
+            </p>
+          </content>
+        </point>
+        <point eId="art_8_para_1_point_2">
+          <content eId="art_8_para_1_point_2_content">
+            <p>
+            Ko na javnom mjestu fizički napadne ili zlostavi drugog ili učestvuje u tuči,
+            kazniće se novčanom kaznom od desetostrukog do dvadesetostrukog iznosa minimalne
+            zarade u Republici ili zatvorom do 60 dana.
+            </p>
+          </content>
+        </point>
+        <point eId="art_8_para_1_point_3">
+          <content eId="art_8_para_1_point_3_content">
+            <p>
+            Lice koje prekršaj iz stava
+            <ref href="/javniRedIMir/art_8_para_1_point_2">2
+            </ref>
+            ovog člana izvrši kao član grupe, kazniće se zatvorom od 20
+            do 60 dana.
+            </p>
+          </content>
+        </point>
+      </paragraph>
+    </article>
+    <article eId="art_10">
+      <num>Član 10.</num>
+      <paragraph eId="art_10_para_1">
+        <point eId="art_10_para_1_point_1">
+          <content eId="art_10_para_1_point_1_content">
+            <p>
+            Ko ometa ili omalovažava službeno lice državnog organa ili organizacije, ustanove,
+            preduzeća ili drugog pravnog lica koje na osnovu zakona vrši javna ovlašćenja, u vezi sa
+            vršenjem poslova iz njihove nadležnosti, kazniće se zatvorom do 60 dana.
+            </p>
+          </content>
+        </point>
+        <point eId="art_10_para_1_point_2">
+          <content eId="art_10_para_1_point_2_content">
+           <p>
+            Lice koje prekršaj iz stava
+            <ref href="/javniRedIMir/art_10_para_1_point_1">1
+            </ref>
+            ovog člana izvrši kao član grupe,
+            kazniće se zatvorom od 30 do 60 dana.
+           </p>
+          </content>
+        </point>
+      </paragraph>
+    </article>
+  </chapter>
+</body>
+</act>
+  </akomaNtoso>

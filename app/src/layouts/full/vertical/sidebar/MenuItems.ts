@@ -46,7 +46,7 @@ const Menuitems = () =>
       id: uniqueId(),
       title: "Zakoni",
       icon: IconBasket,
-      href: "/products",
+      href: "/akoma-laws",
     },
     {
       navlabel: true,

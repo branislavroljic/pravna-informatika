@@ -4,9 +4,10 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
   Paper,
+  TableHead,
+  Typography,
 } from "@mui/material";
 
 // Define the TypeScript type for caseDetails
@@ -36,45 +37,50 @@ export const JudgmentDetails: React.FC<CaseDetailsTableProps> = ({
   caseDetails,
 }) => {
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer component={Paper} sx={{ maxHeight: "100%" }}>
+      <Table stickyHeader>
         <TableHead>
           <TableRow>
-            <TableCell>Naziv atributa</TableCell>
-            <TableCell>Atribut</TableCell>
+            <TableCell colSpan={2}>
+              <Typography variant="h6" component="div" align="center">
+                Rezime slučaja
+              </Typography>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           <TableRow key={"caseNumber"}>
-            <TableCell>{"Broj slučaja"}</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>{"Broj slučaja"}</TableCell>
             <TableCell>{caseDetails.caseNumber}</TableCell>
           </TableRow>
           <TableRow key={"date"}>
-            <TableCell>{"Datum"}</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>{"Datum"}</TableCell>
             <TableCell>{caseDetails.date}</TableCell>
           </TableRow>
           <TableRow key={"court"}>
-            <TableCell>{"Sud"}</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>{"Sud"}</TableCell>
             <TableCell>{caseDetails.court}</TableCell>
           </TableRow>
           <TableRow key={"judge"}>
-            <TableCell>{"Sudija"}</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>{"Sudija"}</TableCell>
             <TableCell>{caseDetails.judge}</TableCell>
           </TableRow>
           <TableRow key={"cr"}>
-            <TableCell>{"Zapisničar"}</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>{"Zapisničar"}</TableCell>
             <TableCell>{caseDetails.courtReporter}</TableCell>
           </TableRow>
           <TableRow key={"defendant"}>
-            <TableCell>{"Okrivljeni"}</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>{"Okrivljeni"}</TableCell>
             <TableCell>{caseDetails.defendant}</TableCell>
           </TableRow>
           <TableRow key={"criminalOffense"}>
-            <TableCell>{"Krivično delo"}</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>{"Krivično delo"}</TableCell>
             <TableCell>{caseDetails.criminalOffense}</TableCell>
           </TableRow>
           <TableRow key={"injurySeverity"}>
-            <TableCell>Težina fizičke povrede</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>
+              Težina fizičke povrede
+            </TableCell>
             <TableCell>
               {caseDetails.injurySeverity == "NONE"
                 ? "Bez povrede"
@@ -84,7 +90,7 @@ export const JudgmentDetails: React.FC<CaseDetailsTableProps> = ({
             </TableCell>
           </TableRow>
           <TableRow key={"publicOfficial"}>
-            <TableCell>Službeno lice</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>Službeno lice</TableCell>
             <TableCell>
               {caseDetails.publicOfficial == "NONE"
                 ? "Ne"
@@ -94,28 +100,30 @@ export const JudgmentDetails: React.FC<CaseDetailsTableProps> = ({
             </TableCell>
           </TableRow>
           <TableRow key={"isUsedWeapon"}>
-            <TableCell>Korišteno oružje</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>Korišteno oružje</TableCell>
             <TableCell>{caseDetails.isUsedWeapon ? "Da" : "Ne"}</TableCell>
           </TableRow>
           <TableRow key={"isPermanentDamage"}>
-            <TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>
               Povreda je prouzrokovala trajno oštecenje povređenog
             </TableCell>
             <TableCell>{caseDetails.isPermanentDamage ? "Da" : "Ne"}</TableCell>
           </TableRow>
           <TableRow key={"isProvoked"}>
-            <TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>
               Napad je usledio kao posledica vredjanja,provociranja, grubog
               ponasanja ostecenog
             </TableCell>
             <TableCell>{caseDetails.isProvoked ? "Da" : "Ne"}</TableCell>
           </TableRow>
           <TableRow key={"isRecidivist"}>
-            <TableCell>Okrivljeni je bio ranije osudjivan</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>
+              Okrivljeni je bio ranije osudjivan
+            </TableCell>
             <TableCell>{caseDetails.isRecidivist ? "Da" : "Ne"}</TableCell>
           </TableRow>
           <TableRow key={"judgmentType"}>
-            <TableCell>Vrsta presude</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>Vrsta presude</TableCell>
             <TableCell>
               {caseDetails.judgmentType == "ACQUITTAL"
                 ? "Oslobađajuća"
@@ -127,7 +135,7 @@ export const JudgmentDetails: React.FC<CaseDetailsTableProps> = ({
             </TableCell>
           </TableRow>
           <TableRow key={"sentence"}>
-            <TableCell>Kazna</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>Kazna</TableCell>
             <TableCell>{caseDetails.sentence}</TableCell>
           </TableRow>
         </TableBody>

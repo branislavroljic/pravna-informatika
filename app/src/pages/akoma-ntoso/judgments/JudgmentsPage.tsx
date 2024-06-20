@@ -41,7 +41,7 @@ export default function JudgmentsAndLawsPage() {
       <Grid
         container
         spacing={0}
-        style={{ height: "90vh", overflow: "visible" }}
+        style={{ height: "100vh", overflow: "visible" }}
       >
         <Grid
           item
@@ -70,7 +70,7 @@ export default function JudgmentsAndLawsPage() {
           </Box>
           <Scrollbar
             sx={{
-              height: { lg: "calc(100vh - 120px)", md: "100vh" },
+              height: { lg: "calc(100vh - 50px)", md: "100vh" },
               maxHeight: "800px",
             }}
           >
@@ -94,14 +94,14 @@ export default function JudgmentsAndLawsPage() {
             overflowY: "auto",
             justifyContent: "center",
             display: "flex",
+            alignItems: "center",
+            backgroundColor: selectedDocument ? "white" : "#c1e3f5",
           }}
         >
           {!selectedDocument ? (
             <Typography>Slučaj nije odabran</Typography>
           ) : (
-            <Stack>
-              <Judgment selectedDocument={selectedDocument} />
-            </Stack>
+            <Judgment selectedDocument={selectedDocument} />
           )}
         </Grid>
       </Grid>

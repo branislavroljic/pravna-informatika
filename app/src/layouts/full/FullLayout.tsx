@@ -66,7 +66,7 @@ const FullLayout: FC = () => {
             {/* ------------------------------------------- */}
             {/* Header */}
             {/* ------------------------------------------- */}
-            <Header/>
+            {/* <Header/> */}
             {/* PageContent */}
             <Container
                 sx={{
@@ -77,7 +77,7 @@ const FullLayout: FC = () => {
               {/* PageContent */}
               {/* ------------------------------------------- */}
 
-              <Box sx={{minHeight: "calc(100vh - 170px)"}}>
+              <Box sx={{minHeight: "calc(100vh - 100px)"}}>
                 <Outlet/>
               </Box>
 
