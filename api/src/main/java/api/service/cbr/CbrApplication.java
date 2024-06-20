@@ -13,8 +13,10 @@ import es.ucm.fdi.gaia.jcolibri.method.retrieve.NNretrieval.similarity.local.Equ
 import es.ucm.fdi.gaia.jcolibri.method.retrieve.RetrievalResult;
 import es.ucm.fdi.gaia.jcolibri.method.retrieve.selection.SelectCases;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public class CbrApplication implements StandardCBRApplication {
 
@@ -125,6 +127,14 @@ public class CbrApplication implements StandardCBRApplication {
         System.out.println("Retrieved cases:");
         for (RetrievalResult nse : eval)
             System.out.println(nse.get_case().getDescription() + " -> " + nse.getEval());
+    }
+    public List<String> getCycle(CBRQuery query) throws ExecutionException {
+        Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
+        eval = SelectCases.selectTopKRR(eval, 5);
+        List<String> cases = new ArrayList<>();
+        for (RetrievalResult nse : eval)
+            cases.add(nse.get_case().getDescription() + " -> " + nse.getEval());
+        return  cases;
     }
 
     @Override

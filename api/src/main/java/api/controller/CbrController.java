@@ -62,8 +62,8 @@ public class CbrController {
         .body(caseService.getDocument("laws", lawName));
   }
 
-  @GetMapping("/recommend")
-  public ResponseEntity<?> getRecommendedSolution() {
+  @GetMapping("/get/similar")
+  public ResponseEntity<?> getSimilarSolution(@RequestBody CaseFeatures caseFeatures) {
     CbrApplication recommender = new CbrApplication();
     try {
       recommender.configure();
@@ -73,31 +73,23 @@ public class CbrController {
       CBRQuery query = new CBRQuery();
       CaseDescription caseDescription = new CaseDescription();
 
-      caseDescription.setInjurySeverity(InjurySeverity.SERIOUS);
-      caseDescription.setCriminalOffense("laka tjelesnapovreda iz čl.152 st. 2 u vezi st. 1 KZ");
-      caseDescription.setSentence("4 meseci zatvora");
-      caseDescription.setIsRecidivist(false);
-      caseDescription.setIsProvoked(false);
-      caseDescription.setDefendant("V.V");
-      caseDescription.setJudge("M.L.");
-      caseDescription.setIsPermanentDamage(true);
-      caseDescription.setPublicOfficial(PublicOfficial.NONE);
-      caseDescription.setIsUsedWeapon(false);
-      caseDescription.setCourtReporter("M.M.");
-      caseDescription.setCourt("Osnovni sud u Podgorici");
-      caseDescription.setCaseNumber("K13-2022");
-      caseDescription.setDate("22-02-2022");
-      caseDescription.setJudgmentType(JudgmentType.CONVICTION);
+      caseDescription.setInjurySeverity(caseFeatures.getInjurySeverity());
+      caseDescription.setIsRecidivist(caseFeatures.getIsRecidivist());
+      caseDescription.setIsProvoked(caseFeatures.getIsProvoked());
+      caseDescription.setIsPermanentDamage(caseFeatures.getIsPermanentDamage());
+      caseDescription.setPublicOfficial(caseFeatures.getPublicOfficial());
+      caseDescription.setIsUsedWeapon(caseFeatures.getIsUsedWeapon());
 
       query.setDescription(caseDescription);
 
       recommender.cycle(query);
 
       recommender.postCycle();
+      return ResponseEntity.ok(recommender.getCycle(query));
     } catch (Exception e) {
       e.printStackTrace();
+      return null;
     }
-    return ResponseEntity.ok(recommender);
   }
   @GetMapping("/laws-akoma/{lawName}")
   public ResponseEntity<String> getLawAkoma(@PathVariable String lawName) throws IOException {
