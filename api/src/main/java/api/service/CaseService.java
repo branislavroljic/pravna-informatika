@@ -6,6 +6,7 @@ import api.service.cbr.CaseDescription;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -50,11 +51,17 @@ public class CaseService {
   }
 
   public Case getCase(String caseName) throws IOException {
-    String caseContent =
-        FileUtils.readFileToString(ResourceUtils.getFile("classpath:cases_akoma/" + caseName +
-            ".xml"), String.valueOf(StandardCharsets.UTF_8));
+    String caseContent = readXMLFile("cases_akoma", caseName);
+//    FileUtils.readFileToString(ResourceUtils.getFile("classpath:cases_akoma/" + caseName +
+//        ".xml"), String.valueOf(StandardCharsets.UTF_8));
     CaseFeatures caseFeatures = featureExtractionService.extractFeatures(caseName + ".pdf");
     return Case.builder().xmlContent(caseContent).caseFeatures(caseFeatures).build();
+  }
+
+  public String readXMLFile(String folder, String fileName) throws IOException {
+    return
+        FileUtils.readFileToString(ResourceUtils.getFile("classpath:" + folder + "/" + fileName +
+            ".xml"), String.valueOf(StandardCharsets.UTF_8));
   }
 
   public void addAllJudgmentsFromPdfToCsv() throws IOException {

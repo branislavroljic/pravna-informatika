@@ -55,4 +55,11 @@ public class CbrController {
         .contentType(MediaType.APPLICATION_PDF)
         .body(caseService.getDocument("laws", lawName));
   }
+
+  @GetMapping("/laws-akoma/{lawName}")
+  public ResponseEntity<String> getLawAkoma(@PathVariable String lawName) throws IOException {
+    return ResponseEntity.ok()
+        .body(caseService.readXMLFile("laws_akoma", lawName));
+  }
+
 }

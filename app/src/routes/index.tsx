@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import React from "react";
 import JudgmentsPage from "@pages/akoma-ntoso/judgments/JudgmentsPage";
+import LawsPage from "@pages/akoma-ntoso/laws/LawsPage";
 
 const FullLayout = React.lazy(() => import("@layout/full/FullLayout"));
 const JudgmentsAndLawsPage = React.lazy(
@@ -33,6 +34,17 @@ const browserConfig = createBrowserRouter([
           {
             index: true,
             element: <JudgmentsPage />,
+            errorElement: <ErrorPage />,
+          },
+        ],
+      },
+      {
+        id: "akoma-laws",
+        path: "/akoma-laws",
+        children: [
+          {
+            index: true,
+            element: <LawsPage />,
             errorElement: <ErrorPage />,
           },
         ],

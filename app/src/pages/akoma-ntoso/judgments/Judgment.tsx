@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import htmlReactParser from "html-react-parser";
 import { useQuery } from "@tanstack/react-query";
 import { getFile } from "@api/cbr/cbr";
-import { CaseDetails, JudgmentDetails } from "./JudgmentDetails";
-import { Stack } from "@mui/material";
+import { JudgmentDetails } from "./JudgmentDetails";
 
 const xslString = `<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
@@ -118,11 +117,16 @@ function Judgment({ selectedDocument }: JudgmentProps) {
   }, [data?.xmlContent]);
 
   return (
-    <>
-      {htmlContent ? htmlReactParser(htmlContent) : <p>Loading...</p>}
-
-      {data && <JudgmentDetails caseDetails={data?.caseFeatures} />}
-    </> 
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+      <div style={{ flex: "0 1 70%", overflowY: "auto" }}>
+        <Fragment>
+          {htmlContent ? htmlReactParser(htmlContent) : <p>Loading...</p>}
+        </Fragment>
+      </div>
+      <div style={{ flex: "0 1 30%", overflowY: "auto" }}>
+        {!isLoading && <JudgmentDetails caseDetails={data?.caseFeatures} />}
+      </div>
+    </div>
   );
 }
 
