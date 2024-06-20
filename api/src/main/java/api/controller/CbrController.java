@@ -1,16 +1,21 @@
 package api.controller;
 
 import api.dto.Case;
+import api.dto.CaseFeatures;
+import api.enumeration.InjurySeverity;
+import api.enumeration.PublicOfficial;
 import api.service.CaseService;
 import java.io.IOException;
 import java.util.List;
+
+import api.service.cbr.CaseDescription;
+import api.service.cbr.CbrApplication;
+import es.ucm.fdi.gaia.jcolibri.cbraplications.StandardCBRApplication;
+import es.ucm.fdi.gaia.jcolibri.cbrcore.CBRQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -54,5 +59,42 @@ public class CbrController {
     return ResponseEntity.ok()
         .contentType(MediaType.APPLICATION_PDF)
         .body(caseService.getDocument("laws", lawName));
+  }
+
+  @GetMapping("/recommend")
+  public ResponseEntity<?> getRecommendedSolution() {
+    CbrApplication recommender = new CbrApplication();
+    try {
+      recommender.configure();
+
+      recommender.preCycle();
+
+      CBRQuery query = new CBRQuery();
+      CaseDescription caseDescription = new CaseDescription();
+
+      caseDescription.setInjurySeverity(InjurySeverity.MINOR);
+      caseDescription.setCriminalOffense("laka tjelesnapovreda iz čl.152 st. 2 u vezi st. 1 KZ");
+      caseDescription.setSentence("4 meseci zatvora");
+      caseDescription.setIsRecidivist(false);
+      caseDescription.setIsProvoked(true);
+      caseDescription.setDefendant("V.V");
+      caseDescription.setJudge("M.L.");
+      caseDescription.setIsPermanentDamage(false);
+      caseDescription.setPublicOfficial(PublicOfficial.NONE);
+      caseDescription.setIsUsedWeapon(false);
+      caseDescription.setCourtReporter("M.M.");
+      caseDescription.setCourt("Osnovni sud u Podgorici");
+      caseDescription.setCaseNumber("K13-2022");
+      caseDescription.setDate("22-02-2022");
+
+      query.setDescription(caseDescription);
+
+      recommender.cycle(query);
+
+      recommender.postCycle();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return ResponseEntity.ok(recommender);
   }
 }

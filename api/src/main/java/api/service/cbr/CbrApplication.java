@@ -31,30 +31,30 @@ public class CbrApplication implements StandardCBRApplication {
         simConfig.setDescriptionSimFunction(new Average());  // global similarity function = average
 
         TabularSimilarity slicnostTezinaFizickePovrede = new TabularSimilarity(Arrays.asList(
-                "Bez povrede",
-                "Laka telesna povreda",
-                "Teska telesna povreda"));
-        slicnostTezinaFizickePovrede.setSimilarity("Bez povrede", "Laka telesna povreda", 0.3);
-        slicnostTezinaFizickePovrede.setSimilarity("Bez povrede", "Teska telesna povreda", 0.1);
-        slicnostTezinaFizickePovrede.setSimilarity("Teska telesna povreda", "Laka telesna povreda", 0.5);
-        simConfig.addMapping(new Attribute("tezinaFizickePovrede", CaseDescription.class), slicnostTezinaFizickePovrede);
+                "NONE",
+                "MINOR",
+                "SERIOUS"));
+        slicnostTezinaFizickePovrede.setSimilarity("NONE", "MINOR", 0.3);
+        slicnostTezinaFizickePovrede.setSimilarity("NONE", "SERIOUS", 0.1);
+        slicnostTezinaFizickePovrede.setSimilarity("SERIOUS", "MINOR", 0.5);
+        simConfig.addMapping(new Attribute("injurySeverity", CaseDescription.class), slicnostTezinaFizickePovrede);
 
         TabularSimilarity slicnostSluzbenoLice = new TabularSimilarity(Arrays.asList(
-                "Nije sluzbeno lice",
+                "NONE",
                 "Jeste sluzbeno lice",
                 "Specijalno sluzbeno lice"));
-        slicnostTezinaFizickePovrede.setSimilarity("Nije sluzbeno lice", "Jeste sluzbeno lice", 0.3);
-        slicnostTezinaFizickePovrede.setSimilarity("Nije sluzbeno lice", "Specijalno sluzbeno lice", 0.1);
-        slicnostTezinaFizickePovrede.setSimilarity("Specijalno sluzbeno lice", "Jeste sluzbeno lice", 0.5);
-        simConfig.addMapping(new Attribute("sluzbenoLice", CaseDescription.class), slicnostSluzbenoLice);
+        slicnostTezinaFizickePovrede.setSimilarity("NONE", "PUBLIC_OFFICIAL", 0.3);
+        slicnostTezinaFizickePovrede.setSimilarity("NONE", "SPECIAL_PUBLIC_OFFICIAL", 0.1);
+        slicnostTezinaFizickePovrede.setSimilarity("SPECIAL_PUBLIC_OFFICIAL", "PUBLIC_OFFICIAL", 0.5);
+        simConfig.addMapping(new Attribute("publicOfficial", CaseDescription.class), slicnostSluzbenoLice);
 
-        simConfig.addMapping(new Attribute("koriscenoOruzije", CaseDescription.class), new Equal());
+        simConfig.addMapping(new Attribute("isUsedWeapon", CaseDescription.class), new Equal());
 
-        simConfig.addMapping(new Attribute("trajnoOstecenjePovredjenog", CaseDescription.class), new Equal());
+        simConfig.addMapping(new Attribute("isPermanentDamage", CaseDescription.class), new Equal());
 
-        simConfig.addMapping(new Attribute("posledicaProvociranja", CaseDescription.class), new Equal());
+        simConfig.addMapping(new Attribute("isProvoked", CaseDescription.class), new Equal());
 
-        simConfig.addMapping(new Attribute("ranijeOsudjivan", CaseDescription.class), new Equal());
+        simConfig.addMapping(new Attribute("isRecidivist", CaseDescription.class), new Equal());
 
 
         // Equal - returns 1 if both individuals are equal, otherwise returns 0

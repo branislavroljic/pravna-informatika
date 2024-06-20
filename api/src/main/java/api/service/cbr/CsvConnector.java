@@ -1,5 +1,7 @@
 package api.service.cbr;
 
+import api.enumeration.InjurySeverity;
+import api.enumeration.PublicOfficial;
 import es.ucm.fdi.gaia.jcolibri.cbrcore.CBRCase;
 import es.ucm.fdi.gaia.jcolibri.cbrcore.CaseBaseFilter;
 import es.ucm.fdi.gaia.jcolibri.cbrcore.Connector;
@@ -18,7 +20,7 @@ public class CsvConnector implements Connector {
         LinkedList<CBRCase> cases = new LinkedList<CBRCase>();
 
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/presude.csv")));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/judgments.csv")));
             if (br == null)
                 throw new Exception("Error opening file");
 
@@ -31,20 +33,26 @@ public class CsvConnector implements Connector {
                 CBRCase cbrCase = new CBRCase();
 
                 CaseDescription caseDescription = new CaseDescription();
-                caseDescription.setCaseNumber(values[0]);
-                caseDescription.setDate(values[1]);
-                caseDescription.setCourt(values[2]);
-                caseDescription.setJudge(values[3]);
-                caseDescription.setCourtReporter(values[4]);
-                caseDescription.setDefendant(values[5]);
-                caseDescription.setCriminalOffense(values[6]);
-                //caseDescription.setInjurySeverity(values[7]);
-                //caseDescription.setPublicOfficial(values[8]);
-                caseDescription.setUsedWeapon(true ? values[9].equals("1") : false);
-                caseDescription.setPermanentDamage(true ? values[10].equals("1") : false);
-                caseDescription.setProvoked(true ? values[11].equals("1") : false);
-                caseDescription.setRecidivist(true ? values[12].equals("1") : false);
-                caseDescription.setSentence(values[13]);
+                caseDescription.setId(Integer.parseInt(values[0]));
+                caseDescription.setCaseNumber(values[1]);
+                caseDescription.setDate(values[2]);
+                caseDescription.setCourt(values[3]);
+                caseDescription.setJudge(values[4]);
+                caseDescription.setCourtReporter(values[5]);
+                caseDescription.setDefendant(values[6]);
+                caseDescription.setCriminalOffense(values[7]);
+                caseDescription.setSentence(values[8]);
+                caseDescription.setInjurySeverity("SERIOUS".equals(values[9]) ? InjurySeverity.SERIOUS :
+                                                    "MINOR".equals(values[9]) ? InjurySeverity.MINOR :
+                                                    InjurySeverity.NONE);
+                caseDescription.setPublicOfficial("NONE".equals(values[10]) ? PublicOfficial.NONE :
+                                                  "PUBLIC_OFFICIAL".equals(values[10]) ? PublicOfficial.PUBLIC_OFFICIAL :
+                                                          PublicOfficial.SPECIAL_PUBLIC_OFFICIAL);
+                caseDescription.setIsUsedWeapon(true ? values[11].equals("true") : false);
+                caseDescription.setIsPermanentDamage(true ? values[12].equals("true") : false);
+                caseDescription.setIsProvoked(true ? values[13].equals("true") : false);
+                caseDescription.setIsRecidivist(true ? values[13].equals("true") : false);
+                caseDescription.setSentence(values[14]);
 
                 cbrCase.setDescription(caseDescription);
                 cases.add(cbrCase);
