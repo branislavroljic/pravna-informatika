@@ -72,14 +72,14 @@ public class CbrController {
       CBRQuery query = new CBRQuery();
       CaseDescription caseDescription = new CaseDescription();
 
-      caseDescription.setInjurySeverity(InjurySeverity.MINOR);
+      caseDescription.setInjurySeverity(InjurySeverity.SERIOUS);
       caseDescription.setCriminalOffense("laka tjelesnapovreda iz čl.152 st. 2 u vezi st. 1 KZ");
       caseDescription.setSentence("4 meseci zatvora");
       caseDescription.setIsRecidivist(false);
-      caseDescription.setIsProvoked(true);
+      caseDescription.setIsProvoked(false);
       caseDescription.setDefendant("V.V");
       caseDescription.setJudge("M.L.");
-      caseDescription.setIsPermanentDamage(false);
+      caseDescription.setIsPermanentDamage(true);
       caseDescription.setPublicOfficial(PublicOfficial.NONE);
       caseDescription.setIsUsedWeapon(false);
       caseDescription.setCourtReporter("M.M.");

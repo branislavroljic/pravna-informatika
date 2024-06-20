@@ -41,20 +41,44 @@ public class CbrApplication implements StandardCBRApplication {
 
         TabularSimilarity slicnostSluzbenoLice = new TabularSimilarity(Arrays.asList(
                 "NONE",
-                "Jeste sluzbeno lice",
-                "Specijalno sluzbeno lice"));
+                "PUBLIC_OFFICIAL",
+                "SPECIAL_PUBLIC_OFFICIAL"));
         slicnostTezinaFizickePovrede.setSimilarity("NONE", "PUBLIC_OFFICIAL", 0.3);
         slicnostTezinaFizickePovrede.setSimilarity("NONE", "SPECIAL_PUBLIC_OFFICIAL", 0.1);
         slicnostTezinaFizickePovrede.setSimilarity("SPECIAL_PUBLIC_OFFICIAL", "PUBLIC_OFFICIAL", 0.5);
         simConfig.addMapping(new Attribute("publicOfficial", CaseDescription.class), slicnostSluzbenoLice);
 
+
         simConfig.addMapping(new Attribute("isUsedWeapon", CaseDescription.class), new Equal());
-
         simConfig.addMapping(new Attribute("isPermanentDamage", CaseDescription.class), new Equal());
-
         simConfig.addMapping(new Attribute("isProvoked", CaseDescription.class), new Equal());
-
         simConfig.addMapping(new Attribute("isRecidivist", CaseDescription.class), new Equal());
+
+        /*TabularSimilarity slicnostKoriscenoOruzije = new TabularSimilarity(Arrays.asList(
+                "true",
+                "false"));
+        slicnostKoriscenoOruzije.setSimilarity("true", "false", 0.1);
+        simConfig.addMapping(new Attribute("isUsedWeapon", CaseDescription.class), slicnostKoriscenoOruzije);
+
+
+        TabularSimilarity slicnostTrajnoOstecenje = new TabularSimilarity(Arrays.asList(
+                "true",
+                "false"));
+        slicnostTrajnoOstecenje.setSimilarity("true", "false", 0.1);
+        simConfig.addMapping(new Attribute("isPermanentDamage", CaseDescription.class), slicnostTrajnoOstecenje);
+
+
+        TabularSimilarity slicnostProvociranje = new TabularSimilarity(Arrays.asList(
+                "true",
+                "false"));
+        slicnostProvociranje.setSimilarity("true", "false", 0.1);
+        simConfig.addMapping(new Attribute("isProvoked", CaseDescription.class), slicnostProvociranje);
+
+        TabularSimilarity slicnostOsudjivan = new TabularSimilarity(Arrays.asList(
+                "true",
+                "false"));
+        slicnostOsudjivan.setSimilarity("true", "false", 0.1);
+        simConfig.addMapping(new Attribute("isRecidivist", CaseDescription.class), slicnostOsudjivan);*/
 
 
         // Equal - returns 1 if both individuals are equal, otherwise returns 0

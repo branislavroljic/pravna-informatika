@@ -1,6 +1,7 @@
 package api.service.cbr;
 
 import api.enumeration.InjurySeverity;
+import api.enumeration.JudgmentType;
 import api.enumeration.PublicOfficial;
 import es.ucm.fdi.gaia.jcolibri.cbrcore.CBRCase;
 import es.ucm.fdi.gaia.jcolibri.cbrcore.CaseBaseFilter;
@@ -41,22 +42,25 @@ public class CsvConnector implements Connector {
                 caseDescription.setCourtReporter(values[5]);
                 caseDescription.setDefendant(values[6]);
                 caseDescription.setCriminalOffense(values[7]);
-                caseDescription.setSentence(values[8]);
-                caseDescription.setInjurySeverity("SERIOUS".equals(values[9]) ? InjurySeverity.SERIOUS :
-                                                    "MINOR".equals(values[9]) ? InjurySeverity.MINOR :
+                caseDescription.setJudgmentType("SUSPENDED".equals(values[8]) ? JudgmentType.SUSPENDED :
+                        "ACQUITTAL".equals(values[8]) ? JudgmentType.ACQUITTAL :
+                        "CONVICTION".equals(values[8]) ? JudgmentType.CONVICTION:
+                        JudgmentType.WARNING);
+                caseDescription.setSentence(values[9]);
+                caseDescription.setInjurySeverity("SERIOUS".equals(values[10]) ? InjurySeverity.SERIOUS :
+                                                    "MINOR".equals(values[10]) ? InjurySeverity.MINOR :
                                                     InjurySeverity.NONE);
-                caseDescription.setPublicOfficial("NONE".equals(values[10]) ? PublicOfficial.NONE :
-                                                  "PUBLIC_OFFICIAL".equals(values[10]) ? PublicOfficial.PUBLIC_OFFICIAL :
+                caseDescription.setPublicOfficial("NONE".equals(values[11]) ? PublicOfficial.NONE :
+                                                  "PUBLIC_OFFICIAL".equals(values[11]) ? PublicOfficial.PUBLIC_OFFICIAL :
                                                           PublicOfficial.SPECIAL_PUBLIC_OFFICIAL);
-                caseDescription.setIsUsedWeapon(true ? values[11].equals("true") : false);
-                caseDescription.setIsPermanentDamage(true ? values[12].equals("true") : false);
-                caseDescription.setIsProvoked(true ? values[13].equals("true") : false);
-                caseDescription.setIsRecidivist(true ? values[13].equals("true") : false);
-                caseDescription.setSentence(values[14]);
+                caseDescription.setIsUsedWeapon(true ? values[12].equals("true") : false);
+                caseDescription.setIsPermanentDamage(true ? values[13].equals("true") : false);
+                caseDescription.setIsProvoked(true ? values[14].equals("true") : false);
+                caseDescription.setIsRecidivist(true ? values[15].equals("true") : false);
 
                 cbrCase.setDescription(caseDescription);
                 cases.add(cbrCase);
-                System.out.println(cases);
+                //System.out.println(cases);
             }
             br.close();
         } catch (Exception e) {
