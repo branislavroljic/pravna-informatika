@@ -1,5 +1,7 @@
 package api.service.cbr;
 
+import api.enumeration.InjurySeverity;
+import api.enumeration.PublicOfficial;
 import es.ucm.fdi.gaia.jcolibri.casebase.LinealCaseBase;
 import es.ucm.fdi.gaia.jcolibri.cbraplications.StandardCBRApplication;
 import es.ucm.fdi.gaia.jcolibri.cbrcore.*;
@@ -31,28 +33,37 @@ public class CbrApplication implements StandardCBRApplication {
         simConfig.setDescriptionSimFunction(new Average());  // global similarity function = average
 
         TabularSimilarity slicnostTezinaFizickePovrede = new TabularSimilarity(Arrays.asList(
-                "NONE",
-                "MINOR",
-                "SERIOUS"));
-        slicnostTezinaFizickePovrede.setSimilarity("NONE", "MINOR", 0.3);
-        slicnostTezinaFizickePovrede.setSimilarity("NONE", "SERIOUS", 0.1);
-        slicnostTezinaFizickePovrede.setSimilarity("SERIOUS", "MINOR", 0.5);
-        simConfig.addMapping(new Attribute("injurySeverity", CaseDescription.class), slicnostTezinaFizickePovrede);
+                InjurySeverity.NONE,
+                InjurySeverity.MINOR,
+                InjurySeverity.SERIOUS));
+        slicnostTezinaFizickePovrede.setSimilarity(InjurySeverity.NONE, InjurySeverity.MINOR, 0.3);
+        slicnostTezinaFizickePovrede.setSimilarity(InjurySeverity.NONE, InjurySeverity.SERIOUS, 0.1);
+        slicnostTezinaFizickePovrede.setSimilarity(InjurySeverity.SERIOUS, InjurySeverity.MINOR, 0.5);
+        Attribute injurySeverity = new Attribute("injurySeverity", CaseDescription.class);
+        simConfig.addMapping(injurySeverity, slicnostTezinaFizickePovrede);
 
         TabularSimilarity slicnostSluzbenoLice = new TabularSimilarity(Arrays.asList(
-                "NONE",
-                "PUBLIC_OFFICIAL",
-                "SPECIAL_PUBLIC_OFFICIAL"));
-        slicnostTezinaFizickePovrede.setSimilarity("NONE", "PUBLIC_OFFICIAL", 0.3);
-        slicnostTezinaFizickePovrede.setSimilarity("NONE", "SPECIAL_PUBLIC_OFFICIAL", 0.1);
-        slicnostTezinaFizickePovrede.setSimilarity("SPECIAL_PUBLIC_OFFICIAL", "PUBLIC_OFFICIAL", 0.5);
-        simConfig.addMapping(new Attribute("publicOfficial", CaseDescription.class), slicnostSluzbenoLice);
+                PublicOfficial.NONE,
+                PublicOfficial.PUBLIC_OFFICIAL,
+                PublicOfficial.SPECIAL_PUBLIC_OFFICIAL));
+        slicnostTezinaFizickePovrede.setSimilarity( PublicOfficial.NONE, PublicOfficial.PUBLIC_OFFICIAL, 0.3);
+        slicnostTezinaFizickePovrede.setSimilarity( PublicOfficial.NONE, PublicOfficial.SPECIAL_PUBLIC_OFFICIAL, 0.1);
+        slicnostTezinaFizickePovrede.setSimilarity(PublicOfficial.SPECIAL_PUBLIC_OFFICIAL, PublicOfficial.PUBLIC_OFFICIAL, 0.5);
+        Attribute publicOfficial = new Attribute("publicOfficial", CaseDescription.class);
+        simConfig.addMapping(publicOfficial, slicnostSluzbenoLice);
+
+        Attribute isUsedWeapon = new Attribute("isUsedWeapon", CaseDescription.class);
+        simConfig.addMapping(isUsedWeapon, new Equal());
+        Attribute isPermanentDamage = new Attribute("isPermanentDamage", CaseDescription.class);
+        simConfig.addMapping(isPermanentDamage, new Equal());
+        Attribute isProvoked = new Attribute("isProvoked", CaseDescription.class);
+        simConfig.addMapping(isProvoked, new Equal());
+        Attribute isRecidivist = new Attribute("isRecidivist", CaseDescription.class);
+        simConfig.addMapping(isRecidivist, new Equal());
 
 
-        simConfig.addMapping(new Attribute("isUsedWeapon", CaseDescription.class), new Equal());
-        simConfig.addMapping(new Attribute("isPermanentDamage", CaseDescription.class), new Equal());
-        simConfig.addMapping(new Attribute("isProvoked", CaseDescription.class), new Equal());
-        simConfig.addMapping(new Attribute("isRecidivist", CaseDescription.class), new Equal());
+
+
 
         /*TabularSimilarity slicnostKoriscenoOruzije = new TabularSimilarity(Arrays.asList(
                 "true",
@@ -79,6 +90,12 @@ public class CbrApplication implements StandardCBRApplication {
                 "false"));
         slicnostOsudjivan.setSimilarity("true", "false", 0.1);
         simConfig.addMapping(new Attribute("isRecidivist", CaseDescription.class), slicnostOsudjivan);*/
+
+        simConfig.setWeight(injurySeverity, 3.0);
+        simConfig.setWeight(publicOfficial, 2.5);
+        simConfig.setWeight(isUsedWeapon, 2.0);
+        simConfig.setWeight(isPermanentDamage, 2.0);
+
 
 
         // Equal - returns 1 if both individuals are equal, otherwise returns 0

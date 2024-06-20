@@ -60,7 +60,7 @@ public class CsvConnector implements Connector {
 
                 cbrCase.setDescription(caseDescription);
                 cases.add(cbrCase);
-                //System.out.println(cases);
+                System.out.println(cases);
             }
             br.close();
         } catch (Exception e) {

@@ -3,6 +3,7 @@ package api.controller;
 import api.dto.Case;
 import api.dto.CaseFeatures;
 import api.enumeration.InjurySeverity;
+import api.enumeration.JudgmentType;
 import api.enumeration.PublicOfficial;
 import api.service.CaseService;
 import java.io.IOException;
@@ -86,6 +87,7 @@ public class CbrController {
       caseDescription.setCourt("Osnovni sud u Podgorici");
       caseDescription.setCaseNumber("K13-2022");
       caseDescription.setDate("22-02-2022");
+      caseDescription.setJudgmentType(JudgmentType.CONVICTION);
 
       query.setDescription(caseDescription);
 

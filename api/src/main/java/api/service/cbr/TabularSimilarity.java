@@ -8,9 +8,9 @@ import java.util.List;
 public class TabularSimilarity implements LocalSimilarityFunction {
 
     private double matrix[][];
-    List<String> categories;
+    List<Object> categories;
 
-    public TabularSimilarity(List<String> categories) {
+    public TabularSimilarity(List<Object> categories) {
         this.categories = categories;
         int n = categories.size();
         matrix = new double[n][n];
@@ -18,11 +18,11 @@ public class TabularSimilarity implements LocalSimilarityFunction {
             matrix[i][i] = 1;  // symbolic similarity of term with itself
     }
 
-    public void setSimilarity(String value1, String value2, double sim) {
+    public void setSimilarity(Object value1, Object value2, double sim) {
         setSimilarity(value1, value2, sim, sim);
     }
 
-    public void setSimilarity(String value1, String value2, double sim1, double sim2) {
+    public void setSimilarity(Object value1, Object value2, double sim1, double sim2) {
         int index1 = categories.indexOf(value1);
         int index2 = categories.indexOf(value2);
         if (index1 != -1 && index2 != -1) {
@@ -31,8 +31,20 @@ public class TabularSimilarity implements LocalSimilarityFunction {
         }
     }
 
+    private int getIndex(Object value) {
+        if (value instanceof Enum) {
+            // Handle enums by finding their ordinal (index in enum)
+            return ((Enum<?>) value).ordinal();
+        } else {
+            // Handle other types (like strings)
+            return categories.indexOf(value);
+        }
+    }
+
     @Override
     public double compute(Object value1, Object value2) throws NoApplicableSimilarityFunctionException {
+        if (value1 instanceof Enum && value2 instanceof Enum)
+            return compute((Enum<?>) value1, (Enum<?>) value2);
         if (value1 instanceof String && value2 instanceof String)
             return compute((String)value1, (String)value2);
         if (value1 instanceof List && value2 instanceof List)
@@ -70,8 +82,20 @@ public class TabularSimilarity implements LocalSimilarityFunction {
         return (sim1to2 + sim2to1)/(list1.size() + list2.size());
     }
 
+    public double compute(Enum<?> enum1, Enum<?> enum2) {
+        int index1 = enum1.ordinal();
+        int index2 = enum2.ordinal();
+        if (index1 != -1 && index2 != -1)
+            return matrix[index1][index2];
+        if (enum1.equals(enum2))
+            return 1;
+        return 0;
+    }
+
     @Override
     public boolean isApplicable(Object value1, Object value2) {
+        if (value1 instanceof Enum && value2 instanceof Enum)
+            return true;
         if (value1 instanceof String && value2 instanceof String)
             return true;
         if (value1 instanceof List && value2 instanceof List)
