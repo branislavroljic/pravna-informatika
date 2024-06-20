@@ -1,16 +1,22 @@
 package api.controller;
 
 import api.dto.Case;
+import api.dto.CaseFeatures;
+import api.enumeration.InjurySeverity;
+import api.enumeration.JudgmentType;
+import api.enumeration.PublicOfficial;
 import api.service.CaseService;
 import java.io.IOException;
 import java.util.List;
+
+import api.service.cbr.CaseDescription;
+import api.service.cbr.CbrApplication;
+import es.ucm.fdi.gaia.jcolibri.cbraplications.StandardCBRApplication;
+import es.ucm.fdi.gaia.jcolibri.cbrcore.CBRQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -56,6 +62,35 @@ public class CbrController {
         .body(caseService.getDocument("laws", lawName));
   }
 
+  @GetMapping("/get/similar")
+  public ResponseEntity<?> getSimilarSolution(@RequestBody CaseFeatures caseFeatures) {
+    CbrApplication recommender = new CbrApplication();
+    try {
+      recommender.configure();
+
+      recommender.preCycle();
+
+      CBRQuery query = new CBRQuery();
+      CaseDescription caseDescription = new CaseDescription();
+
+      caseDescription.setInjurySeverity(caseFeatures.getInjurySeverity());
+      caseDescription.setIsRecidivist(caseFeatures.getIsRecidivist());
+      caseDescription.setIsProvoked(caseFeatures.getIsProvoked());
+      caseDescription.setIsPermanentDamage(caseFeatures.getIsPermanentDamage());
+      caseDescription.setPublicOfficial(caseFeatures.getPublicOfficial());
+      caseDescription.setIsUsedWeapon(caseFeatures.getIsUsedWeapon());
+
+      query.setDescription(caseDescription);
+
+      recommender.cycle(query);
+
+      recommender.postCycle();
+      return ResponseEntity.ok(recommender.getCycle(query));
+    } catch (Exception e) {
+      e.printStackTrace();
+      return null;
+    }
+  }
   @GetMapping("/laws-akoma/{lawName}")
   public ResponseEntity<String> getLawAkoma(@PathVariable String lawName) throws IOException {
     return ResponseEntity.ok()

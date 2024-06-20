@@ -68,7 +68,7 @@ public class CaseService {
     List<CaseDescription> caseDescriptions = new ArrayList<>();
     List<String> caseNames = getDocumentList("cases").stream().toList();
     for (int i = 0; i < caseNames.size(); i++) {
-      CaseFeatures caseFeatures = featureExtractionService.extractFeatures(caseNames.get(i));
+      CaseFeatures caseFeatures = featureExtractionService.extractFeatures(caseNames.get(i) + ".pdf");
       CaseDescription caseDescription = new CaseDescription(i, caseFeatures);
       caseDescriptions.add(caseDescription);
     }
