@@ -27,12 +27,7 @@ const DocumentListItem = ({
       <ListItemText>
         <Stack direction="row" gap="10px" alignItems="center">
           <Box mr="auto">
-            <Typography
-              variant="subtitle1"
-              noWrap
-              fontWeight={600}
-              sx={{ maxWidth: "150px" }}
-            >
+            <Typography variant="subtitle1" noWrap fontWeight={600}>
               {documentName}
             </Typography>
             <Typography variant="body2" color="text.secondary" noWrap>

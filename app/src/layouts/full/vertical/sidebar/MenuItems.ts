@@ -56,7 +56,7 @@ const Menuitems = () =>
       id: uniqueId(),
       title: "Nova presuda",
       icon: IconCoin,
-      href: "/payments",
+      href: "/new-case",
     },
   ] as MenuitemsType[];
 

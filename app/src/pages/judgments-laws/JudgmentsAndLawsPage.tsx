@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import PageContainer from "@ui/container/PageContainer";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { getFile } from "@api/cbr/cbr";
 import { useQuery } from "@tanstack/react-query";
 import { Worker, Viewer, SpecialZoomLevel } from "@react-pdf-viewer/core";
@@ -17,6 +17,7 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import { IconSearch } from "@tabler/icons-react";
 import Scrollbar from "@ui/custom-scroll/Scrollbar";
 import DocumentsList from "@pages/shared/DocumentsList";
+import Breadcrumb from "@layout/full/shared/breadcrumb/Breadcrumb";
 
 export default function JudgmentsAndLawsPage() {
   const [selectedDocumentType, setSelectedDocumentType] = useState<
@@ -49,7 +50,7 @@ export default function JudgmentsAndLawsPage() {
       <Grid
         container
         spacing={0}
-        style={{ height: "100vh", overflow: "visible" }}
+        style={{ height: "calc(100vh)", overflow: "visible" }}
       >
         <Grid
           item
@@ -78,7 +79,7 @@ export default function JudgmentsAndLawsPage() {
           </Box>
           <Scrollbar
             sx={{
-              height: { lg: "calc(100vh)", md: "100vh" },
+              height: { lg: "calc(100vh - 72px)", md: "90vh" },
               maxHeight: "800px",
             }}
           >
@@ -123,7 +124,11 @@ export default function JudgmentsAndLawsPage() {
           }}
         >
           {!selectedDocument ? (
-            <Typography>Slučaj nije odabran</Typography>
+            <Typography
+              style={{ fontStyle: "italic", color: "grey", fontSize: "17px" }}
+            >
+              Slučaj nije odabran
+            </Typography>
           ) : isLoading ? null : (
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
               <Viewer

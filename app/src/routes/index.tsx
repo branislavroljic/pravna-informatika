@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import React from "react";
 import JudgmentsPage from "@pages/akoma-ntoso/judgments/JudgmentsPage";
-import LawsPage from "@pages/akoma-ntoso/laws/LawsPage";
 
 const FullLayout = React.lazy(() => import("@layout/full/FullLayout"));
 const JudgmentsAndLawsPage = React.lazy(
   () => import("@pages/judgments-laws/JudgmentsAndLawsPage")
 );
+const LawsPage = React.lazy(() => import("@pages/akoma-ntoso/laws/LawsPage"));
+const NewCasePage = React.lazy(() => import("@pages/new-case/NewCasePage"));
 const ErrorPage = React.lazy(() => import("@pages/Error/ErrorPage"));
 const NotFoundPage = React.lazy(() => import("@pages/Error/NotFoundPage"));
 
@@ -45,6 +46,17 @@ const browserConfig = createBrowserRouter([
           {
             index: true,
             element: <LawsPage />,
+            errorElement: <ErrorPage />,
+          },
+        ],
+      },
+      {
+        id: "new-case",
+        path: "/new-case",
+        children: [
+          {
+            index: true,
+            element: <NewCasePage />,
             errorElement: <ErrorPage />,
           },
         ],

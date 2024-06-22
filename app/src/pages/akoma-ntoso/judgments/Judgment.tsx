@@ -3,6 +3,7 @@ import htmlReactParser from "html-react-parser";
 import { useQuery } from "@tanstack/react-query";
 import { getFile } from "@api/cbr/cbr";
 import { JudgmentDetails } from "./JudgmentDetails";
+import { Divider } from "@mui/material";
 
 const xslString = `<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
@@ -28,7 +29,7 @@ const xslString = `<?xml version="1.0" encoding="UTF-8"?>
                         margin: 10px 0;
                     }
                     a {
-                        color: blue;
+                        color: #5D87FF;
                         text-decoration: none;
                     }
                 </style>
@@ -120,7 +121,7 @@ function Judgment({ selectedDocument }: JudgmentProps) {
     <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <div style={{ flex: "0 1 70%", overflowY: "auto" }}>
         <Fragment>
-          {htmlContent ? htmlReactParser(htmlContent) : <p>Loading...</p>}
+          {htmlContent ? htmlReactParser(htmlContent) : <p>Učitavanje...</p>}
         </Fragment>
       </div>
       <div style={{ flex: "0 1 30%", overflowY: "auto" }}>

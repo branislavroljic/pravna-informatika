@@ -1,9 +1,7 @@
 import {
   Box,
-  Divider,
   Grid,
   InputAdornment,
-  Stack,
   TextField,
   Typography,
 } from "@mui/material";
@@ -22,15 +20,6 @@ export default function JudgmentsAndLawsPage() {
     undefined
   );
   const [searchTerm, setSearchTerm] = useState("");
-
-  //   const { data, isLoading } = useQuery({
-  //     queryKey: ["akoma-document", selectedDocument],
-  //     queryFn: async () => {
-  //       if (selectedDocument != undefined)
-  //         return getFile("cases-akoma", selectedDocument, "application/xml");
-  //     },
-  //     enabled: !!selectedDocument,
-  //   });
 
   const handleDocumentSelection = (documentName: string) => {
     setSelectedDocument(documentName);
@@ -99,7 +88,11 @@ export default function JudgmentsAndLawsPage() {
           }}
         >
           {!selectedDocument ? (
-            <Typography>Slučaj nije odabran</Typography>
+            <Typography
+              style={{ fontStyle: "italic", color: "grey", fontSize: "17px" }}
+            >
+              Slučaj nije odabran
+            </Typography>
           ) : (
             <Judgment selectedDocument={selectedDocument} />
           )}

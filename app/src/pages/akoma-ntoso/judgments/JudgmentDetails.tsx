@@ -37,7 +37,7 @@ export const JudgmentDetails: React.FC<CaseDetailsTableProps> = ({
   caseDetails,
 }) => {
   return (
-    <TableContainer component={Paper} sx={{ maxHeight: "100%" }}>
+    <TableContainer component={Paper} sx={{ maxHeight: "100%", border : '1px solid #e3e2de'}}>
       <Table stickyHeader>
         <TableHead>
           <TableRow>

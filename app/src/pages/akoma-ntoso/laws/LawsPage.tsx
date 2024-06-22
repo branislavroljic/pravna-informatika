@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import htmlReactParser from "html-react-parser";
 import { useQuery } from "@tanstack/react-query";
 import { getFile } from "@api/cbr/cbr";
+import { Box } from "@mui/material";
 
 const xslString = `<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
@@ -142,9 +143,11 @@ function LawsPage() {
   }, [htmlContent]);
 
   return (
-    <Fragment>
-      {htmlContent ? htmlReactParser(htmlContent) : <p>Loading...</p>}
-    </Fragment>
+    <Box padding={5}>
+      <Fragment>
+        {htmlContent ? htmlReactParser(htmlContent) : <p>Učitavanje...</p>}
+      </Fragment>
+    </Box>
   );
 }
 
