@@ -62,7 +62,7 @@ public class CbrController {
         .body(caseService.getDocument("laws", lawName));
   }
 
-  @GetMapping("/get/similar")
+  @PostMapping("/get/similar")
   public ResponseEntity<?> getSimilarSolution(@RequestBody CaseFeatures caseFeatures) {
     CbrApplication recommender = new CbrApplication();
     try {

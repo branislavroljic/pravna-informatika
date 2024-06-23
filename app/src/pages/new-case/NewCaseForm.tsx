@@ -2,15 +2,14 @@ import { useMemo, useState } from "react";
 import {
   Grid,
   Box,
-  Typography,
-  Stack,
   Autocomplete,
   TextField,
   RadioGroup,
   FormControlLabel,
   Radio,
+  Divider,
+  Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import { z } from "zod";
 import { Controller, useForm } from "react-hook-form";
 import { useNotificationStore } from "@stores/notificationStore";
@@ -18,7 +17,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import CustomFormLabel from "@ui/forms/theme-elements/CustomFormLabel";
 import CustomTextField from "@ui/forms/theme-elements/CustomTextField";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { alignProperty } from "@mui/material/styles/cssUtils";
 
 const newCaseSchema = z.object({
   court: z.string({
@@ -45,23 +43,35 @@ const newCaseSchema = z.object({
   publicOfficial: z.string({
     required_error: "Polje je neophodno",
   }),
-  isUsedWeapon: z.string({
+  isUsedWeapon: z.coerce.boolean({
     required_error: "Polje je neophodno",
   }),
-  isPermanentDamage: z.string({
+  isPermanentDamage: z.coerce.boolean({
     required_error: "Poljeje neophodno",
   }),
-  isProvoked: z.string({
+  isProvoked: z.coerce.boolean({
     required_error: "Polje je neophodno",
   }),
-  isRecidivist: z.string({
+  isRecidivist: z.coerce.boolean({
     required_error: "Polje je neophodno",
   }),
 });
 
 type NewCaseInput = z.infer<typeof newCaseSchema>;
 
-const NewCaseForm = () => {
+const injurySeverityLabels = {
+  NONE: "Bez povrede",
+  MINOR: "Laka telesna povreda",
+  SERIOUS: "Teška telesna povreda",
+};
+
+const publicOfficialLabels = {
+  NONE: "Ne",
+  PUBLIC_OFFICIAL: "Službeno lice",
+  SPECIAL_PUBLIC_OFFICIAL: "Specijalno službeno lice",
+};
+
+const NewCaseForm = ({ setSimilarCases }: any) => {
   const openNotification = useNotificationStore(
     (state) => state.openNotification
   );
@@ -79,9 +89,9 @@ const NewCaseForm = () => {
     formState: { errors },
   } = useForm<NewCaseInput>({ resolver: zodResolver(newCaseSchema) });
 
-  const getRecomendations = async (input: NewCaseInput) => {
+  const getSimilarCases = async (input: NewCaseInput) => {
     setLoading(true);
-    const baseUrl = new URL("auth/signup", import.meta.env.VITE_API_URL);
+    const baseUrl = new URL("cbr/get/similar", import.meta.env.VITE_API_URL);
     const result = await fetch(baseUrl, {
       method: "POST",
       body: JSON.stringify(input),
@@ -91,6 +101,7 @@ const NewCaseForm = () => {
     });
 
     setLoading(false);
+    setSimilarCases(await result.json());
     if (!result.ok) {
       openNotification({
         isError: true,
@@ -105,7 +116,7 @@ const NewCaseForm = () => {
 
   return (
     <>
-      <Box component="form" onSubmit={handleSubmit(getRecomendations)}>
+      <Box component="form" onSubmit={handleSubmit(getSimilarCases)}>
         <Grid container direction={"row"} spacing={1}>
           <Grid item xs={12} sm={12} lg={12}>
             <CustomFormLabel
@@ -289,7 +300,7 @@ const NewCaseForm = () => {
                   }}
                   value={injurySeverities.find((m) => m === value)}
                   options={injurySeverities}
-                  getOptionLabel={(option) => option}
+                  getOptionLabel={(option) => injurySeverityLabels[option]}
                   renderInput={(params) => (
                     <TextField
                       {...params}
@@ -298,7 +309,6 @@ const NewCaseForm = () => {
                         marginBottom: "0px",
                         padding: "0px !important",
                         "& .MuiInputBase-root": { height: "45px" },
-                        "& input": { color: "white" },
                       }}
                       label={"Težina povrede"}
                       margin="normal"
@@ -311,6 +321,7 @@ const NewCaseForm = () => {
               )}
             />
           </Grid>
+
           <Grid item xs={12} sm={6} lg={6}>
             <CustomFormLabel
               sx={{
@@ -323,15 +334,15 @@ const NewCaseForm = () => {
             <Controller
               name="publicOfficial"
               control={control}
-              defaultValue={undefined}
+              rules={{ required: true }}
               render={({ field: { onChange, value } }) => (
                 <Autocomplete
-                  onChange={(event, item) => {
+                  onChange={(_event, item) => {
                     onChange(item);
                   }}
                   value={publicOfficials.find((m) => m === value)}
                   options={publicOfficials}
-                  getOptionLabel={(option) => option}
+                  getOptionLabel={(option) => publicOfficialLabels[option]}
                   renderInput={(params) => (
                     <TextField
                       {...params}
@@ -340,7 +351,6 @@ const NewCaseForm = () => {
                         marginBottom: "0px",
                         padding: "0px !important",
                         "& .MuiInputBase-root": { height: "45px" },
-                        "& input": { color: "white" },
                       }}
                       label={"Službeno lice"}
                       margin="normal"
@@ -353,6 +363,7 @@ const NewCaseForm = () => {
               )}
             />
           </Grid>
+
           <Grid
             item
             xs={12}
@@ -539,6 +550,8 @@ const NewCaseForm = () => {
           {"Preporuke rasuđivanja"}
         </LoadingButton>
       </Box>
+      <Divider />
+      <Typography>Nesto</Typography>
     </>
   );
 };
