@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Pljevljima
+                    </FRBRauthor>
+                    <FRBRdate date="2012-06-27">
+						2013-06-25
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 55/2013
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="ospv" href="/ontology/organization/OsnovniSud.Pljevlja" showAs="Osnovni sud u Pljevljima" />
+                <TLCOrganization eId="odtpv" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Pljevlja" showAs="Osnovno drzavno tuzilastvo Pljevlja" />
+                <TLCOrganization eId="ruadpv" href="/ontology/organization/RudnikUglja.Pljevlja" showAs="Rudnik uglja AD Pljevlja" />
+                <TLCPerson eId="ljpopovic" href="/ontology/person/ljpopovic" showAs="Ljiljana Popović" />
+                <TLCPerson eId="zlekovic" href="/ontology/person/zlekovic" showAs="Zora Leković" />
+                <TLCPerson eId="vdjurovic" href="/ontology/person/vdjurovic" showAs="Veljko Đurović" />
+                <TLCPerson eId="cs" href="/ontology/person/cs" showAs="Ć.S." />
+                <TLCPerson eId="sa" href="/ontology/person/sa" showAs="Š.A." />
+                <TLCPerson eId="sv" href="/ontology/person/sv" showAs="Š.V." />
+                <TLCPerson eId="bv" href="/ontology/person/bv" showAs="B.V." />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="witness" href="/ontology/role/witness" showAs="Witness" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <p>
+                    <organization id="ospv" refersTo="#ospv">
+                    Osnovni sud u Pljevljima
+                    </organization>
+                , kao prvostepeni krivični sud, po sudiji 
+                    <party id="ljpopovic" refersTo="#ljpopovic" as="#judge">
+                    Ljiljani Popović
+                    </party>
+                , uz sudjelovanje zapisničara 
+                    <party id="zlekovic" refersTo="#zlekovic" as="#clerk">
+                    Leković Zore
+                    </party>
+                , u krivičnom predmetu protiv optuženog 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    Ć. S.
+                    </party>
+                 iz P.zbog krivičnog djela napad na službeno lice u vršenju službene dužnosti iz 
+                    <ref href="/akoma-laws#art_376">
+                    čl.376 st.1 Krivičnog Zakonika
+                    </ref>
+                 po optužnom predlogu 
+                    <organization id="odtpv" refersTo="#odtpv">
+                    ODT Pljevlja
+                    </organization>
+                 Kt.br.73/13 od 02.04.2013. godine, nakon održanog glavnog i javnog pretresa u prisustvu zamjenika 
+                    <organization id="odtpv" refersTo="#odtpv">
+                    ODT Pljevlja
+                    </organization>
+                    <party id="vdjurovic" refersTo="#vdjurovic" as="#prosecutor">
+                    Đurović Veljka
+                    </party>
+                , oštećenih 
+                    <party id="sa" refersTo="#sa" as="victim">
+                    Š.A.
+                    </party>
+                 i 
+                    <party id="sv" refersTo="#sv" as="victim">
+                    Š.V.
+                    </party>
+                  a u odsustvu optuženog 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    Ć. S.
+                    </party>
+                , dana 25.06.2013. godine, donio je i javno objavio</p>
+                <p style="text-align: center;">P R E S U D U</p>
+                <p>Optuženi 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    Ć. S.
+                    </party>
+                , JMBG ... od oca R. i majke M. rodjene B., rodjen u P.dana 22.11.1978.godine, sa prebivalištem u mjestu B. opština P., državljanin CG, oženjen, otac dvoje maloljetno djece, nezaposlen, pismen, završio III stepen srednje škole, govori srpskim jezikom, razumije crnogorski jezik, srednjeg imovnog stanja, osudjivan.</p>
+                <p>Na osnovu 
+                    <ref href="/postupak#art_373">
+                    čl.373 st.1 tačka 2 ZKP-a
+                    </ref>
+                </p>
+                <p style="text-align: center;">OSLOBADJA SE OD OPTUŽBE</p>
+                <p>Da je :</p>
+                <p>Dana 18.03.2013.godine oko 22,30 časova kod bivše K. u krugu Površinskog kopa "B." vlasništvo 
+                    <organization id="ruadpv" refersTo="#ruadpv">
+                    R. u. AD P.
+                    </organization>
+                 napao na službeno lice 
+                    <party id="sa" refersTo="#sa" as="victim">
+                    Š. A.
+                    </party>
+                , rukovodioca smjene u PK "B." u vršenju službene dužnosti obilaska površinskog kopa na način što je na upozorenje 
+                    <party id="sa" refersTo="#sa" as="victim">
+                    Š. A.
+                    </party>
+                 da sa vozilom napusti prostor PK "B." okrivljeni 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    Ć.
+                    </party>
+                uputio uvrede 
+                    <party id="sa" refersTo="#sa" as="victim">
+                    Š. A.
+                    </party>
+                govoreći " pičko jedna, jebem ti majku, ti ćeš mi zabraniti da se ovdje nalazim" i krenuo put 
+                    <party id="sa" refersTo="#sa" as="victim">
+                    Štulića
+                    </party>
+                 zamahujući rukama put 
+                    <party id="sa" refersTo="#sa" as="victim">
+                    Štulića
+                    </party>
+                  u čemu ga je spriječio 
+                    <party id="sv" refersTo="#sv" as="victim">
+                    Š. V.
+                    </party>
+                , radnik obezbedjenja da bi po tom 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    okrivljeni
+                    </party>
+                sa zemlje u ruku uzeo komad cigle u namjeri da istom gadja 
+                    <party id="sa" refersTo="#sa" as="victim">
+                    Štulića
+                    </party>
+                 te su 
+                    <party id="sv" refersTo="#sv" as="victim">
+                    Š. V.
+                    </party>
+                i 
+                    <party id="bv" refersTo="#bv" as="witness">
+                    B. V.
+                    </party>
+                uhvatili rukama 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    okrivljenog
+                    </party>
+                 i iz ruke oduzeli mu komad cigle i 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    okrivljenog
+                    </party>
+                 odveli put njegovog PMV i na taj način spriječili 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    okrivljenog
+                    </party>
+                 u daljem napadu na 
+                    <party id="sv" refersTo="#sv" as="victim">
+                    oštećenog
+                    </party>
+                ,
+                </p>
+                <p>čime bi izvršio krivično djelo napad na službeno lice u vršenju službene dužnosti iz 
+                    <ref href="/akoma-laws#art_376">
+                    čl.376 st.1 Krivičnog Zakonika
+                    </ref>
+                ,
+                </p>
+                <p>jer u postupku nije dokazano da je 
+                    <party id="cs" refersTo="#cs" as="#defendant">
+                    optuzeni
+                    </party>
+                 izvršio krivično djelo koje mu se javnom optužbom stavlja na teret.</p>
+                <conclusions>
+                    <p>
+                    Troškovi krivičnog postupka padaju na teret budžetskih sredstava.
+                    </p>
+                    <p>
+                    Imovinsko pravnog zahtjeva nije bilo.
+                    </p>
+                </conclusions>
+            </judgementBody>
+        </judgement>
+    </akomaNtoso>

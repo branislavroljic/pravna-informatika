@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Podgorici
+                    </FRBRauthor>
+                    <FRBRdate date="2012-06-27">
+						2012-06-27
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 242/2012
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="ospg" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici" />
+                <TLCOrganization eId="odtpg" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno drzavno tuzilastvo Podgorica" />
+                <TLCOrganization eId="vspg" href="/ontology/organization/VisiSud.Podgorica" showAs="Visi sud u Podgorici" />
+                <TLCPerson eId="mzekovic" href="/ontology/person/mzekovic" showAs="Maja Zeković" />
+                <TLCPerson eId="ajankovic" href="/ontology/person/ajankovic" showAs="Andrijana Janković" />
+                <TLCPerson eId="mjovanovic" href="/ontology/person/mjovanovic" showAs="Maja Jovanović" />
+                <TLCPerson eId="sn" href="/ontology/person/sn" showAs="Š.N." />
+                <TLCPerson eId="cd" href="/ontology/person/cd" showAs="C.D." />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="ospg" refersTo="#ospg">
+                    Osnovni sud u Podgorici
+                </organization>
+                , sudija 
+                <party id="mzekovic" refersTo="#mzekovic" as="#judge">
+                    Maja Zeković
+                </party>
+                , uz učešće 
+                <party id="ajankovic" refersTo="#ajankovic" as="#clerk">
+                    Andrijane Janković
+                </party>
+                 kao zapisničara, u krivičnom predmetu protiv optuženog 
+                <party id="sn" refersTo="#sn" as="#defendant">
+                    Š. N.
+                </party>
+                 , zbog krivičnog djela teška tjelesna povreda iz 
+                <ref href="/akoma-laws#art_151">
+                    čl. 151 st.2 Krivičnog zakonika Crne Gore
+                </ref>
+                 , odlučujući po optužnici 
+                <organization id="odtpg" refersTo="#odtpg">
+                    Osnovnog državnog tužilaštva u Podgorici
+                </organization>
+                 Kt.br.1505/10 od 02.03.2012. godine, nakon održanog glavnog i javnog pretresa dana 27.06.2012. godine u prisustvu zastupnika optužbe  
+                <party id="mjovanovic" refersTo="#mjovanovic" as="#prosecutor">
+                    Maje Jovanović
+                </party>
+                - zamjenice u ODT-u,  
+                <party id="sn" refersTo="#sn" as="#defendant">
+                    optuženog
+                </party>
+                , donio je i istog dana javno objavio</p>
+            <p style="text-align: center;">PRESUDU </p>
+            <p>Optuženi: 
+                <party id="sn" refersTo="#sn" as="#defendant">
+                    Š.N.
+                </party>
+                , od oca M. i majke Lj., rođene J., rođen .... godine u N., sa prebivalištem u P., Ul. …, državljanin Crne Gore, završio osnovnu školu, nezaposlen, neoženjen, lošeg imovnog stanja, ranije osuđivan presudom 
+                <organization id="vspg" refersTo="#vspg">
+                    Višeg suda u Podgorici
+                </organization>
+                 K.br. ... od ... godine, zbog krivičnog djela iz čl.300 st.1 i čl.301 st.1 KZ CG, na 1 godinu i 2 mjeseca zatvora.</p>
+            <p>Na osnovu 
+                <ref href="/postupak#art_373">
+                    čl.373 st.1 tač.1 Zakonika o krivičnom postupku Crne Gore
+                </ref> u vezi 
+                <ref href="/akoma-laws#art_10">
+                    čl.10 st.1 Krivičnog zakonika Crne Gore
+                </ref>
+            </p>
+            <p style="text-align: center;">OSLOBAĐA SE OPTUŽBE</p>
+            <p>Da je:</p>
+            <p>Dana 29.10.2010. godine, u Podgorici, u Ul. Žrtava Fašizma, odbijajući od sebe istovremen protipravan napad od strane 
+                <party id="cd" refersTo="#cd" as="victim">
+                    C. D.
+                </party>
+                 koji se sastojao u tome što  je 
+                <party id="cd" refersTo="#cd" as="victim">
+                    C. D.
+                </party>
+                  nakon što je izašao iz svog vozila i zaletio se u pravcu 
+                <party id="sn" refersTo="#sn" as="#defendant">
+                    optuženog
+                </party>
+                 prilazeći mu, koji je stajao ispred svog vozila, zamahnuvši stisnutom pesnicom u njegovom pravcu, pri čemu je 
+                <party id="sn" refersTo="#sn" as="#defendant">
+                    optuženi
+                </party>
+                  odbijajući od sebe ovakav napad teško tjelesno povrijedio 
+                <party id="cd" refersTo="#cd" as="victim">
+                    C. D.
+                </party>
+                , na način što ga je, udario pesnicom  u predjelu lica, a zatim pesnicom u predjelu glave, od kojih udarca je pao na asfalt i tom prilikom zadobio tešku tjelesnu povredu u vidu nagnječenja u desnom tjemenom predjelu, nagnječenja mozga u oba čeona predjela, preloma lobanje u potiljačno bazalnom predjelu sa desne strane, preloma baze lobanje čeono slepočno desno sa prisustvom vazduha u lobanjskoj duplji i sa krvarenjem na desno uvo, krvnog podliva oko desnog oka i rane razderine u predjelu brade sa lijeve strane,</p>
+            <p>- čime bi izvršio krivično djelo teška tjelesna povreda iz 
+                <ref href="/akoma-laws#art_151">
+                    čl.151 st.2 Krivičnog zakonika
+                </ref>
+            </p>
+            <conclusions>
+                <p>Troškovi krivičnog postupka u iznosu od 93,50€ padaju na teret budžetskih sredstava 
+                    <organization id="ospg" refersTo="#ospg">
+                        suda
+                    </organization>
+                    .
+                </p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

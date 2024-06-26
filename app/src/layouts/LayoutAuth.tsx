@@ -152,7 +152,7 @@ export default function LayoutAuth() {
               <MenuIcon/>
             </IconButton>
             <Typography variant="h6" noWrap component="h1" color="inherit">
-              Klix Lead
+              Pravna informatika
             </Typography>
             <Box component="div" sx={{ml: "auto"}}>
               <IconButton
@@ -194,43 +194,7 @@ export default function LayoutAuth() {
             </IconButton>
           </DrawerHeader>
           <Divider/>
-          {/* <List component="nav">
-          {pages.map((item) => (
-            <ListItem
-              key={item.name}
-              component={Link}
-              to={item.href}
-              disablePadding
-              sx={{ display: "block" }}
-            >
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  // ...(item.href == location.pathname && {
-                  //   backgroundColor: 'gray',
-                  // }),
-                }}
-                selected={item.href == location.pathname}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <item.icon />
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.name}
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List> */}
+        
         </Drawer>
         <Box component="main" sx={{flexGrow: 1, p: 3}}>
           <DrawerHeader/>

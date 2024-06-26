@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Baru
+                    </FRBRauthor>
+                    <FRBRdate date="2015-12-21">
+						2016-10-27
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 122/2014
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osbr" href="/ontology/organization/OsnovniSud.Bar" showAs="Osnovni sud u Baru" />
+                <TLCOrganization eId="odtbr" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Bar" showAs="Osnovno drzavno tuzilastvo Bar" />
+                <TLCPerson eId="alekovic" href="/ontology/person/alekovic" showAs="Aleksandra Leković" />
+                <TLCPerson eId="dmarkovic" href="/ontology/person/dmarkovic" showAs="Danijela Marković" />
+                <TLCPerson eId="hi" href="/ontology/person/hi" showAs="H. I." />
+                <TLCPerson eId="ir" href="/ontology/person/ir" showAs=" I. R." />
+                <TLCPerson eId="ln" href="/ontology/person/ln" showAs="L. N." />
+                <TLCPerson eId="ss" href="/ontology/person/ss" showAs="S. S." />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="osbr" refersTo="#osbr">
+                    OSNOVNI SUD U BARU
+                </organization>
+                , kao prvostepeni krivični, sudija 
+                <party id="alekovic" refersTo="#alekovic" as="#judge">
+                    Aleksandra Leković
+                </party>
+                , sa zapisničarom 
+                <party id="dmarkovic" refersTo="#dmarkovic" as="#clerk">
+                    Danijelom Marković
+                </party>
+                , u krivičnom predmetu okrivljenog 
+                <party id="hi" refersTo="#hi" as="#defendant">
+                    H. I.
+                </party>
+                 zbog krivičnog djela napad na službeno lice u vršenju službene dužnosti u pokušaju iz 
+                <ref href="/akoma-laws#art_376">
+                    čl.376 st.4 u vezi st.1 Krivičnog zakonika
+                </ref>
+                 po optužnom predlogu 
+                <organization id="odtbr" refersTo="#odtbr">
+                    Osnovnog državnog tužilaštva u Baru
+                </organization>
+                 Kt br. 440/13 od 10.03.2014.godine, nakon održanog glavnog javnog pretresa dana 21.10.2016. godine u prisustvu zastupnika optužbe državnog tužioca 
+                <party id="ir" refersTo="#ir" as="#prosecutor">
+                    I. R.
+                </party>
+                 iz 
+                <organization id="odtbr" refersTo="#odtbr">
+                    ODT Bar
+                </organization>
+                 i branioca okrivljenog 
+                <party id="ln" refersTo="#ln" as="#defenseAttorney">
+                    L. N.
+                </party>
+                , advokata iz B., dana 27.10.2016.godine donio je i javno objavio</p>
+            <p>PRESUDU</p>
+            <p>Okrivljeni 
+                <party id="hi" refersTo="#hi" as="#defendant">
+                    H. I.
+                </party>
+                , od oca .jdina i majke N., rođene T., sa prebivalištem u B., oženjen, otac troje djece, pismen, završio osnovnu školu, po zanimanju pekar, lošeg imovnog stanja, razumije službeni jezik suda, neosuđivan</p>
+            <p>Na osnovu 
+                <ref href="/postupak#art_373">
+                    čl.373 tč. 1 ZKP-a
+                </ref>
+                ,
+            </p>
+            <p style="text-align: center;">OSLOBAĐA SE OD OPTUŽBE</p>
+            <p>Da je :</p>
+            <p>Dana 29.07.2013.godine, u 06,15 časova, na terasi ugostiteljskog objekta zvanog "R.", na šetalištu u Čanju, opština Bar, svjestan svog djela i htio je njegovo izvršenje, iako je znao da je njegovo djelo zabranjeno, napadom pokušao da spriječi ovlašćeno službeno lice inspektora 
+                <organization>
+                    Uprave za inspekcijske poslove-Odsjeka inspekcije zaštite prostora
+                </organization>
+                , oštećenu 
+                <party id="ss" refersTo="#ss" as="#victim">
+                    S. S.
+                </party>
+                , prilikom vršenja službene radnje u okviru svojih ovlašćena-izvršenja administrativnog rješenja o uklanjanju objekata postavljenih bez odobrenja br.0401/7-273/13od 16.07.2013.godine, na način što se prilikom sprovođenja navedene službene radnje popeo na vitrinu koju je trebalo izvršenjem ukloniti govoreći: „Nećete ovo dirati, sklonite se odavde", da bi potom podigao rukama sto i sa istim krenuo u pravcu oštećene, u kojem trenutku su prišli ovlašćeni policijski službenici i istog spriječili da napadne
+                <party id="ss" refersTo="#ss" as="#victim">
+                    oštećenu
+                </party>
+                ,
+            </p>
+            <p>-čime bi izvršio krivično djelo napad na službeno lice u vršenju službene dužnosti u pokušaju iz 
+                <ref href="/akoma-laws#art_376">
+                    čl.376 st.4 u vezi st.1 Krivičnog zakonika
+                </ref>
+            </p>
+            <p>- Jer djelo za koje je optužen po zakonu nije krivično djelo.</p>
+            <conclusions>
+                <p>
+                    Troškovi postupka padaju na teret budžetskih sredstava 
+                    <organization id="osbr" refersTo="#osbr">
+                        suda
+                    </organization>
+                    .
+                </p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

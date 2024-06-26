@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Cetinju
+                    </FRBRauthor>
+                    <FRBRdate date="2018-03-29">
+						2018-03-29
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 5/2018
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osct" href="/ontology/organization/OsnovniSud.Cetinje" showAs="Osnovni sud u Cetinju" />
+                <TLCOrganization eId="vspg" href="/ontology/organization/VisiSud.Podgorica" showAs="Visi sud u Podgorici" />
+                <TLCOrganization eId="osko" href="/ontology/organization/OsnovniSud.Kotor" showAs="Osnovni sud u Kotoru" />
+                <TLCOrganization eId="upobct" href="/ontology/organization/UpravaPolicije.OdjeljenjeBezbjednostiCetinje" showAs="Uprava policije - Odjeljenje bezbjednosti Cetinje"/>
+                <TLCPerson eId="mcupic" href="/ontology/person/mcupic" showAs="Marija Cupic" />
+                <TLCPerson eId="amartinovic" href="/ontology/person/amartinovic" showAs="Aleksandra Martinovic" />
+                <TLCPerson eId="vv" href="/ontology/person/vv" showAs="V.V." />
+                <TLCPerson eId="amitrovic" href="/ontology/person/amitrovic" showAs="Aleksandar Mitrovic" />
+                <TLCPerson eId="imarkovic" href="/ontology/person/imarkovic" showAs="Ivan Markovic" />
+                <TLCPerson eId="zkaradzic" href="/ontology/person/zkaradzic" showAs="Zoran Karadzic" />
+                <TLCPerson eId="dpopovic" href="/ontology/person/dpopovic" showAs="Dejan Popovic" />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+            </references>
+        </meta>
+        <judgmentBody>
+
+            <p>
+                <organization id="osct" refersTo="#osct">
+					OSNOVNI SUD U Cetinju
+                </organization>
+                , po
+                <party id="mcupic" refersTo="#mcupic" as="#judge">
+					sudiji Mariji Ćupić
+                </party>
+                ,uz učešće
+                <party id="amartinovic" refersTo="#amartinovic" as="#clerk">
+                    namještenika suda Martinović Aleksandre
+                </party>
+                , kao zapisničara, u krivičnom predmetu protiv okrivljenog 
+                <party id="vv" refersTo="#vv" as="#defendant">
+                V. V.
+                </party>
+                ,iz C. ,zbog krivičnog djela napad na službeno lice u vršenju službene dužnosti iz 
+                <ref href="/akoma-laws#art_376">
+                    čl. 376. st.3.u vezi st.1.i 2. Krivičnog zakonika Crne Gore
+                </ref>
+                , nakon pravosnažnosti rješenja o usvajanju sporazuma o priznanju krivice, dana 29.03.2018. godine donio je,</p>
+            <p style="text-align: center;">P R E S U D U </p>
+            <p>Okrivljeni :</p>
+            <p>
+                <party id="vv" refersTo="#vv" as="#defendant">
+                    V. V.
+                </party> 
+                    zv. »Š.« JMBG .., od oca M. i majke V., rođene K., rođen .. godine u C., državljanin C. G., pismen, sa završenom Srednjom stručnom školom, neoženjen, bez djece nekvalifikovani radnik, nezaposlen, lošeg imovnog stanja, osuđivan: Presudom 
+                <organization id="osct" refersTo="#osct">
+                    Osnovnog suda u Cetinju
+                </organization>
+                , posl. br. K. 217/06 od 13. 04.2007.godine, zbog krivičnog djela nasilničko ponašanje iz 
+                <ref href="/akoma-laws#art_399">
+                člana 399. Krivičnog zakonika
+                </ref>
+                 na kaznu zatvora u trajanju od 6 mjeseci uslovno na jednu godinu, Presudom 
+                <organization id="vspg" refersTo="#vspg">
+                    Višeg suda u Podgorici
+                </organization>
+                 posl. br. Kž.638/07 od 20.12.2007.godine, zbog krivičnog djela napad na službeno lice u vršenju slubžene dužnosti iz 
+                <ref href="/akoma-laws#art_376">
+                    člana 376.stav 3. Krivičnog zakonika
+                </ref> 
+                 na kaznu zatvora u trajanju od četiri mjeseca, Presudom 
+                <organization id="osko" refersTo="#osko">
+                    Osnovnog suda u Kotoru
+                </organization> 
+                posl. br. K.252/08 od 23.07.2009.godine, zbog krivičnog djela teško djelo protiv bezbjednosti javnog saobraćaja iz 
+                <ref href="/akoma-laws#art_348">
+                    člana 348. Krivičnog zakonika
+                </ref>
+                 na kaznu zatvora u trajanju od pet mjeseci uslovno na jednu godinu, Presudom 
+                <organization id="osct" refersTo="#osct">
+                    osnovnog suda u Cetinju
+                </organization> 
+                 posl. br. K. 52/09 od 04.05.2009.godine zbog krivičnog djela nasilničko ponašanje iz 
+                <ref href="/akoma-laws#art_399">
+                    člana 399. Krivičnog zakonika
+                </ref> 
+                na kaznu zatvora u trajanju od šest mjeseci, Presudom 
+                <organization id="osct" refersTo="#osct">
+                    Osnovnog suda u Cetinju
+                </organization> 
+                posl. br. K.116/10 od 02.11.2010.godine zbog krivičnog djela nasilničko ponašanje iz 
+                <ref href="/akoma-laws#art_399">
+                    člana 399. Krivičnog zakonika
+                </ref>
+                , Presudom 
+                <organization id="osct" refersTo="#osct">
+                    Osnovnog suda u Cetinju
+                </organization>
+                 posl. br. K. 211/10 od 27.07.2010.godine, zbog krivičnog djela nasilničko ponašanje iz 
+                <ref href="/akoma-laws#art_399">
+                    člana 399. Krivičnog zakonika
+                </ref>
+                 na kaznu zatvora u trajanju od 30 dana i Presudom 
+                <organization id="osct" refersTo="#osct">
+                    Osnovnog suda u Cetinju
+                </organization>
+                  posl. br. K. 209/11 od 23.03.2011.godine zbog krivičnog djela napad na službeno lice u vršenju slubžene dužnosti iz 
+                <ref href="/akoma-laws#art_376">
+                    člana 376.stav 3. Krivičnog zakonika
+                </ref>
+                na kaznu zatvora u trajanju od šest mjeseci i Presudom 
+                <organization id="osct" refersTo="#osct">
+                    osnovnog suda u Cetinju
+                </organization>
+                 K. br. 61/14 od 03.04.2015.godine, zbog krivičnog djela nasilničko ponašanje iz 
+                <ref href="/akoma-laws#art_399">
+                    člana 399. Krivičnog zakonika
+                </ref>
+                 , na kaznu rad u javnom interesu.</p>
+            <p style="text-align: center;"> K r i v je</p>
+            <p>Što je:</p>
+            <p>Dana 14. 01. 2018. godine, oko 14,40 časova, u holu ispred dežurne službe 
+                <organization id="upobct" refersTo="#upobct">
+                    Uprave policije - Odjeljenja bezbjednosti Cetinje
+                </organization>
+                , u naselju zv. »G.« b.b. u C. gdje je pristupio kako bi prijavio prethodni događaj u kojem je bio fizički napadnut od strane P. F. iz C., svjestan svog djela čije je izvršenje htio i svjestan da je njegovo djelo zabranjeno, prijetio da će upotrebom oružja napasti policijske službenike 
+                <organization id="upobct" refersTo="#upobct">
+                    Uprave policije – Odeljenja bezbjednosti Cetinje
+                </organization>
+                 i to oštećene: 
+                <party id="amitrovic" refersTo="#amitrovic" as="#victim">
+                    Mitrović Aleksandra
+                </party>
+                 , 
+                <party id="imarkovic" refersTo="#imarkovic" as="#victim">
+                    Marković Ivana
+                </party>
+                 ,                
+                <party id="zkaradzic" refersTo="#zkaradzic" as="#victim">
+                    Karadžić Zorana
+                </party>
+                  i 
+                <party id="dpopovic" refersTo="#dpopovic" as="#victim">
+                    Popović Dejana
+                </party>
+                   u vršenju poslova javne bezbjednosti – održavanja javnog reda i mira, na način što je po dolasku u službene prostorije 
+                <organization id="upobct" refersTo="#upobct">
+                    Odjeljenja bezbjednosti Cetinje
+                </organization>
+                , ispred prostroija dežurne službe, oštećenima uputio riječi »Vas boli kurac, usta vas jebem, sad sam napadnut od strane ujaka maloga S., uzet ću pištolji i pobit ću vas sve«, nakon čega mu je prišao dežurni starješina 
+                <organization id="upobct" refersTo="#upobct">
+                    OB Cetinje
+                </organization>
+                , oštećeni 
+                <party id="imarkovic" refersTo="#imarkovic" as="#victim">
+                    Marković Ivan
+                </party>
+                 i upozorio ga na ponašanje, te je isti prestao sa daljim prijetnjama i uvredama,</p>
+            <p>-čime je izvršio krivično djelo napad na službeno lice u vršenju službene dužnosti iz 
+                <ref href="/akoma-laws#art_376">
+                    člana 376. stav 3. u vezi stava 1. i 2. Krivičnog zakonika Crne Gore
+                </ref>
+                .
+            </p>
+
+            <conclusions>
+                <p>
+                    Pa ga
+                    <organization id="osct" refersTo="#osct">
+                        Sud
+                    </organization>
+                     primjenom citiranih zakonskih propisa i primjenom
+                    <ref href="/akoma-laws#art_4">
+                        čl.4
+                    </ref>
+                    , 
+                    <ref href="/akoma-laws#art_5">
+                        5
+                    </ref>
+                    , 
+                    <ref href="/akoma-laws#art_13">
+                        13
+                    </ref>
+                    , 
+                    <ref href="/akoma-laws#art_15">
+                        15
+                    </ref>
+                    , 
+                    <ref href="/akoma-laws#art_32">
+                        32
+                    </ref>
+                    , 
+                    <ref href="/akoma-laws#art_36">
+                        36
+                    </ref>
+                    , 
+                    <ref href="/akoma-laws#art_42">
+                        42
+                    </ref>
+                    , 
+                    <ref href="/akoma-laws#art_51">
+                        51. KZ CG 
+                    </ref>
+                    i 
+                    <ref href="/postupak#art_226">
+                        čl.226
+                    </ref>
+                     - 
+                    <ref href="/postupak#art_229">
+                        229
+                    </ref>
+                    ,
+                    <ref href="/postupak#art_239">
+                        239.
+                    </ref>
+                     i 
+                    <ref href="/postupak#art_374">
+                        374 ZKP-a
+                    </ref>
+                </p>
+                <p style="text-align: center;">O S U Đ U J E </p>
+                <p>Na kaznu zatvora u trajanju od 6 (šest) mjeseci u koju kaznu mu se ima uračunati vrijeme provedeno u pritvoru od dana 14.01.2018. godine od 17,25 časova, kao dana i časa lišenja slobode, do dana 29.03.2018. godine, kao dana pravosnažnosti presude donijete na osnovu sporazuma o priznanju krivice i isti se upućuje na izdržavanje preostalog dijela kazne jer je vrijeme provedeno u pritvoru kraće od dužine izrečene kazne zatvora.</p>
+                <p>Obavezuje se 
+                    <party id="vv" refersTo="#vv" as="#defendant">
+                        okrivljeni
+                    </party>
+                     da na ime troškova krivičnog postupka uplati iznos od 126,50 eura, te na ime paušala iznos od 30,00 eura, kao i troškove koji se odnose na dovođenje 
+                    <party id="vv" refersTo="#vv" as="#defendant">
+                        okrivljenog
+                    </party>
+                    iz ZIKS-a o čijoj će visini sud odlučiti posebnim rješenjem, shodno 
+                    <ref href="/postupak#art_227">
+                        čl. 227. st. 2. Zakonika o krivičnom postupku
+                    </ref>
+                      , sve prednje u korist Budžeta Crne Gore, u roku od 15 dana od dana pravosnažnosti presude donijete na osnovu sporazuma o priznanju krivice, pod prijetnjom prinudnog izvršenja.</p>
+                <p>Oštećeni 
+                    <party id="amitrovic" refersTo="#amitrovic" as="#victim">
+                        Mitrović Aleksandar
+                    </party>
+                    , 
+                    <party id="imarkovic" refersTo="#imarkovic" as="#victim">
+                        Marković Ivan
+                    </party>
+                    , 
+                    <party id="zkaradzic" refersTo="#zkaradzic" as="#victim">
+                        Karadžić Zoran
+                    </party>
+                     i 
+                    <party id="dpopovic" refersTo="#dpopovic" as="#victim">
+                        Popović Dejan
+                    </party>
+                     se radi ostvarenja svog imovinskopravnog zahtjeva upućuju na parnični postupak.</p>
+
+            </conclusions>
+        </judgmentBody>
+    </judgement>
+</akomaNtoso>

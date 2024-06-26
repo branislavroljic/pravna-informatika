@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Niksicu
+                    </FRBRauthor>
+                    <FRBRdate date="2012-12-27">
+						2012-12-27
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 655/2011
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osnk" href="/ontology/organization/OsnovniSud.Niksic" showAs="Osnovni sud u Niksicu" />
+                <TLCOrganization eId="vspg" href="/ontology/organization/VisiSud.Podgorica" showAs="Visi sud u Podgorici" />
+                <TLCOrganization eId="odtnk" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Niksic" showAs="Osnovno drzavno tuzilastvo Niksic" />
+                <TLCPerson eId="idjurickovic" href="/ontology/person/idjurickovic" showAs="Igor Djurickovic" />
+                <TLCPerson eId="bpapovic" href="/ontology/person/bpapovic" showAs="Budimirka Papovic" />
+                <TLCPerson eId="iivanisevic" href="/ontology/person/iivanisevic" showAs="Ivana Ivanisevic" />
+                <TLCPerson eId="mk" href="/ontology/person/mk" showAs="M.K." />
+                <TLCPerson eId="dm" href="/ontology/person/dm" showAs="D.M." />
+                <TLCPerson eId="sd" href="/ontology/person/sd" showAs="S.D." />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="osnk" refersTo="#osnk">
+                    OSNOVNI SUD U NIKŠIĆU
+                </organization>
+                , kao prvostepeni krivični, sudija pojedinac 
+                <party id="idjurickovic" refersTo="#idjurickovic" as="#judge">
+                    Djuričković Igor
+                </party>
+                , uz sudjelovanje namještenika 
+                <party id="bpapovic" refersTo="#bpapovic" as="#clerk">
+                    Papović Budimirke
+                </party>
+                 kao zapisničara, rješavajući u krivičnom predmetu okrivljenog 
+                <party id="mk" refersTo="#mk" as="#defendant">
+                    M.K.
+                </party>
+                 iz Nikšića, zbog krivičnog djela laka tjelesna povreda iz 
+                <ref href="/akoma-laws#art_152">
+                    člana 152 stav 2 u vezi stava 1 KZ
+                </ref>
+                 , postupajući po optužnom predlogu 
+                <organization id="odtnk" refersTo="#odtnk">
+                    ODT Nikšić
+                </organization>
+                  Kt.br.798/11-2 od 22.11.2011. godine, nakon javnog glavnog pretresa održanog dana 24.12.2012.godine, u prisustvu zastupnika 
+                <organization id="odtnk" refersTo="#odtnk">
+                    ODT-a
+                </organization>
+                <party id="iivanisevic" refersTo="#iivanisevic" as="#prosecutor">
+                  Ivanišević Ivane
+                </party>
+                   i branioca okrivljenog 
+                <party id="mk" refersTo="#mk" as="#defendant">
+                    M.K.
+                </party>
+                 postavljenog po službenoj dužnosti 
+                <party id="sd" refersTo="#sd" as="#defenseAttorney">
+                    S. D.
+                </party>
+                 advokata iz N., a u odsustvu okrivljenog, donio je i dana 27.12.2012.godine javno objavio</p>
+            <p style="text-align: center;">P R E S U D U </p>
+            <p>Okrivljeni:
+                <party id="mk" refersTo="#mk" as="#defendant">
+                    M.K.
+                </party>
+                 , JMBG ., od oca M. i majke N. rodjene P., rodjen .. godine u N., sa prebivalištem u N.-ul.R. br.., državljanin Crne Gore, nezaposlen, neoženjen, lošeg imovnog stanja, ranije osudjivan presudom 
+                <organization id="osnk" refersTo="#osnk">
+                    Osnovnog suda u Nikšiću
+                </organization>
+                  K.br. 380/03 od 10.03.2004.godine, zbog krivičnog djela iz 
+                <ref href="/akoma-laws#art_181">
+                  člana 181 stav 1 KZ RCG
+                </ref>
+                  , uslovnom osudom, 40 dana zatvora uslovno na jednu godinu, presudom 
+                <organization id="osnk" refersTo="#osnk">
+                    Osnovnog suda u Nikšiću
+                </organization>
+                K.br. 1/2005 od 24.10.2007. godine, zbog krivčnog djela iz 
+                <ref href="/akoma-laws#art_375">člana 375 stav 3 KZ</ref>
+                , na kaznu zatvora u trajanju od 2 mjeseca zatvora, presudom 
+                <organization id="vspg" refersTo="#vspg">
+                    Višeg suda u Podgorici
+                </organization>
+                 K.br. 128/2010. od 23.09.2010. godine, zbog krivčnog djela iz 
+                <ref href="/akoma-laws#art_300">
+                    člana 300 stav 1 KZ
+                </ref>
+                 , na kaznu zatvora u trajanju od 1 godina i 6 mjeseci i presudom 
+                <organization id="osnk" refersTo="#osnk">
+                    Osnovnog suda u Nikšiću
+                </organization>
+                 K.br. 210/10 od 31.07.2010. godine, zbog krivčnog djela iz 
+                <ref href="/akoma-laws#art_339">
+                    člana 339 stav 3/1 KZ
+                </ref>
+                 , uslovnom osudom- 90 dana zatvora uslovno na 1 godinu.</p>
+            <p style="text-align: center;">K r i v j e:</p>
+            <p>Što je: </p>
+            <p>Dana 30.04.2011.godine, oko 00:30 časova, u Nikšiću, u diskoteci “F.” u ulici Nj., fizički napao oštećenog 
+                <party id="dm" refersTo="#dm" as="#victim">
+                    D.M.
+                </party>
+                , na način što ga je staklenom pivskom flašom, kao sredstvom podobnim da tijelo teško povrijedi ili zdravlje teško naruši, udario u predjelu glave, kojom prilikom mu je nanio laku tjelesnu povredu u vidu razderotine rane u predjelu gornjeg kapka lijevog oka dužine oko 2 cm i nagnječenja bulbusa lijevog oka, </p>
+            <p>- čime je izvršio krivično djelo laka tjelesna povreda iz 
+                <ref href="/akoma-laws#art_152">
+                    člana 152 stav 2 u vezi stava 1 Krivičnog zakonika
+                </ref>
+            </p>
+            <conclusions>
+                <p>pa 
+                    <organization id="osnk" refersTo="#osnk">
+                        sud
+                    </organization>
+                     okrivljenog zbog izvršenja navedenog krivičnog djela primjenom citiranih zakonskih odredbi, odredbi iz 
+                    <ref href="/akoma-laws#art_4">
+                     člana 4 stav 2
+                    </ref>
+                     , 
+                    <ref href="/akoma-laws#art_32">
+                        člana 32
+                    </ref>
+                     , 
+                    <ref href="/akoma-laws#art_36">
+                        36
+                    </ref>
+                     i 
+                    <ref href="/akoma-laws#art_42">
+                        člana 42 stav 1 KZ
+                    </ref>
+                     i odredbi iz 
+                    <ref href="/postupak#art_226">
+                        člana 226
+                    </ref>
+                     , 
+                    <ref href="/postupak#art_229">
+                        229
+                    </ref> i 
+                    <ref href="/postupak#art_374">
+                        člana 374 ZKP-a
+                    </ref>
+                </p>
+                <p style="text-align: center;">O S U D J U J E</p>
+                <p>Na kaznu zatvora u trajanju od 60 (slovima:šezdeset) dana, koju kaznu je 
+                    <party id="mk" refersTo="#mk" as="#defendant">
+                        okrivljeni
+                    </party>
+                     dužan izdržati nakon pravosnažnosti presude.</p>
+                <p>Obavezuje se 
+                    <party id="mk" refersTo="#mk" as="#defendant">
+                        okrivljeni
+                    </party>
+                    da na ime troškova krivičnog postupka plati novčani iznos od 169,00 eura, u roku od 15 dana od dana pravosnažosti presude, pod prijetnjom prinudnog izvršenja, na na žiro račun 
+                    <organization id="osnk" refersTo="#osnk">
+                        Osnovnog suda u Nikšiću
+                    </organization>
+                     broj 832-152-32 i da sudu dostavi dokaz o izvršenoj uplati.
+                </p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

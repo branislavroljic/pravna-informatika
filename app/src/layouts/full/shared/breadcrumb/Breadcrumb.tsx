@@ -1,7 +1,7 @@
 import {Grid, Typography, Box, Breadcrumbs, Link, Theme} from '@mui/material';
 import {NavLink} from 'react-router-dom';
 
-import breadcrumbImg from '/src/assets/images/breadcrumb/ChatBc.png';
+import breadcrumbImg from '/src/assets/images/breadcrumb/emailSv.png';
 import {IconCircle} from '@tabler/icons-react';
 
 interface BreadCrumbType {
@@ -18,7 +18,7 @@ const Breadcrumb = ({subtitle, items, title, children}: BreadCrumbType) => (
           backgroundColor: 'primary.light',
           borderRadius: (theme: Theme) => theme.shape.borderRadius / 4,
           p: '30px 25px 20px',
-          marginBottom: '30px',
+          marginBottom: '20px',
           position: 'relative',
           overflow: 'hidden',
         }}

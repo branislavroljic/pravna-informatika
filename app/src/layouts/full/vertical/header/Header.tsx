@@ -8,7 +8,7 @@ import {
   Stack,
 } from "@mui/material";
 import Search from "./Search";
-import {useCustomizerStore} from "@stores/customizerStore";
+import { useCustomizerStore } from "@stores/customizerStore";
 import Navigation from "./Navigation";
 
 const Header = () => {
@@ -18,51 +18,54 @@ const Header = () => {
   const customizer = useCustomizerStore();
   // const dispatch = useDispatch();
 
-  const AppBarStyled = styled(AppBar)(({theme}) => ({
+  const AppBarStyled = styled(AppBar)(({ theme }) => ({
     boxShadow: "none",
     background: theme.palette.background.paper,
     justifyContent: "center",
     backdropFilter: "blur(4px)",
-    minHeight : '40px',
+    minHeight: "50px",
     [theme.breakpoints.up("lg")]: {
-      minHeight: customizer.TopbarHeight,
+      minHeight: "50px",
     },
   }));
-  const ToolbarStyled = styled(Toolbar)(({theme}) => ({
+  const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
     width: "100%",
     color: theme.palette.text.secondary,
-    minHeight : '40px'
+    minHeight: "50px",
+    [theme.breakpoints.up("lg")]: {
+      minHeight: "50px",
+    },
   }));
 
   return (
-      <AppBarStyled position="sticky" color="default">
-        <ToolbarStyled>
-          {/* ------------------------------------------- */}
-          {/* Toggle Button Sidebar */}
-          {/* ------------------------------------------- */}
-          <IconButton
-              color="inherit"
-              aria-label="menu"
-              onClick={
-                lgUp
-                    ? () => customizer.toggleSidebar()
-                    : () => customizer.toggleMobileSidebar()
-              }
-          >
-            {/* <IconMen size="20" /> */}
-          </IconButton>
+    <AppBarStyled position="sticky" color="default">
+      <ToolbarStyled>
+        {/* ------------------------------------------- */}
+        {/* Toggle Button Sidebar */}
+        {/* ------------------------------------------- */}
+        <IconButton
+          color="inherit"
+          aria-label="menu"
+          onClick={
+            lgUp
+              ? () => customizer.toggleSidebar()
+              : () => customizer.toggleMobileSidebar()
+          }
+        >
+          {/* <IconMen size="20" /> */}
+        </IconButton>
 
-          {/* ------------------------------------------- */}
-          {/* Search Dropdown */}
-          {/* ------------------------------------------- */}
-          <Search/>
+        {/* ------------------------------------------- */}
+        {/* Search Dropdown */}
+        {/* ------------------------------------------- */}
+        <Search />
 
-          <Box flexGrow={1}/>
-          <Stack spacing={1} direction="row" alignItems="center">
-            <Navigation/>
-          </Stack>
-        </ToolbarStyled>
-      </AppBarStyled>
+        <Box flexGrow={1} />
+        <Stack spacing={1} direction="row" alignItems="center">
+          <Navigation />
+        </Stack>
+      </ToolbarStyled>
+    </AppBarStyled>
   );
 };
 

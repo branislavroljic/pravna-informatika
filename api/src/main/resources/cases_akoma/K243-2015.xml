@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Baru
+                    </FRBRauthor>
+                    <FRBRdate date="2015-12-21">
+						2015-12-21
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 243/2015
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osbr" href="/ontology/organization/OsnovniSud.Bar" showAs="Osnovni sud u Baru" />
+                <TLCPerson eId="vvukovic" href="/ontology/person/vvukovic" showAs="Valentina Vuković" />
+                <TLCPerson eId="nlalovic" href="/ontology/person/nlalovic" showAs="Nataša Lalović" />
+                <TLCPerson eId="oa" href="/ontology/person/oa" showAs="O.A." />
+                <TLCPerson eId="gn" href="/ontology/person/gn" showAs="G.N." />
+                <TLCPerson eId="ps" href="/ontology/person/ps" showAs="P. S." />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+            <p>
+                <organization id="osbr" refersTo="#osbr">
+                    Osnovni sud u Baru
+                </organization>
+                , prvostepeni krivični sud, po sudiji 
+                <party id="vvukovic" refersTo="#vvukovic" as="#judge">
+                    Valentine Vuković
+                </party>
+                , uz učešće namještenika suda zapisničara 
+                <party id="nlalovic" refersTo="#nlalovic" as="#clerk">
+                    Nataše Lalović
+                </party>
+                , u krivičnom predmetu protiv okrivljenog 
+                <party id="oa" refersTo="#oa" as="#defendant">
+                    O. A.
+                </party>
+                 iz P. , zbog krivičnog djela - laka tjelesna povreda iz 
+                <ref href="/akoma-laws#art_152">
+                    čl. 152. st.1. Krivičnog zakonika
+                </ref>
+                , rješavajući po optužnom predlogu supsidijarnog tužioca 
+                <party id="gn" refersTo="#gn" as="#victim">
+                    G. N.
+                </party>
+                , nakon održanog usmenog glavnog i javnog pretresa dana 21.12.2015. godine, u prisustvu 
+                <party id="oa" refersTo="#oa" as="#defendant">
+                    okrivljenog
+                </party>
+                , supsidjarnog tužioca i njegovog punomoćnika adv. 
+                <party id="ps" refersTo="#ps" as="#prosecutor">
+                    P. S.
+                </party>
+                , istog dana donio je i javno objavio:</p>
+            <p style="text-align: center;">P R E S U D U</p>
+            <p>Okrivljeni 
+                <party id="oa" refersTo="#oa" as="#defendant">
+                    O. A.
+                </party>
+                , JMB ..., od oca A. i majke J., rođene N., rođen ... godine u B., sa prebivalištem u S., student, dobrog imovnog stanja, ožnjen, otac jednog maloljetnog djeteta, neosuđivan,</p>
+            <p>Na osnovu 
+                <ref href="/postupak#art_373">
+                    čl.373 st.1 tač. 1 Zakonika o krivičnom postupku
+                </ref>
+            </p>
+            <p style="text-align: center;">OSLOBAĐA SE OD OPTUŽBE</p>
+            <p>Da je,</p>
+            <p>Dana 25.07.2015.godine oko 11,00 sati, u S., kod hotela “S. M.” nakon kraće verbalne prepiske, sa 
+                <party id="gn" refersTo="#gn" as="#victim">
+                    privatnim tužiteljem
+                </party>
+                , istog lako tjelesno povrijedio na način što se okrivljeni 
+                <party id="oa" refersTo="#oa" as="#defendant">
+                    O. A.
+                </party>
+                , naglo približio 
+                <party id="gn" refersTo="#gn" as="#victim">
+                    privatnom tužitelju
+                </party>
+                 i udario ga stisnutom pesnicom u predjelu glave iznad lijevog oka, zadobio tjelesne povrede u vidu nagnječno – razderne rane u predjelu lijeve obrve (tzv. lijeva arkada) dužine 2 cm i krvni podliv kože u lijevom jagodičnom predjelu promjera 1,5 x 1 cm koje predstavljaju laku tjelesnu povredu, nakon čega je 
+                <party id="gn" refersTo="#gn" as="#victim">
+                    tužitelju
+                </party>
+                 iz nanijete ozlijede potekla krv, čime ga je lako tjelesno povrijedio,
+            </p>
+            <p>- čime bi izvršio krivično djelo - laka tjelesna povreda iz 
+                <ref href="/akoma-laws#art_152">
+                    čl. 152. st.1. Krivičnog zakonika
+                </ref>
+                ,
+            </p>
+            <conclusions>
+                <p>Troškovi postupka padaju na teret budžetskih sredstava 
+                    <organization id="osbr" refersTo="#osbr">
+                        suda
+                    </organization>
+                        .
+                </p>
+                <p>Supsidjarni tužilac 
+                    <party id="gn" refersTo="#gn" as="#victim">
+                        G. N.
+                    </party>
+                     se radi ostvarivanja imovinsko pravnog zahtjeva upućuje na parnični postupak.
+                </p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Akoma_Ntoso document -->
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd "
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgement>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+						Osnovni Sud u Kotoru
+                    </FRBRauthor>
+                    <FRBRdate date="2017-03-14">
+						2017-03-14
+                    </FRBRdate>
+                    <FRBRtitle>
+						K 37/2017
+                    </FRBRtitle>
+                    <FRBRcountry>
+						CG
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="osko" href="/ontology/organization/OsnovniSud.Kotor" showAs="Osnovni sud u Kotoru" />
+                <TLCOrganization eId="odtko" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Kotor" showAs="Osnovno drzavno tuzilastvo Kotor" />
+                <TLCPerson eId="mtesic" href="/ontology/person/mtesic" showAs="Momirka Tesic" />
+                <TLCPerson eId="apetkovic" href="/ontology/person/apetkovic" showAs="Ana–Marije Petkovic" />
+                <TLCPerson eId="zpajkovic" href="/ontology/person/zpajkovic" showAs="Zarko Pajkovic" />
+                <TLCPerson eId="bp" href="/ontology/person/bp" showAs="B P" />
+                <TLCPerson eId="se" href="/ontology/person/se" showAs="S E" />
+                <TLCPerson eId="st" href="/ontology/person/st" showAs="S T" />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="advisor" href="/ontology/role/advisor" showAs="Advisor" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+                <TLCRole eId="defenseAttorney" href="/ontology/role/defenseAttorney" showAs="Defense attorney" />
+            </references>
+        </meta>
+        <judgementBody>
+
+            <p>
+                <organization id="osko" refersTo="#osko">
+                    OSNOVNI SUD U KOTORU
+                </organization>
+                , kao nadležni prvostepeni krivični sud, po sudiji 
+                <party id="mtesic" refersTo="#mtesic" as="#judge">
+                    Momirki Tešić
+                </party>
+                , uz učešće zapisničarke 
+                <party id="apetkovic" refersTo="#apetkovic" as="#clerk">
+                    Ana–Marije Petković
+                </party>
+                , u krivičnom predmetu protiv okrivljenog 
+                <party id="bp" refersTo="#bp" as="#defendant">
+                    B P
+                </party>
+                , zbog krivičnog djela laka tjelesna povreda iz 
+                <ref href="/akoma-laws#art_152">
+                člana 152 st. 2 u vezi st. 1. Kivičnog zakonika Crne Gore
+                </ref>
+                , koji se vodi po optužnom predlogu 
+                <organization id="odtko" refersTo="#odtko">
+                    ODT-a Kotor
+                </organization>
+                 Kt.br. 626/16 od 26.01.2017 godine, nakon održanog glavnog i javnog pretresa dana 14.03.2017 godine, u prisustvu državnog tužioca 
+                <organization id="odtko" refersTo="#odtko">
+                    ODT-a Kotor
+                </organization>
+                <party id="zpajkovic" refersTo="#zpajkovic" as="#prosecutor">
+                    Žarka Pajkovića
+                </party>
+                , okivljenog B P i njegovog branioca, adv. 
+                <party id="st" refersTo="#st" as="defenseAttorney">
+                    S T Č
+                </party>
+                , istog dana je donio i javno objavio sljedeće:</p>
+            <p style="text-align: center;">R J E Š E Nj E</p>
+            <p>Prema okrivljenom 
+                <party id="bp" refersTo="#bp" as="#defendant">
+                    B P
+                </party>
+                , JMBG ...., od oca P i majke V rođene V, rođenom .... godine u K stalno nastanjenom u T, P bb, državljaninu Crne Gore, mornaru, neoženjenom, bez djece, sa završenom SSS, dobrog imovnog stanja, ranije neosuđivanom, protiv kojeg se ne vodi postupak za drugo krivično djelo,</p>
+            <p>Na osnovu 
+                <ref href="/akoma-laws#art_65">
+                    čl. 65. Krivičnog Zakonika
+                </ref>
+                , 
+                <ref href="/postupak#art_461">
+                    čl. 461.
+                </ref>
+                 i 
+                <ref href="/postupak#art_462">
+                    462. Zakonika o krivičnom postupku
+                </ref>
+                izriče se</p>
+            <p style="text-align: center;">SUDSKA OPOMENA</p>
+            <p>Što je dana .. godine oko .. časova kod taxi stanice u neposrednoj blizini P M u TivtuT sredstvom podobnim da se tijelo teško povrijedi ili zdravlje teško naruši, lako tjelesno povrijedio ošt. 
+                <party id="se" refersTo="#se" as="#victim">
+                    S E
+                </party>
+                 iz T, nakon što je bio izazvan nepristojnim ponašanjem 
+                <party id="se" refersTo="#se" as="#victim">
+                    oštećenog
+                </party>
+                 , koji je njegovoj djevojci mal. M Č, slao poruke preko facebook-a nepristojne sadržine, na način što mu je zadao udarac metalnom šipkom u predjelu glave, usled čega je isti zadobio 
+                 laku tjelesnu povredu u vidu krvnog podliva kože u desnom sljepoočno-potiljačnom predjelu zahvatajući i desni zaušni predio iza ušne školjke, pri čemu je bio uračunljiv i svjestan svoga djela i njegove zabranjenosti, a čije izvršenje je htio. </p>
+            <p>- čime je izvršio krivično djelo laka tjelesna povreda iz 
+                <ref href="/akoma-laws#art_152">
+                    člana 152. st. 3 u vezi st. 2. i 1. Krivičnog zakonika Crne Gore
+                </ref>
+                .
+            </p>
+            <conclusions>
+                <p>Dužan je ‚
+                    <party id="bp" refersTo="#bp" as="#defendant">
+                    okrivljeni
+                    </party>
+                 na ime sudskog paušala platiti iznos od 50,00 €, i na ime troškova krivičnog postupka iznos od 49,50 €, u roku od 30 dana od dana pravosnažnosti rješenja na Žiro račun br. 832-16-52, u korist budžeta Crne Gore, i dokaz o uplati dostaviti ovom 
+                    <organization id="osko" refersTo="#osko">
+                    sudu
+                    </organization>
+                 s pozivom na broj K. 37/17/17.</p>
+                <p>Oštećeni 
+                    <party id="se" refersTo="#se" as="#victim">
+                    S E
+                    </party>
+                 se sa imovinskopravnim zahtjevom upućuje na parnicu.
+                </p>
+            </conclusions>
+        </judgementBody>
+    </judgement>
+</akomaNtoso>

@@ -7,16 +7,17 @@ import {
   Typography,
 } from "@mui/material";
 import PageContainer from "@ui/container/PageContainer";
-import { useState } from "react";
-import { fetchFile } from "@api/cbr/cbr";
+import { useMemo, useState } from "react";
+import { getFile } from "@api/cbr/cbr";
 import { useQuery } from "@tanstack/react-query";
 import { Worker, Viewer, SpecialZoomLevel } from "@react-pdf-viewer/core";
 
 // Import styles
 import "@react-pdf-viewer/core/lib/styles/index.css";
-import DocumentsList from "./DocumentsList";
 import { IconSearch } from "@tabler/icons-react";
 import Scrollbar from "@ui/custom-scroll/Scrollbar";
+import DocumentsList from "@pages/shared/DocumentsList";
+import Breadcrumb from "@layout/full/shared/breadcrumb/Breadcrumb";
 
 export default function JudgmentsAndLawsPage() {
   const [selectedDocumentType, setSelectedDocumentType] = useState<
@@ -31,7 +32,7 @@ export default function JudgmentsAndLawsPage() {
     queryKey: ["document", selectedDocumentType, selectedDocument],
     queryFn: async () => {
       if (selectedDocument != undefined)
-        return fetchFile(selectedDocumentType, selectedDocument);
+        return getFile(selectedDocumentType, selectedDocument + ".pdf");
     },
     enabled: !!selectedDocument,
   });
@@ -49,12 +50,12 @@ export default function JudgmentsAndLawsPage() {
       <Grid
         container
         spacing={0}
-        style={{ height: "90vh", overflow: "visible" }}
+        style={{ height: "calc(100vh)", overflow: "visible" }}
       >
         <Grid
           item
           xs={12}
-          lg={5}
+          lg={4}
           style={{ height: "100%" }}
           direction={"column"}
         >
@@ -78,23 +79,11 @@ export default function JudgmentsAndLawsPage() {
           </Box>
           <Scrollbar
             sx={{
-              height: { lg: "calc(100vh - 120px)", md: "100vh" },
+              height: { lg: "calc(100vh - 72px)", md: "90vh" },
               maxHeight: "800px",
             }}
           >
-            Presude
-            <Divider />
-            <DocumentsList
-              documentType="cases"
-              selectedDocument={
-                selectedDocumentType === "cases" ? selectedDocument : undefined
-              }
-              setSelectedDocument={(documentName: string) =>
-                handleDocumentSelection(documentName, "cases")
-              }
-              searchTerm={searchTerm}
-            />
-            Zakoni
+            <Typography>Zakoni</Typography>
             <Divider />
             <DocumentsList
               documentType="laws"
@@ -106,12 +95,24 @@ export default function JudgmentsAndLawsPage() {
               }
               searchTerm={searchTerm}
             />
+            <Typography>Presude</Typography>
+            <Divider />
+            <DocumentsList
+              documentType="cases"
+              selectedDocument={
+                selectedDocumentType === "cases" ? selectedDocument : undefined
+              }
+              setSelectedDocument={(documentName: string) =>
+                handleDocumentSelection(documentName, "cases")
+              }
+              searchTerm={searchTerm}
+            />
           </Scrollbar>
         </Grid>
         <Grid
           item
           xs={12}
-          lg={7}
+          lg={8}
           style={{
             height: "100%",
             width: "100%",
@@ -119,10 +120,15 @@ export default function JudgmentsAndLawsPage() {
             justifyContent: "center",
             display: "flex",
             alignItems: "center",
+            backgroundColor: selectedDocument ? "white" : "#c1e3f5",
           }}
         >
           {!selectedDocument ? (
-            <Typography>Slučaj nije odabran</Typography>
+            <Typography
+              style={{ fontStyle: "italic", color: "grey", fontSize: "17px" }}
+            >
+              Slučaj nije odabran
+            </Typography>
           ) : isLoading ? null : (
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
               <Viewer
