@@ -37,6 +37,7 @@ public class CaseService {
   private final FeatureExtractionService featureExtractionService;
   private final ResourceLoader resourceLoader;
   private final ResourcePatternResolver resourcePatternResolver;
+  private final PdfService pdfService;
 
   public List<String> getDocumentList(String folder) throws IOException {
     Resource[] resources = resourcePatternResolver.getResources("classpath:" + folder + "/*.pdf");
@@ -82,7 +83,8 @@ public class CaseService {
               + "Kazna;Tezina fizicke povrede;Sluzbeno lice;Korisceno oruzje;Povreda je "
               + "prouzrokovala trajno ostecenje"
               + " povredjenog;Napad je usledio kao posledica vredjanja,provociranja, grubog "
-              + "ponasanja ostecenog;Okrivljeni je bio ranije osudjivan\n";
+              + "ponasanja ostecenog;Okrivljeni je bio ranije osudjivan; Okrivljeni je narušio "
+              + "javni red i mir;\n";
 
       StringBuilder content = new StringBuilder();
       content.append(header);
@@ -93,6 +95,11 @@ public class CaseService {
 
       bufferedWriter.write(content.toString());
     }
+  }
+
+  public void addNewCase(CaseDescription caseDescription) throws Exception {
+    addJudgmentToCsv(caseDescription);
+    pdfService.createPdf(caseDescription);
   }
 
   public void addJudgmentToCsv(CaseDescription caseDescription) {

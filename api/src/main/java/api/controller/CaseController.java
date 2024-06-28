@@ -2,6 +2,7 @@ package api.controller;
 
 import api.dto.CaseFeatures;
 import api.service.CaseService;
+import api.service.PdfService;
 import api.service.cbr.CaseDescription;
 import java.io.IOException;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +21,8 @@ public class CaseController {
   private final CaseService caseService;
 
   @PostMapping
-  public ResponseEntity<?> addNewCase(@RequestBody CaseDescription description) {
-    caseService.addJudgmentToCsv(description);
+  public ResponseEntity<?> addNewCase(@RequestBody CaseDescription description) throws Exception {
+    caseService.addNewCase(description);
     return ResponseEntity.ok().build();
   }
 

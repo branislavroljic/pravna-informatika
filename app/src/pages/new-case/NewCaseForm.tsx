@@ -56,6 +56,9 @@ const newCaseSchema = z.object({
   isRecidivist: z.coerce.boolean({
     required_error: "Polje je neophodno",
   }),
+  isDisturbedPublicOrderAndPeace: z.coerce.boolean({
+    required_error: "Polje je neophodno",
+  }),
   judgmentType: z.string().optional(),
   sentence: z.string().optional(),
 });
@@ -161,7 +164,7 @@ const NewCaseForm = ({ setSimilarCases }: any) => {
   };
 
   const onSubmit = (data: NewCaseInput) => {
-    console.log('tu samm')
+    console.log("tu samm");
     if (submitType === "getSimilarCases") {
       getSimilarCases(data);
     } else if (submitType === "addNewCase") {
@@ -567,6 +570,49 @@ const NewCaseForm = ({ setSimilarCases }: any) => {
             </CustomFormLabel>
             <Controller
               name="isRecidivist"
+              control={control}
+              defaultValue={false}
+              render={({ field }) => (
+                <RadioGroup
+                  {...field}
+                  row
+                  value={field.value !== undefined ? String(field.value) : ""} // Convert boolean to string for RadioGroup
+                  onChange={(e) => field.onChange(e.target.value === "true")} // Convert string back to boolean on change
+                >
+                  <FormControlLabel
+                    value="false"
+                    control={<Radio />}
+                    label="Ne"
+                  />
+                  <FormControlLabel
+                    value="true"
+                    control={<Radio />}
+                    label="Da"
+                  />
+                </RadioGroup>
+              )}
+            />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            lg={12}
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <CustomFormLabel
+              sx={{
+                mt: 2,
+              }}
+              htmlFor="isDisturbedPublicOrderAndPeace"
+            >
+              {"Da li je okrivljeni izazvao narušavanje javnog reda i mira?"}
+            </CustomFormLabel>
+            <Controller
+              name="isDisturbedPublicOrderAndPeace"
               control={control}
               defaultValue={false}
               render={({ field }) => (
