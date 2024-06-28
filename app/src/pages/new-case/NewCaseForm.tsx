@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import CustomFormLabel from "@ui/forms/theme-elements/CustomFormLabel";
 import CustomTextField from "@ui/forms/theme-elements/CustomTextField";
 import LoadingButton from "@mui/lab/LoadingButton";
+import useAuthStore from "@stores/authStore";
 
 const newCaseSchema = z.object({
   court: z.string({
@@ -55,6 +56,11 @@ const newCaseSchema = z.object({
   isRecidivist: z.coerce.boolean({
     required_error: "Polje je neophodno",
   }),
+  isDisturbedPublicOrderAndPeace: z.coerce.boolean({
+    required_error: "Polje je neophodno",
+  }),
+  judgmentType: z.string().optional(),
+  sentence: z.string().optional(),
 });
 
 type NewCaseInput = z.infer<typeof newCaseSchema>;
@@ -71,15 +77,29 @@ const publicOfficialLabels = {
   SPECIAL_PUBLIC_OFFICIAL: "Specijalno službeno lice",
 };
 
+const judgmentTypeLabels = {
+  SUSPENDED: "Uslovna osuda",
+  ACQUITTAL: "Oslobađa se optužbe",
+  CONVICTION: "Osuđuje se",
+  WARNING: "Opomena",
+};
+
 const NewCaseForm = ({ setSimilarCases }: any) => {
   const openNotification = useNotificationStore(
     (state) => state.openNotification
   );
   const [loading, setLoading] = useState(false);
+  const { user } = useAuthStore();
+
+  const [submitType, setSubmitType] = useState("");
 
   const injurySeverities = useMemo(() => ["NONE", "MINOR", "SERIOUS"], []);
   const publicOfficials = useMemo(
     () => ["NONE", "PUBLIC_OFFICIAL", "SPECIAL_PUBLIC_OFFICIAL"],
+    []
+  );
+  const judgmenTypes = useMemo(
+    () => ["SUSPENDED", "ACQUITTAL", "CONVICTION", "WARNING"],
     []
   );
 
@@ -97,6 +117,7 @@ const NewCaseForm = ({ setSimilarCases }: any) => {
       body: JSON.stringify(input),
       headers: {
         "Content-type": "application/json",
+        Authorization: `Bearer ${user?.token}`,
       },
     });
 
@@ -114,9 +135,46 @@ const NewCaseForm = ({ setSimilarCases }: any) => {
     return;
   };
 
+  const addNewCase = async (input: NewCaseInput) => {
+    setLoading(true);
+    const baseUrl = new URL("/cases", import.meta.env.VITE_API_URL);
+    const result = await fetch(baseUrl, {
+      method: "POST",
+      body: JSON.stringify(input),
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${user?.token}`,
+      },
+    });
+
+    setLoading(false);
+    if (!result.ok) {
+      openNotification({
+        isError: true,
+        primaryText: "Dogodila se greska",
+        secondaryText: (await result.json()).message,
+      });
+      return;
+    }
+    openNotification({
+      isError: false,
+      primaryText: "Uspešno dodato",
+      secondaryText: "Novi slučaj je uspešno dodato",
+    });
+  };
+
+  const onSubmit = (data: NewCaseInput) => {
+    console.log("tu samm");
+    if (submitType === "getSimilarCases") {
+      getSimilarCases(data);
+    } else if (submitType === "addNewCase") {
+      addNewCase(data);
+    }
+  };
+
   return (
     <>
-      <Box component="form" onSubmit={handleSubmit(getSimilarCases)}>
+      <Box component="form" onSubmit={handleSubmit(onSubmit)}>
         <Grid container direction={"row"} spacing={1}>
           <Grid item xs={12} sm={12} lg={12}>
             <CustomFormLabel
@@ -535,6 +593,49 @@ const NewCaseForm = ({ setSimilarCases }: any) => {
               )}
             />
           </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            lg={12}
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <CustomFormLabel
+              sx={{
+                mt: 2,
+              }}
+              htmlFor="isDisturbedPublicOrderAndPeace"
+            >
+              {"Da li je okrivljeni izazvao narušavanje javnog reda i mira?"}
+            </CustomFormLabel>
+            <Controller
+              name="isDisturbedPublicOrderAndPeace"
+              control={control}
+              defaultValue={false}
+              render={({ field }) => (
+                <RadioGroup
+                  {...field}
+                  row
+                  value={field.value !== undefined ? String(field.value) : ""} // Convert boolean to string for RadioGroup
+                  onChange={(e) => field.onChange(e.target.value === "true")} // Convert string back to boolean on change
+                >
+                  <FormControlLabel
+                    value="false"
+                    control={<Radio />}
+                    label="Ne"
+                  />
+                  <FormControlLabel
+                    value="true"
+                    control={<Radio />}
+                    label="Da"
+                  />
+                </RadioGroup>
+              )}
+            />
+          </Grid>
         </Grid>
 
         <LoadingButton
@@ -543,15 +644,100 @@ const NewCaseForm = ({ setSimilarCases }: any) => {
           size="large"
           fullWidth
           type="submit"
+          onClick={() => setSubmitType("getSimilarCases")}
           loading={loading}
           style={{ color: "white" }}
           sx={{ marginTop: "20px" }}
         >
           {"Preporuke rasuđivanja"}
         </LoadingButton>
+
+        <Divider textAlign="center" style={{ marginTop: 25 }}>
+          PRESUDA
+        </Divider>
+
+        <Grid item xs={12} sm={12} lg={12}>
+          <CustomFormLabel
+            sx={{
+              mt: 2,
+            }}
+            htmlFor="judgmentType"
+          >
+            {"Vrsta presude"}
+          </CustomFormLabel>
+          <Controller
+            name="judgmentType"
+            control={control}
+            defaultValue={undefined}
+            render={({ field: { onChange, value } }) => (
+              <Autocomplete
+                onChange={(event, item) => {
+                  onChange(item);
+                }}
+                value={judgmenTypes.find((m) => m === value)}
+                options={judgmenTypes}
+                getOptionLabel={(option) => judgmentTypeLabels[option]}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    sx={{
+                      marginTop: "5px !important",
+                      marginBottom: "0px",
+                      padding: "0px !important",
+                      "& .MuiInputBase-root": { height: "45px" },
+                    }}
+                    label={"Vrsta presude"}
+                    margin="normal"
+                    variant="outlined"
+                    error={errors.judgmentType !== undefined}
+                  />
+                )}
+              />
+            )}
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={12} lg={12}>
+          <CustomFormLabel
+            sx={{
+              mt: 2,
+            }}
+            htmlFor="sentence"
+          >
+            {"Kazna"}
+          </CustomFormLabel>
+          <Controller
+            name="sentence"
+            control={control}
+            defaultValue={undefined}
+            render={({ field }) => (
+              <CustomTextField
+                id="sentence"
+                error={errors.sentence !== undefined}
+                helperText={errors.sentence?.message}
+                placeholder={"Kazna"}
+                variant="outlined"
+                fullWidth
+                {...field}
+              />
+            )}
+          />
+        </Grid>
+
+        <LoadingButton
+          color="primary"
+          variant="contained"
+          size="large"
+          fullWidth
+          type="submit"
+          onClick={() => setSubmitType("addNewCase")}
+          loading={loading}
+          style={{ color: "white" }}
+          sx={{ marginTop: "20px" }}
+        >
+          {"Dodaj slučaj"}
+        </LoadingButton>
       </Box>
-      <Divider />
-      <Typography>Nesto</Typography>
     </>
   );
 };

@@ -32,6 +32,7 @@ public class CaseDescription implements CaseComponent {
   private Boolean isPermanentDamage;
   private Boolean isProvoked;
   private Boolean isRecidivist;
+  private Boolean isDisturbedPublicOrderAndPeace;
 
 
   public CaseDescription(int id, CaseFeatures features) {
@@ -51,26 +52,38 @@ public class CaseDescription implements CaseComponent {
     this.isPermanentDamage = features.getIsPermanentDamage();
     this.isProvoked = features.getIsProvoked();
     this.isRecidivist = features.getIsRecidivist();
+    this.isDisturbedPublicOrderAndPeace = features.getIsDisturbedPublicOrderAndPeace();
   }
 
   @Override
   public String toString() {
     return /*"ID:" + id + ";" + */
-         " Broj slučaja=" + caseNumber + ";"
-        + " Datum=" + date + ";"
-        + " Sud=" + court + ";"
-        + " Sudija=" + judge + ";"
-        + " Zapisničar=" + courtReporter + ";"
-        + " Okrivljeni=" + defendant + ";"
-        + " Krivicno delo=" + criminalOffense + ";"
-        + " Vrsta presude=" + (judgmentType.equals(JudgmentType.CONVICTION) ? "Osuđujuća" : judgmentType.equals(JudgmentType.SUSPENDED) ? "Uslovna" : judgmentType.equals(JudgmentType.ACQUITTAL) ? "Odbijena optužba" : "Sudska opomena")  + ";"
-        + " Tezina povrede=" + (injurySeverity.equals(InjurySeverity.MINOR) ? "Laka telesna povreda" : injurySeverity.equals(InjurySeverity.SERIOUS) ? "Teška telesna povreda" : "Bez povrede") + ";"
-        + " Sluzbeno lice=" + (publicOfficial.equals(PublicOfficial.PUBLIC_OFFICIAL) ? "Službeno lice" : publicOfficial.equals(PublicOfficial.SPECIAL_PUBLIC_OFFICIAL) ? "Specijalno službeno lice" : "Nije službeno lice") + ";"
-        + " Korišćeno oružije=" + (isUsedWeapon.equals(true) ? "Da" : "Ne") + ";"
-        + " Prouzrokovano trajno oštećenje=" + (isPermanentDamage.equals(true) ? "Da" : "Ne") + ";"
-        + " Okrivljeni provociran=" + (isProvoked.equals(true) ? "Da" : "Ne") + ";"
-        + " Prethodno osuđivan=" + (isRecidivist.equals(true) ? "Da" : "Ne") + ";"
-        + " Kazna=" + (sentence.equals("null") ? "-" : sentence);
+        " Broj slučaja=" + caseNumber + ";"
+            + " Datum=" + date + ";"
+            + " Sud=" + court + ";"
+            + " Sudija=" + judge + ";"
+            + " Zapisničar=" + courtReporter + ";"
+            + " Okrivljeni=" + defendant + ";"
+            + " Krivicno delo=" + criminalOffense + ";"
+            + " Vrsta presude=" + (judgmentType.equals(JudgmentType.CONVICTION) ? "Osuđujuća"
+            : judgmentType.equals(JudgmentType.SUSPENDED) ? "Uslovna"
+                : judgmentType.equals(JudgmentType.ACQUITTAL) ? "Odbijena optužba"
+                    : "Sudska opomena") + ";"
+            + " Tezina povrede=" + (injurySeverity.equals(InjurySeverity.MINOR)
+            ? "Laka telesna povreda"
+            : injurySeverity.equals(InjurySeverity.SERIOUS) ? "Teška telesna povreda"
+                : "Bez povrede") + ";"
+            + " Sluzbeno lice=" + (publicOfficial.equals(PublicOfficial.PUBLIC_OFFICIAL)
+            ? "Službeno lice" : publicOfficial.equals(PublicOfficial.SPECIAL_PUBLIC_OFFICIAL)
+            ? "Specijalno službeno lice" : "Nije službeno lice") + ";"
+            + " Korišćeno oružije=" + (isUsedWeapon.equals(true) ? "Da" : "Ne") + ";"
+            + " Prouzrokovano trajno oštećenje=" + (isPermanentDamage.equals(true) ? "Da" : "Ne")
+            + ";"
+            + " Okrivljeni provociran=" + (isProvoked.equals(true) ? "Da" : "Ne") + ";"
+            + " Prethodno osuđivan=" + (isRecidivist.equals(true) ? "Da" : "Ne") + ";"
+            + " Kazna=" + (sentence == "null" ? "-" : sentence) + ";" +
+            "Narušio javni red i mir=" + (isDisturbedPublicOrderAndPeace != null && isDisturbedPublicOrderAndPeace.equals(true) ? "Da" :
+            "Ne");
   }
 
   @Override

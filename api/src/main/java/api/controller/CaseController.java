@@ -2,10 +2,14 @@ package api.controller;
 
 import api.dto.CaseFeatures;
 import api.service.CaseService;
-import api.service.FeatureExtractionService;
+import api.service.PdfService;
+import api.service.cbr.CaseDescription;
 import java.io.IOException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,19 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cases")
 public class CaseController {
 
-  private final FeatureExtractionService featureExtractionService;
   private final CaseService caseService;
 
-  @GetMapping
-  public void getJudgments() throws IOException {
-    for (String caseDoc : caseService.getDocumentList("cases")) {
-      System.out.println("--------CASE");
-      System.out.println(caseDoc);
-      CaseFeatures caseFeatures = featureExtractionService.extractFeatures(caseDoc);
-
-      System.out.println(caseFeatures.toString());
-    }
-
+  @PostMapping
+  public ResponseEntity<?> addNewCase(@RequestBody CaseDescription description) throws Exception {
+    caseService.addNewCase(description);
+    return ResponseEntity.ok().build();
   }
 
   @GetMapping("/reset/csv")

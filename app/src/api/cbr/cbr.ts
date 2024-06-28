@@ -1,3 +1,4 @@
+import { getUserFromStorage } from "@api/auth";
 import { get } from "@api/utils";
 import axios from "axios";
 
@@ -15,9 +16,18 @@ export const getFile = async (
   type: FILE_TYPE = "application/pdf"
 ) => {
   const url = new URL(`${dir}/${name}`, baseUrl);
+  const user = getUserFromStorage();
+
+  // Prepare headers object
+  const headers: Record<string, string> = {};
+  if (user && user.token) {
+    headers.Authorization = `Bearer ${user.token}`;
+  }
+
   if (type == "application/pdf") {
     const response = await axios.get(url.toString(), {
       responseType: "blob",
+      headers,
     });
     return window.URL.createObjectURL(
       new Blob([response.data], { type: type })
