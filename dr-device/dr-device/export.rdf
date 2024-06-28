@@ -55,6 +55,21 @@
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
+<rdfs:Class rdf:about='&export;commited_8_st1'>
+     <rdfs:label rdf:resource='commited_8_st1'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;commited_8_st2'>
+     <rdfs:label rdf:resource='commited_8_st2'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;commited_10_st1'>
+     <rdfs:label rdf:resource='commited_10_st1'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
 <rdfs:Class rdf:about='&export;kazna_zatvora_min'>
      <rdfs:label rdf:resource='kazna_zatvora_min'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
@@ -72,6 +87,31 @@
 
 <rdfs:Class rdf:about='&export;novcana_kazna_152_st1_max'>
      <rdfs:label rdf:resource='novcana_kazna_152_st1_max'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;sudska_opomena'>
+     <rdfs:label rdf:resource='sudska_opomena'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;novcana_kazna_8_st1_min'>
+     <rdfs:label rdf:resource='novcana_kazna_8_st1_min'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;novcana_kazna_8_st2_min'>
+     <rdfs:label rdf:resource='novcana_kazna_8_st2_min'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;novcana_kazna_8_st1_max'>
+     <rdfs:label rdf:resource='novcana_kazna_8_st1_max'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;novcana_kazna_8_st2_max'>
+     <rdfs:label rdf:resource='novcana_kazna_8_st2_max'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
@@ -108,6 +148,18 @@
      <rdfs:domain rdf:resource='&export;commited_376_st3'/>
 </rdf:Property>
 
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;commited_8_st1'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;commited_8_st2'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;commited_10_st1'/>
+</rdf:Property>
+
 <rdf:Property rdf:about='&export;value'>
      <rdfs:domain rdf:resource='&export;kazna_zatvora_min'/>
 </rdf:Property>
@@ -122,6 +174,26 @@
 
 <rdf:Property rdf:about='&export;value'>
      <rdfs:domain rdf:resource='&export;novcana_kazna_152_st1_max'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;sudska_opomena'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;novcana_kazna_8_st1_min'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;novcana_kazna_8_st2_min'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;novcana_kazna_8_st1_max'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;novcana_kazna_8_st2_max'/>
 </rdf:Property>
 
 <export:commited_152_st1 rdf:about='&export;commited_152_st11'>

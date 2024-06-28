@@ -68,6 +68,7 @@ public class DrDeviceService {
         String korisceno_oruzje = "yes";
         String provokacija = "yes";
         String napad_ili_pretnja = "no";
+        String javno_mesto = "no";
 
         if (Objects.equals(caseDTO.getPublicOfficial(), PublicOfficial.NONE)) {
             is_entity = "individual";
@@ -125,6 +126,7 @@ public class DrDeviceService {
                         "\t<lc:provokacija>" + provokacija + "</lc:provokacija>\n" +
                         "\t<lc:napad_ili_pretnja>" + napad_ili_pretnja + "</lc:napad_ili_pretnja>\n" +
                         "\t<lc:zivotna_opasnost>" + zivotna_opasnost + "</lc:zivotna_opasnost>\n" +
+                        "\t<lc:javno_mesto>" + javno_mesto + "</lc:javno_mesto>\n" +
                         "    </lc:case>\n" +
                         "</rdf:RDF>";
 

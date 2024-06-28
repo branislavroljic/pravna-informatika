@@ -15,5 +15,6 @@
 	<lc:provokacija>no</lc:provokacija>
 	<lc:napad_ili_pretnja>no</lc:napad_ili_pretnja>
 	<lc:zivotna_opasnost>no</lc:zivotna_opasnost>
+	<lc:javno_mesto>no</lc:javno_mesto>
     </lc:case>
 </rdf:RDF>

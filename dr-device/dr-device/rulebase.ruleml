@@ -6,7 +6,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          proof="proof.ruleml"
          rdf_export="export.rdf"
-         rdf_export_classes="commited_151_st1 commited_151_st2 commited_152_st1 commited_152_st2 commited_152_st3 commited_376_st1 commited_376_st2 commited_376_st3 kazna_zatvora_min kazna_zatvora_max novcana_kazna_152_st1_min novcana_kazna_152_st1_max"
+         rdf_export_classes="commited_151_st1 commited_151_st2 commited_152_st1 commited_152_st2 commited_152_st3 commited_376_st1 commited_376_st2 commited_376_st3 commited_8_st1 commited_8_st2 commited_10_st1 kazna_zatvora_min kazna_zatvora_max novcana_kazna_152_st1_min novcana_kazna_152_st1_max sudska_opomena novcana_kazna_8_st1_min novcana_kazna_8_st2_min novcana_kazna_8_st1_max novcana_kazna_8_st2_max"
          rdf_import="&#34;facts.rdf&#34;">
    <Assert>
       <Implies ruletype="defeasiblerule">
@@ -70,34 +70,32 @@
                      <Var>Defendant</Var>
                   </slot>
                </Atom>
-               <Or>
-                  <Atom>
-                     <op>
-                        <Rel uri="lc:case"/>
-                     </op>
-                     <slot>
-                        <Ind uri="lc:defendant"/>
-                        <Var>Defendant</Var>
-                     </slot>
-                     <slot>
-                        <Ind uri="lc:zivotna_opasnost"/>
-                        <Data xsi:type="xs:string">yes</Data>
-                     </slot>
-                  </Atom>
-                  <Atom>
-                     <op>
-                        <Rel uri="lc:case"/>
-                     </op>
-                     <slot>
-                        <Ind uri="lc:defendant"/>
-                        <Var>Defendant</Var>
-                     </slot>
-                     <slot>
-                        <Ind uri="lc:trajna_osakacenost"/>
-                        <Data xsi:type="xs:string">yes</Data>
-                     </slot>
-                  </Atom>
-               </Or>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:zivotna_opasnost"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:trajna_osakacenost"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
             </And>
          </body>
          <head>
@@ -303,34 +301,32 @@
                      <Var>Defendant</Var>
                   </slot>
                </Atom>
-               <Or>
-                  <Atom>
-                     <op>
-                        <Rel uri="lc:case"/>
-                     </op>
-                     <slot>
-                        <Ind uri="lc:defendant"/>
-                        <Var>Defendant</Var>
-                     </slot>
-                     <slot>
-                        <Ind uri="lc:laka_telesna_povreda"/>
-                        <Data xsi:type="xs:string">yes</Data>
-                     </slot>
-                  </Atom>
-                  <Atom>
-                     <op>
-                        <Rel uri="lc:case"/>
-                     </op>
-                     <slot>
-                        <Ind uri="lc:defendant"/>
-                        <Var>Defendant</Var>
-                     </slot>
-                     <slot>
-                        <Ind uri="lc:korisceno_oruzje"/>
-                        <Data xsi:type="xs:string">yes</Data>
-                     </slot>
-                  </Atom>
-               </Or>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:laka_telesna_povreda"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:korisceno_oruzje"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
             </And>
          </body>
          <head>
@@ -394,6 +390,195 @@
             <Atom>
                <op>
                   <Rel>commited_376_st3</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule_8_st1">rule_8_st1</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:provokacija"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:javno_mesto"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:victim"/>
+                     <Var>Victim</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:is_entity"/>
+                     <Data xsi:type="xs:string">individual</Data>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st1</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule_8_st2">rule_8_st2</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:napad_ili_pretnja"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:javno_mesto"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:victim"/>
+                     <Var>Victim</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:is_entity"/>
+                     <Data xsi:type="xs:string">individual</Data>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st2</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule_10_st1">rule_10_st1</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:provokacija"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:javno_mesto"/>
+                     <Data xsi:type="xs:string">yes</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:victim"/>
+                     <Var>Victim</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:is_entity"/>
+                     <Data xsi:type="xs:string">legal_entity</Data>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>commited_10_st1</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -857,6 +1042,276 @@
                <slot>
                   <Ind uri="value"/>
                   <Data xsi:type="xs:integer">60</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_8_st1_min">kazna_cl_8_st1_min</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st1</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>kazna_zatvora_min</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">0</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_8_st1_max">kazna_cl_8_st1_max</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st1</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>kazna_zatvora_max</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">1</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_8_st1_min_novcana">kazna_cl_8_st1_min_novcana</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st1</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>novcana_kazna_8_st1_min</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">3_minimalne_zarade</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_8_st1_max_novcana">kazna_cl_8_st1_max_novcana</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st1</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>novcana_kazna_8_st1_max</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">18_minimalnih_zarada</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_8_st2_min">kazna_cl_8_st2_min</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st2</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>kazna_zatvora_min</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">0</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_8_st2_max">kazna_cl_8_st2_max</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st2</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>kazna_zatvora_max</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">2</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_8_st2_min_novcana">kazna_cl_8_st2_min_novcana</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st2</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>novcana_kazna_8_st2_min</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">10_minimalnih_zarada</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_8_st2_max_novcana">kazna_cl_8_st2_max_novcana</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_8_st2</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>novcana_kazna_8_st2_max</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">20_minimalnih_zarada</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_10_st1_min">kazna_cl_10_st1_min</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_10_st1</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>kazna_zatvora_min</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">0</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="kazna_cl_10_st1_max">kazna_cl_10_st1_max</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>commited_10_st1</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>kazna_zatvora_max</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">2</Data>
                </slot>
             </Atom>
          </head>

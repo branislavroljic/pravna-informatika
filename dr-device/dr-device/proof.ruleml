@@ -4,7 +4,7 @@
      <!ENTITY proof-export "http://startrek.csd.auth.gr/dr-device/proof/proof.ruleml#">
 ]>
 
-<RuleML rdf_import='"facts.rdf"' rdf_export='export.rdf' rdf_export_classes="commited_151_st1 commited_151_st2 commited_152_st1 commited_152_st2 commited_152_st3 commited_376_st1 commited_376_st2 commited_376_st3 kazna_zatvora_min kazna_zatvora_max novcana_kazna_152_st1_min novcana_kazna_152_st1_max" rulebase='rulebase.ruleml' xmlns="http://www.ruleml.org/0.91/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.ruleml.org/0.91/xsd http://lpis.csd.auth.gr/systems/dr-device/dr-device-0.81.xsd">
+<RuleML rdf_import='"facts.rdf"' rdf_export='export.rdf' rdf_export_classes="commited_151_st1 commited_151_st2 commited_152_st1 commited_152_st2 commited_152_st3 commited_376_st1 commited_376_st2 commited_376_st3 commited_8_st1 commited_8_st2 commited_10_st1 kazna_zatvora_min kazna_zatvora_max novcana_kazna_152_st1_min novcana_kazna_152_st1_max sudska_opomena novcana_kazna_8_st1_min novcana_kazna_8_st2_min novcana_kazna_8_st1_max novcana_kazna_8_st2_max" rulebase='rulebase.ruleml' xmlns="http://www.ruleml.org/0.91/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.ruleml.org/0.91/xsd http://lpis.csd.auth.gr/systems/dr-device/dr-device-0.81.xsd">
 <Grounds>
 <Defeasibly_Proved>
 <oid>
