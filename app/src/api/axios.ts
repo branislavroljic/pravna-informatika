@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosRequestHeaders } from "axios";
-
+import { USER_KEY, User, getUserFromStorage } from "./auth";
 const baseUrl = import.meta.env.VITE_API_URL;
 
 export const headers = (
@@ -9,8 +9,6 @@ export const headers = (
   return {
     Accept: "application/json",
     "Content-Type": contentType,
-    "Accept-Language": 'en',
-    "Access-Control-Allow-Origin": "*",
     ...additionalHeaders,
   };
 };
@@ -25,39 +23,38 @@ export const handleError = <T>(error: AxiosError<T>) => {
   return undefined;
 };
 
-// const refreshAxios = axios.create({
-//   baseURL: baseUrl,
-// });
+const refreshAxios = axios.create({
+  baseURL: baseUrl,
+});
 
-// const refreshTokenFunction = () => {
-//   const user = getUserFromStorage();
+const refreshTokenFunction = () => {
+  const user = getUserFromStorage();
 
-//   return refreshAxios.post(
-//     "/auth/refreshtoken",
-//     {
-//       refreshToken: user ? user.refreshToken : null,
-//     },
-//     {
-//       headers: headers(),
-//     }
-//   );
+  return refreshAxios.post(
+    "/auth/refresh-token",
+    {
+      refreshToken: user ? user.refreshToken : null,
+    },
+    {
+      headers: headers(),
+    }
+  );
 
-//   // handle case when both tokens expire
-// };
+  // handle case when both tokens expire
+};
 
 const axiosClient = () => {
   const defaultOptions = {
     baseURL: baseUrl,
-    header: headers(),
   };
 
   const instance = axios.create(defaultOptions);
 
   // Set the AUTH token for any request
   instance.interceptors.request.use(function (config) {
-    // const user = getUserFromStorage();
+    const user = getUserFromStorage();
 
-    // config.headers.Authorization = user ? `Bearer ${user.token}` : "";
+    config.headers.Authorization = user ? `Bearer ${user.token}` : "";
 
     return config;
   });
@@ -72,25 +69,25 @@ const axiosClient = () => {
         // Access Token was expired
         if (err.response.status === 401 && !originalConfig.retry) {
           originalConfig.retry = true;
-          // try {
-          //   const rs = await refreshTokenFunction();
-          //   const { jwtToken } = rs.data;
-          //   const token: string = jwtToken;
+          try {
+            const rs = await refreshTokenFunction();
+            const { jwtToken } = rs.data;
+            const token: string = jwtToken;
 
-          //   const user = getUserFromStorage();
-          //   sessionStorage.setItem(
-          //     USER_KEY,
-          //     JSON.stringify({ ...user, token: token } as AuthUser)
-          //   );
-          //   originalConfig.headers.authorization = `Bearer ${token}`;
+            const user = getUserFromStorage();
+            sessionStorage.setItem(
+              USER_KEY,
+              JSON.stringify({ ...user, token: token } as User)
+            );
+            originalConfig.headers.authorization = `Bearer ${token}`;
 
-          //   return instance(originalConfig);
-          // } catch (error) {
-          //   handleError<string>(error as AxiosError<string>);
-          //   localStorage.removeItem(USER_KEY);
-          //   sessionStorage.removeItem(USER_KEY);
-          //   window.location.reload();
-          // }
+            return instance(originalConfig);
+          } catch (error) {
+            handleError<string>(error as AxiosError<string>);
+            localStorage.removeItem(USER_KEY);
+            sessionStorage.removeItem(USER_KEY);
+            window.location.reload();
+          }
         }
       }
       return Promise.reject(err);

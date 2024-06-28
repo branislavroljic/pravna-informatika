@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {Outlet} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Navigate, Outlet } from "react-router-dom";
 import {
   Box,
   CSSObject,
@@ -7,22 +7,25 @@ import {
   Divider,
   IconButton,
   Menu,
+  MenuItem,
   Theme,
   Toolbar,
   Typography,
   styled,
   useTheme,
 } from "@mui/material";
-import MuiAppBar, {AppBarProps as MuiAppBarProps} from "@mui/material/AppBar";
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import MuiDrawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-import {AccountCircle} from "@mui/icons-material";
+import { AccountCircle } from "@mui/icons-material";
 import Notification from "@ui/Notification";
 
-import {useNotificationStore} from "@stores/notificationStore";
+import { useNotificationStore } from "@stores/notificationStore";
+import { USER_KEY } from "@api/auth";
+import useAuthStore from "@stores/authStore";
 
 const drawerWidth = 240;
 
@@ -47,7 +50,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
   },
 });
 
-const DrawerHeader = styled("div")(({theme}) => ({
+const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
@@ -62,7 +65,7 @@ interface AppBarProps extends MuiAppBarProps {
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
-})<AppBarProps>(({theme, open}) => ({
+})<AppBarProps>(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -80,7 +83,7 @@ const AppBar = styled(MuiAppBar, {
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
-})(({theme, open}) => ({
+})(({ theme, open }) => ({
   width: drawerWidth,
   flexShrink: 0,
   whiteSpace: "nowrap",
@@ -97,9 +100,11 @@ const Drawer = styled(MuiDrawer, {
 
 export default function LayoutAuth() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const {isOpen, data, closeNotification} = useNotificationStore();
+  const { isOpen, data, closeNotification } = useNotificationStore();
 
   // const location = useLocation();
+
+  const { isValid, deleteUser } = useAuthStore((state) => state);
 
   const theme = useTheme();
 
@@ -117,11 +122,23 @@ export default function LayoutAuth() {
     setAnchorEl(event.currentTarget);
   };
 
+  const handleLogout = () => {
+    {
+      deleteUser();
+      localStorage.removeItem(USER_KEY);
+      sessionStorage.removeItem(USER_KEY);
+    }
+  };
+
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => closeNotification(), 3000);
     }
   }, [closeNotification, isOpen]);
+
+  if (!isValid) {
+    return <Navigate to={"/login"} replace={true} />;
+  }
 
   // const Link = React.forwardRef<HTMLAnchorElement, RouterLinkProps>(
   //   function Link(itemProps, ref) {
@@ -130,84 +147,86 @@ export default function LayoutAuth() {
   // );
 
   return (
-      <Box sx={{display: "flex"}}>
-        <CssBaseline/>
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
 
-        <AppBar position="fixed" open={open}>
-          <Toolbar
-              sx={{
-                pr: "24px",
-              }}
+      <AppBar position="fixed" open={open}>
+        <Toolbar
+          sx={{
+            pr: "24px",
+          }}
+        >
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            sx={{
+              marginRight: 5,
+              ...(open && { display: "none" }),
+            }}
           >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap component="h1" color="inherit">
+            Pravna informatika
+          </Typography>
+          <Box component="div" sx={{ ml: "auto" }}>
             <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                onClick={handleDrawerOpen}
-                edge="start"
-                sx={{
-                  marginRight: 5,
-                  ...(open && {display: "none"}),
-                }}
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
             >
-              <MenuIcon/>
+              <AccountCircle />
             </IconButton>
-            <Typography variant="h6" noWrap component="h1" color="inherit">
-              Pravna informatika
-            </Typography>
-            <Box component="div" sx={{ml: "auto"}}>
-              <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleMenu}
-                  color="inherit"
-              >
-                <AccountCircle/>
-              </IconButton>
-              <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorEl)}
-                  onClose={() => setAnchorEl(null)}
-              ></Menu>
-            </Box>
-          </Toolbar>
-        </AppBar>
-        <Drawer variant="permanent" open={open}>
-          <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "rtl" ? (
-                  <ChevronRightIcon/>
-              ) : (
-                  <ChevronLeftIcon/>
-              )}
-            </IconButton>
-          </DrawerHeader>
-          <Divider/>
-        
-        </Drawer>
-        <Box component="main" sx={{flexGrow: 1, p: 3}}>
-          <DrawerHeader/>
-          {/* content */}
-          <Outlet/>
-          <Notification
-              isShowing={isOpen}
-              primaryText={data.primaryText ?? ""}
-              secondaryText={data.secondaryText}
-              isError={data.isError}
-              closeNotification={closeNotification}
-          />
-        </Box>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={() => setAnchorEl(null)}
+            >
+              {/* <MenuItem onClick={handleClose}>Profile</MenuItem> */}
+              <MenuItem onClick={handleLogout}>Logout</MenuItem>
+            </Menu>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Drawer variant="permanent" open={open}>
+        <DrawerHeader>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === "rtl" ? (
+              <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
+            )}
+          </IconButton>
+        </DrawerHeader>
+        <Divider />
+      </Drawer>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <DrawerHeader />
+        {/* content */}
+        <Outlet />
+        <Notification
+          isShowing={isOpen}
+          primaryText={data.primaryText ?? ""}
+          secondaryText={data.secondaryText}
+          isError={data.isError}
+          closeNotification={closeNotification}
+        />
       </Box>
+    </Box>
   );
 }

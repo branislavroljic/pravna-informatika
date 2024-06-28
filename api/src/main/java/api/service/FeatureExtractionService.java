@@ -49,6 +49,7 @@ public class FeatureExtractionService {
     caseFeatures.setJudgmentType(getJudgmentType(pdfContent));
     caseFeatures.setIsRecidivist(getIsRecidivist(pdfContent));
     caseFeatures.setSentence(getSentence(pdfContent));
+    caseFeatures.setIsDisturbedPublicOrderAndPeace(getIsDisturbedPublicOrderAndPeace(pdfContent));
 
     return caseFeatures;
   }
@@ -232,6 +233,13 @@ public class FeatureExtractionService {
       return matcher.group(0).equals("osudjivan") | matcher.group(0).equals("osuđivan");
     }
     return false;
+  }
+
+  private Boolean getIsDisturbedPublicOrderAndPeace(String pdfContent) {
+    Pattern pattern = Pattern.compile(
+        "(Naruši(o|la)\\s*?javni red(\\s*i\\s*mir))|(narušavanje\\s*javnog\\sreda\\s*i\\s*mira)");
+    Matcher matcher = pattern.matcher(pdfContent);
+    return matcher.find();
   }
 
   private String getSentence(String pdfContent) {
