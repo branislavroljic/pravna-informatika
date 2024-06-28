@@ -20,8 +20,8 @@ public class CaseFeatures {
   private Boolean isUsedWeapon;
   private Boolean isPermanentDamage;
   private Boolean isProvoked;
-  private JudgmentType judgmentType;
   private Boolean isRecidivist;
+  private Boolean isDisturbedPublicOrderAndPeace;
+  private JudgmentType judgmentType;
   private String sentence;
-
 }

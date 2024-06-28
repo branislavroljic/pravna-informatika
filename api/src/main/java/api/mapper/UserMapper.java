@@ -1,26 +1,21 @@
-package com.example.mapper;
+package api.mapper;
 
-import com.example.model.dto.User;
-import com.example.model.entity.UserEntity;
-import com.example.model.response.auth.LoginResponse;
-import com.example.security.JwtUser;
+import api.dto.auth.LoginResponse;
+import api.model.User;
+import api.security.JwtUser;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
 @Mapper(
     componentModel = "spring")
-public abstract class UserMapper {
+public interface UserMapper {
 
-
-  @BeanMapping(qualifiedByName = "userEntityToUser")
-  public abstract User mapUserEntityToUser(UserEntity userEntity);
-
-  public abstract JwtUser mapUserEntityToJwtUser(UserEntity userEntity);
+  JwtUser mapUserToJwtUser(User user);
 
   @BeanMapping(
       qualifiedByName = "userEntityToLoginResponse",
       nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-  public abstract LoginResponse mapUserEntityToLoginResponse(UserEntity userEntity);
+  LoginResponse mapUserToLoginResponse(User user);
 
 }

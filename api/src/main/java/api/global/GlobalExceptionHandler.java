@@ -1,6 +1,6 @@
-package com.example.global;
+package api.global;
 
-import com.example.model.exception.HttpException;
+import api.exception.HttpException;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;

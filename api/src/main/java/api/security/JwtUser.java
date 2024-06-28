@@ -1,8 +1,9 @@
-package com.example.security;
+package api.security;
 
-import com.example.model.enumeration.Role;
+import api.enumeration.Role;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +16,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 @AllArgsConstructor
 public class JwtUser implements UserDetails {
 
-  private Integer id;
-  private String email;
+  private Long id;
+  private String username;
   private String password;
   private Role role;
 
@@ -27,7 +28,7 @@ public class JwtUser implements UserDetails {
 
   @Override
   public String getUsername() {
-    return email;
+    return username;
   }
 
   @Override

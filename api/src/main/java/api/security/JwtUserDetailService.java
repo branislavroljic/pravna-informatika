@@ -1,8 +1,8 @@
-package com.example.security;
+package api.security;
 
-import com.example.mapper.UserMapper;
-import com.example.model.exception.NotFoundException;
-import com.example.repositories.UserEntityRepository;
+import api.exception.NotFoundException;
+import api.mapper.UserMapper;
+import api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class JwtUserDetailService implements UserDetailsService {
 
-  private final UserEntityRepository userEntityRepository;
+  private final UserRepository userRepository;
   private final UserMapper userMapper;
 
   @Override
-  public JwtUser loadUserByUsername(String email)
+  public JwtUser loadUserByUsername(String username)
       throws org.springframework.security.core.userdetails.UsernameNotFoundException {
 
-    return userMapper.mapUserEntityToJwtUser(
-        userEntityRepository.findByEmail(email).orElseThrow(NotFoundException::new));
+    return userMapper.mapUserToJwtUser(
+        userRepository.findByUsername(username).orElseThrow(NotFoundException::new));
   }
 }

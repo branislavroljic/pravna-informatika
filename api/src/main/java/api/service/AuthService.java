@@ -1,17 +1,16 @@
-package com.example.service;
+package api.service;
 
-import com.example.mapper.UserMapper;
-import com.example.model.entity.UserEntity;
-import com.example.model.exception.EmailNotFoundException;
-import com.example.model.exception.NotFoundException;
-import com.example.model.request.auth.LoginRequest;
-import com.example.model.request.auth.RefreshTokenRequest;
-import com.example.model.response.auth.LoginResponse;
-import com.example.model.response.auth.RefreshTokenResponse;
-import com.example.repositories.UserEntityRepository;
-import com.example.security.JwtConfig;
-import com.example.security.JwtUser;
-import com.example.security.JwtUtils;
+import api.dto.auth.LoginRequest;
+import api.dto.auth.LoginResponse;
+import api.dto.auth.RefreshTokenRequest;
+import api.dto.auth.RefreshTokenResponse;
+import api.exception.NotFoundException;
+import api.mapper.UserMapper;
+import api.model.User;
+import api.repository.UserRepository;
+import api.security.JwtConfig;
+import api.security.JwtUser;
+import api.security.JwtUtils;
 import io.jsonwebtoken.Claims;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -30,7 +29,7 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
   private final MessageSource ms;
-  private final UserEntityRepository userEntityRepository;
+  private final UserRepository userEntityRepository;
   private final UserMapper userMapper;
   private final PasswordEncoder passwordEncoder;
   private final AuthenticationManager authenticationManager;
@@ -43,13 +42,13 @@ public class AuthService {
       Authentication authentication =
           authenticationManager.authenticate(
               new UsernamePasswordAuthenticationToken(
-                  loginRequest.getEmail(), loginRequest.getPassword()));
+                  loginRequest.getUsername(), loginRequest.getPassword()));
       JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
 
-      UserEntity userEntity =
+      User userEntity =
           userEntityRepository.findById(jwtUser.getId()).orElseThrow(NotFoundException::new);
 
-      response = userMapper.mapUserEntityToLoginResponse(userEntity);
+      response = userMapper.mapUserToLoginResponse(userEntity);
       response.setToken(jwtUtils.generateJwt(userEntity));
       response.setRefreshToken(jwtUtils.generateRefresh(userEntity));
 
@@ -66,10 +65,10 @@ public class AuthService {
     Claims claims = jwtUtils.getClaimsFromJwtToken(refreshToken);
 
     // get user from claims
-    UserEntity user =
+    User user =
         userEntityRepository
-            .findByEmail(claims.getSubject())
-            .orElseThrow(EmailNotFoundException::new);
+            .findByUsername(claims.getSubject())
+            .orElseThrow(NotFoundException::new);
 
     // generate new JWT
     String jwt = jwtUtils.generateJwt(user);

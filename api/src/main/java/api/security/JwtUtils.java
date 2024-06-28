@@ -1,9 +1,12 @@
-package com.example.security;
+package api.security;
 
-import com.example.model.entity.UserEntity;
+import api.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
@@ -17,20 +20,20 @@ public class JwtUtils {
 
   private final JwtConfig jwtConfig;
 
-  public String generateJwt(UserEntity user) {
+  public String generateJwt(User user) {
 
     return Jwts.builder()
         .setId(user.getId().toString())
-        .setSubject(user.getEmail())
+        .setSubject(user.getUsername())
         .claim("role", user.getRole().name())
         .setExpiration(new Date(System.currentTimeMillis() + jwtConfig.getTokenExpirationTime()))
         .signWith(jwtConfig.getHmacKey())
         .compact();
   }
 
-  public String generateRefresh(UserEntity user) {
+  public String generateRefresh(User user) {
     return Jwts.builder()
-        .setSubject(user.getEmail())
+        .setSubject(user.getUsername())
         .setExpiration(
             new Date(System.currentTimeMillis() + jwtConfig.getRefreshTokenExpirationTime()))
         .signWith(jwtConfig.getHmacKey())

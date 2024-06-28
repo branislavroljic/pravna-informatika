@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import React from "react";
 import JudgmentsPage from "@pages/akoma-ntoso/judgments/JudgmentsPage";
+import LayoutUnauth from "@layout/LayoutUnauth";
+import LoginPage from "@pages/auth/LoginPage";
 
 const FullLayout = React.lazy(() => import("@layout/full/FullLayout"));
 const JudgmentsAndLawsPage = React.lazy(
@@ -65,6 +67,18 @@ const browserConfig = createBrowserRouter([
         id: "notFound",
         path: "*",
         element: <NotFoundPage />,
+      },
+    ],
+  },
+
+  {
+    id: "layout-unatuh",
+    element: <LayoutUnauth />,
+    children: [
+      {
+        id: "login",
+        path: "/login",
+        element: <LoginPage />,
       },
     ],
   },

@@ -1,4 +1,4 @@
-package com.example.security;
+package api.security;
 
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.annotation.PostConstruct;
@@ -16,7 +16,8 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "authorization")
 public class JwtConfig {
 
-  @NotNull private String bcryptPrefix;
+  @NotNull
+  private String bcryptPrefix;
 
   @NotNull
   @Value("${authorization.token.header.name}")

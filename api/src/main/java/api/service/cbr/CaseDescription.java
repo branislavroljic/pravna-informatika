@@ -70,7 +70,7 @@ public class CaseDescription implements CaseComponent {
         + " Prouzrokovano trajno oštećenje=" + (isPermanentDamage.equals(true) ? "Da" : "Ne") + ";"
         + " Okrivljeni provociran=" + (isProvoked.equals(true) ? "Da" : "Ne") + ";"
         + " Prethodno osuđivan=" + (isRecidivist.equals(true) ? "Da" : "Ne") + ";"
-        + " Kazna=" + (sentence.equals("null") ? "-" : sentence);
+        + " Kazna=" + (sentence == "null" ? "-" : sentence);
   }
 
   @Override

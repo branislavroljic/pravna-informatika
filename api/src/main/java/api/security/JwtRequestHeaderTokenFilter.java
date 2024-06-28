@@ -1,6 +1,7 @@
-package com.example.security;
+package api.security;
 
-import com.example.model.enumeration.Role;
+import api.enumeration.Role;
+import api.security.JwtUser;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -51,7 +52,7 @@ public class JwtRequestHeaderTokenFilter extends OncePerRequestFilter {
 
       JwtUser jwtUser =
           new JwtUser(
-              Integer.valueOf(claims.getId()),
+              Long.valueOf(claims.getId()),
               claims.getSubject(),
               null,
               Role.valueOf(claims.get("role", String.class)));

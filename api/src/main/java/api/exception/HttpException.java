@@ -1,4 +1,4 @@
-package com.example.model.exception;
+package api.exception;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -6,6 +6,7 @@ import api.service.cbr.CaseDescription;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -68,7 +69,8 @@ public class CaseService {
     List<CaseDescription> caseDescriptions = new ArrayList<>();
     List<String> caseNames = getDocumentList("cases").stream().toList();
     for (int i = 0; i < caseNames.size(); i++) {
-      CaseFeatures caseFeatures = featureExtractionService.extractFeatures(caseNames.get(i) + ".pdf");
+      CaseFeatures caseFeatures = featureExtractionService.extractFeatures(
+          caseNames.get(i) + ".pdf");
       CaseDescription caseDescription = new CaseDescription(i, caseFeatures);
       caseDescriptions.add(caseDescription);
     }
@@ -76,7 +78,7 @@ public class CaseService {
 
     try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
       String header =
-          "#id;Broj slucaja;Datum;Sud;Sudija;Zapisnicar;Okrivljeni;Krivicno delo;Vrsta presude;"
+          "Broj slucaja;Datum;Sud;Sudija;Zapisnicar;Okrivljeni;Krivicno delo;Vrsta presude;"
               + "Kazna;Tezina fizicke povrede;Sluzbeno lice;Korisceno oruzje;Povreda je "
               + "prouzrokovala trajno ostecenje"
               + " povredjenog;Napad je usledio kao posledica vredjanja,provociranja, grubog "
@@ -93,46 +95,19 @@ public class CaseService {
     }
   }
 
-  public CaseDescription addJudgmentToCsv(CaseFeatures newCaseFeatures) {
-    int lastId = 0;
-
-    // Read the last line of the CSV file to get the last ID
-    try (BufferedReader br =
-        new BufferedReader(new InputStreamReader(
-            Objects.requireNonNull(getClass().getResourceAsStream("/judgments.csv"))))) {
-      String currentLine;
-      String lastLine = "";
-      while ((currentLine = br.readLine()) != null) {
-        if (!currentLine.startsWith("#") && currentLine.length() != 0) {
-          lastLine = currentLine;
-        }
-      }
-      if (!lastLine.isEmpty()) {
-        String[] values = lastLine.split(";");
-        lastId = Integer.parseInt(values[0]);
-      }
-    } catch (IOException e) {
-      throw new RuntimeException("Error reading the last ID from the file", e);
-    }
-
-    // Increment the last ID for the new entry
-    lastId++;
-    CaseDescription newCaseDescription = new CaseDescription(lastId, newCaseFeatures);
+  public void addJudgmentToCsv(CaseDescription caseDescription) {
 
     // Append the new case description to the file
     try {
-      File file = new File(ResourceUtils.getFile("classpath:judgments.csv/").toURI());
+      File file = new File("judgments.csv");
       try (FileWriter myWriter = new FileWriter(file, true)) { // Open FileWriter in append mode
-        myWriter.write(newCaseDescription.toString() + "\n");
+        myWriter.write(caseDescription.toString() + "\n");
       } catch (IOException e) {
-        System.out.println("An error occurred.");
         e.printStackTrace();
       }
     } catch (Exception e) {
-      throw new RuntimeException(e);
+      e.printStackTrace();
     }
-
-    return newCaseDescription;
   }
 
 }

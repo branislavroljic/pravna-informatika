@@ -1,4 +1,4 @@
-package com.example.model.response.auth;
+package api.dto.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
