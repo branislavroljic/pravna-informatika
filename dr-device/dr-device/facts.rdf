@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+        xmlns:lc="http://informatika.ftn.uns.ac.rs/legal-case.rdf#">
+    <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#case01">
+       <lc:defendant>John</lc:defendant>
+       <lc:victim>Johny</lc:victim>
+        <lc:name>case 01</lc:name>
+	<lc:is_entity>individual</lc:is_entity>
+	<lc:teska_telesna_povreda>no</lc:teska_telesna_povreda>
+	<lc:laka_telesna_povreda>yes</lc:laka_telesna_povreda>
+	<lc:trajna_osakacenost>no</lc:trajna_osakacenost>
+	<lc:korisceno_oruzje>no</lc:korisceno_oruzje>
+	<lc:provokacija>no</lc:provokacija>
+	<lc:napad_ili_pretnja>no</lc:napad_ili_pretnja>
+	<lc:zivotna_opasnost>no</lc:zivotna_opasnost>
+    </lc:case>
+</rdf:RDF>
