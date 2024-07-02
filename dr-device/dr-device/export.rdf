@@ -60,11 +60,6 @@
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about='&export;commited_8_st2'>
-     <rdfs:label rdf:resource='commited_8_st2'/>
-     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
-</rdfs:Class>
-
 <rdfs:Class rdf:about='&export;commited_10_st1'>
      <rdfs:label rdf:resource='commited_10_st1'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
@@ -100,18 +95,48 @@
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about='&export;novcana_kazna_8_st2_min'>
-     <rdfs:label rdf:resource='novcana_kazna_8_st2_min'/>
+<rdfs:Class rdf:about='&export;kazna_zatvora_cl_151_st2_min'>
+     <rdfs:label rdf:resource='kazna_zatvora_cl_151_st2_min'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;kazna_zatvora_cl_151_st2_max'>
+     <rdfs:label rdf:resource='kazna_zatvora_cl_151_st2_max'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;kazna_zatvora_cl_152_st2_min'>
+     <rdfs:label rdf:resource='kazna_zatvora_cl_152_st2_min'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;kazna_zatvora_cl_152_st2_max'>
+     <rdfs:label rdf:resource='kazna_zatvora_cl_152_st2_max'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;kazna_zatvora_cl_376_st2_min'>
+     <rdfs:label rdf:resource='kazna_zatvora_cl_376_st2_min'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;kazna_zatvora_cl_376_st2_max'>
+     <rdfs:label rdf:resource='kazna_zatvora_cl_376_st2_max'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;kazna_zatvora_cl_376_st3_min'>
+     <rdfs:label rdf:resource='kazna_zatvora_cl_376_st3_min'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;kazna_zatvora_cl_376_st3_max'>
+     <rdfs:label rdf:resource='kazna_zatvora_cl_376_st3_max'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
 <rdfs:Class rdf:about='&export;novcana_kazna_8_st1_max'>
      <rdfs:label rdf:resource='novcana_kazna_8_st1_max'/>
-     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
-</rdfs:Class>
-
-<rdfs:Class rdf:about='&export;novcana_kazna_8_st2_max'>
-     <rdfs:label rdf:resource='novcana_kazna_8_st2_max'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
@@ -153,10 +178,6 @@
 </rdf:Property>
 
 <rdf:Property rdf:about='&export;defendant'>
-     <rdfs:domain rdf:resource='&export;commited_8_st2'/>
-</rdf:Property>
-
-<rdf:Property rdf:about='&export;defendant'>
      <rdfs:domain rdf:resource='&export;commited_10_st1'/>
 </rdf:Property>
 
@@ -185,22 +206,46 @@
 </rdf:Property>
 
 <rdf:Property rdf:about='&export;value'>
-     <rdfs:domain rdf:resource='&export;novcana_kazna_8_st2_min'/>
+     <rdfs:domain rdf:resource='&export;kazna_zatvora_cl_151_st2_min'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;kazna_zatvora_cl_151_st2_max'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;kazna_zatvora_cl_152_st2_min'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;kazna_zatvora_cl_152_st2_max'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;kazna_zatvora_cl_376_st2_min'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;kazna_zatvora_cl_376_st2_max'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;kazna_zatvora_cl_376_st3_min'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;kazna_zatvora_cl_376_st3_max'/>
 </rdf:Property>
 
 <rdf:Property rdf:about='&export;value'>
      <rdfs:domain rdf:resource='&export;novcana_kazna_8_st1_max'/>
 </rdf:Property>
 
-<rdf:Property rdf:about='&export;value'>
-     <rdfs:domain rdf:resource='&export;novcana_kazna_8_st2_max'/>
-</rdf:Property>
-
-<export:commited_152_st1 rdf:about='&export;commited_152_st11'>
+<export:commited_376_st1 rdf:about='&export;commited_376_st11'>
      <export:defendant>John</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof1</defeasible:proof>
-</export:commited_152_st1>
+</export:commited_376_st1>
 
 <export:kazna_zatvora_min rdf:about='&export;kazna_zatvora_min1'>
      <export:value>0</export:value>
@@ -209,21 +254,9 @@
 </export:kazna_zatvora_min>
 
 <export:kazna_zatvora_max rdf:about='&export;kazna_zatvora_max1'>
-     <export:value>12</export:value>
+     <export:value>36</export:value>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof3</defeasible:proof>
 </export:kazna_zatvora_max>
-
-<export:novcana_kazna_152_st1_min rdf:about='&export;novcana_kazna_152_st1_min1'>
-     <export:value>600</export:value>
-     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
-     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof4</defeasible:proof>
-</export:novcana_kazna_152_st1_min>
-
-<export:novcana_kazna_152_st1_max rdf:about='&export;novcana_kazna_152_st1_max1'>
-     <export:value>8000</export:value>
-     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
-     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof5</defeasible:proof>
-</export:novcana_kazna_152_st1_max>
 
 </rdf:RDF>

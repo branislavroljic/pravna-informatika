@@ -107,6 +107,11 @@ public class DrDeviceService {
         } else {
             trajna_osakacenost = "no";
         }
+        if (caseDTO.getIsDisturbedPublicOrderAndPeace()) {
+            javno_mesto = "yes";
+        } else {
+            javno_mesto = "no";
+        }
 
         String fileContent =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
@@ -145,88 +150,183 @@ public class DrDeviceService {
         Boolean didAnythingWrong = false;
 
         String commited_151_st1 = StringUtils.substringBetween(fileContent, "<export:commited_151_st1", "</export:commited_151_st1");
+        String commited_151_st2 = StringUtils.substringBetween(fileContent, "<export:commited_151_st2", "</export:commited_151_st2");
+        String commited_152_st1 = StringUtils.substringBetween(fileContent, "<export:commited_152_st1", "</export:commited_152_st1");
+        String commited_152_st2 = StringUtils.substringBetween(fileContent, "<export:commited_152_st2", "</export:commited_152_st2");
+        String commited_152_st3 = StringUtils.substringBetween(fileContent, "<export:commited_152_st3", "</export:commited_152_st3");
+        String commited_376_st1 = StringUtils.substringBetween(fileContent, "<export:commited_376_st1", "</export:commited_376_st1");
+        String commited_376_st2 = StringUtils.substringBetween(fileContent, "<export:commited_376_st2", "</export:commited_376_st2");
+        String commited_376_st3 = StringUtils.substringBetween(fileContent, "<export:commited_376_st3", "</export:commited_376_st3");
+        String commited_8_st1 = StringUtils.substringBetween(fileContent, "<export:commited_8_st1 ", "</export:commited_8_st1 ");
+        String commited_8_st2 = StringUtils.substringBetween(fileContent, "<export:commited_8_st2 ", "</export:commited_8_st2 ");
+        String commited_10_st1 = StringUtils.substringBetween(fileContent, "<export:commited_10_st1 ", "</export:commited_10_st1 ");
+
+        if (commited_151_st2 != null && commited_151_st2.contains(provenPositive)) {
+            commited_151_st1 = null;
+        }
+        if (commited_152_st2 != null && commited_152_st2.contains(provenPositive)) {
+            commited_152_st1 = null;
+        }
+        if (commited_152_st3 != null && commited_152_st3.contains(provenPositive)) {
+            commited_152_st1 = null;
+            commited_152_st2 = null;
+        }
+
+
         if (commited_151_st1 != null && commited_151_st1.contains(provenPositive)) {
             retVal += "Okrivljeni je optuzen za nanosenje teske telesne povrede (cl.151 st.1 KZ).";
             didAnythingWrong = true;
         }
 
-        String commited_151_st2 = StringUtils.substringBetween(fileContent, "<export:commited_151_st2", "</export:commited_151_st2");
         if (commited_151_st2 != null && commited_151_st2.contains(provenPositive)) {
             retVal += "Okrivljeni je optuzen za nanosenje teske telesne povrede (cl.151 st.2 KZ).";
             didAnythingWrong = true;
         }
 
-        String commited_152_st1 = StringUtils.substringBetween(fileContent, "<export:commited_152_st1", "</export:commited_152_st1");
         if (commited_152_st1 != null && commited_152_st1.contains(provenPositive)) {
             retVal += "Okrivljeni je optuzen za nanosenje lake telesne povrede (cl.152 st.1 KZ).";
             didAnythingWrong = true;
         }
 
-        String commited_152_st2 = StringUtils.substringBetween(fileContent, "<export:commited_152_st2", "</export:commited_152_st2");
         if (commited_152_st2 != null && commited_152_st2.contains(provenPositive)) {
             retVal += "Okrivljeni je optuzen za nanosenje lake telesne povrede (cl.152 st.2 KZ).";
             didAnythingWrong = true;
         }
-        String commited_152_st3 = StringUtils.substringBetween(fileContent, "<export:commited_152_st3", "</export:commited_152_st3");
         if (commited_152_st3 != null && commited_152_st3.contains(provenPositive)) {
             retVal += "Okrivljeni je optuzen za nanosenje lake telesne povrede (cl.152 st.3 KZ).";
             didAnythingWrong = true;
         }
-        String commited_376_st1 = StringUtils.substringBetween(fileContent, "<export:commited_376_st1", "</export:commited_376_st1");
         if (commited_376_st1 != null && commited_376_st1.contains(provenPositive)) {
             retVal += "Okrivljeni je optuzen za napad na sluzbeno lice u vrsenju sluzbene duznosti (cl.376 st.1 KZ).";
             didAnythingWrong = true;
         }
-        String commited_376_st2 = StringUtils.substringBetween(fileContent, "<export:commited_376_st2", "</export:commited_376_st2");
         if (commited_376_st2 != null && commited_376_st2.contains(provenPositive)) {
             retVal += "Okrivljeni je optuzen za napad na sluzbeno lice u vrsenju sluzbene duznosti (cl.376 st.2 KZ).";
             didAnythingWrong = true;
         }
-        String commited_376_st3 = StringUtils.substringBetween(fileContent, "<export:commited_376_st3", "</export:commited_376_st3");
-        if (commited_376_st3 != null && commited_376_st2.contains(provenPositive)) {
+        if (commited_376_st3 != null && commited_376_st3.contains(provenPositive)) {
             retVal += "Okrivljeni je optuzen za napad na sluzbeno lice u vrsenju sluzbene duznosti (cl.376 st.3 KZ).";
             didAnythingWrong = true;
         }
-
-        String placed_on_market_rezani_duvan = StringUtils.substringBetween(fileContent, "<export:placed_on_market_rezani_duvan", "</export:placed_on_market_rezani_duvan");
-        if (placed_on_market_rezani_duvan != null && placed_on_market_rezani_duvan.contains(provenPositive)) {
-            retVal += "Okrivljeni je optužen za nedozvoljenu trgovinu rezanog duvana. \n\n";
+        if (commited_8_st1 != null && commited_8_st1.contains(provenPositive)) {
+            retVal += "Okrivljeni je optuzen za provociranje i izazivanje na tucu na javnom mestu (cl.8 st.1 Zakona o javnom redu i miru).";
             didAnythingWrong = true;
         }
-
-        String unauthorized_retail_distribution = StringUtils.substringBetween(fileContent, "<export:unauthorized_retail_distribution", "</export:unauthorized_retail_distribution>");
-        if (unauthorized_retail_distribution != null && unauthorized_retail_distribution.contains(provenPositive)) {
-            retVal += "Okrivljeni je optužen za nedozvoljenu trgovinu u prometu na malo. \n\n";
+        if (commited_8_st2 != null && commited_8_st2.contains(provenPositive)) {
+            retVal += "Okrivljeni je optuzen za napad na javnom mestu (cl.8 st.2 Zakona o javnom redu i miru).";
             didAnythingWrong = true;
         }
-
-        String unauthorized_wholesale_distribution = StringUtils.substringBetween(fileContent, "<export:unauthorized_wholesale_distribution", "</export:unauthorized_wholesale_distribution>");
-        if (unauthorized_wholesale_distribution != null && unauthorized_wholesale_distribution.contains(provenPositive)) {
-            retVal += "Okrivljeni je optužen za nedozvoljenu trgovinu u prometu na veliko. \n\n";
+        if (commited_10_st1 != null && commited_10_st1.contains(provenPositive)) {
+            retVal += "Okrivljeni je optuzen za omalovazavanje i provociranje sluzbenog lica na javnom mestu (cl.10 st.1 Zakona o javnom redu i miru).";
             didAnythingWrong = true;
         }
 
         if (!didAnythingWrong) {
             return "Nije kriv.";
         }
-        String novcana_kazna_152_st1_min = StringUtils.substringBetween(fileContent, "<export:novcana_kazna_152_st1_min", "</export:novcana_kazna_152_st1_min");
-        if (novcana_kazna_152_st1_min != null && novcana_kazna_152_st1_min.contains(provenPositive)) {
-            retVal += "Okrivljeni je optužen da plati MINIMALNO " + StringUtils.substringBetween(novcana_kazna_152_st1_min, "<export:value>", "</export:value>") + "e. \n\n";
-        }
 
         String novcana_kazna_152_st1_max = StringUtils.substringBetween(fileContent, "<export:novcana_kazna_152_st1_max", "</export:novcana_kazna_152_st1_max");
-        if (novcana_kazna_152_st1_max != null && novcana_kazna_152_st1_max.contains(provenPositive)) {
-            retVal += "Okrivljeni je optužen da plati MAKSIMALNO " + StringUtils.substringBetween(novcana_kazna_152_st1_max, "<export:value>", "</export:value>") + "e. \n\n";
+        String novcana_kazna_152_st1_min = StringUtils.substringBetween(fileContent, "<export:novcana_kazna_152_st1_min", "</export:novcana_kazna_152_st1_min");
+        String kazna_zatvora_min = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_min", "</export:kazna_zatvora_min");
+        String kazna_zatvora_max = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_max", "</export:kazna_zatvora_max");
+        String kazna_zatvora_cl_151_st2_min = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_cl_151_st2_min", "</export:kazna_zatvora_cl_151_st2_min");
+        String kazna_zatvora_cl_151_st2_max = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_cl_151_st2_max", "</export:kazna_zatvora_cl_151_st2_max");
+        String kazna_zatvora_cl_152_st2_min = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_cl_152_st2_min", "</export:kazna_zatvora_cl_152_st2_min");
+        String kazna_zatvora_cl_152_st2_max = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_cl_152_st2_max", "</export:kazna_zatvora_cl_152_st2_max");
+        String kazna_zatvora_cl_376_st2_min = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_cl_376_st2_min", "</export:kazna_zatvora_cl_376_st2_min");
+        String kazna_zatvora_cl_376_st2_max = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_cl_376_st2_max", "</export:kazna_zatvora_cl_376_st2_max");
+        String kazna_zatvora_cl_376_st3_min = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_cl_376_st3_min", "</export:kazna_zatvora_cl_376_st3_min");
+        String kazna_zatvora_cl_376_st3_max = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_cl_376_st3_max", "</export:kazna_zatvora_cl_376_st3_max");
+        String sudska_opomena = StringUtils.substringBetween(fileContent, "<export:sudska_opomena", "</export:sudska_opomena");
+        String novcana_kazna_8_st1_min = StringUtils.substringBetween(fileContent, "<export:novcana_kazna_8_st1_min", "</export:novcana_kazna_8_st1_min");
+        String novcana_kazna_8_st1_max = StringUtils.substringBetween(fileContent, "<export:novcana_kazna_8_st1_max", "</export:novcana_kazna_8_st1_max");
+        String novcana_kazna_8_st2_min = StringUtils.substringBetween(fileContent, "<export:novcana_kazna_8_st2_min", "</export:novcana_kazna_8_st2_min");
+        String novcana_kazna_8_st2_max = StringUtils.substringBetween(fileContent, "<export:novcana_kazna_8_st2_max", "</export:novcana_kazna_8_st2_max");
+
+
+        if (commited_152_st1 != null) {
+            if (novcana_kazna_152_st1_min != null && novcana_kazna_152_st1_min.contains(provenPositive)) {
+                retVal += "Okrivljeni je optužen da plati MINIMALNO " + StringUtils.substringBetween(novcana_kazna_152_st1_min, "<export:value>", "</export:value>") + "e. \n\n";
+            }
+
+            if (novcana_kazna_152_st1_max != null && novcana_kazna_152_st1_max.contains(provenPositive)) {
+                retVal += "Okrivljeni je optužen da plati MAKSIMALNO " + StringUtils.substringBetween(novcana_kazna_152_st1_max, "<export:value>", "</export:value>") + "e. \n\n";
+            }
         }
 
-        String kazna_zatvora_min = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_min", "</export:kazna_zatvora_min");
         if (kazna_zatvora_min != null && kazna_zatvora_min.contains(provenPositive)) {
             retVal += "Okrivljenom se izriče MINIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_min, "<export:value>", "</export:value>") + " meseci. \n\n";
         }
 
-        String kazna_zatvora_max = StringUtils.substringBetween(fileContent, "<export:kazna_zatvora_max", "</export:kazna_zatvora_max");
         if (kazna_zatvora_max != null && kazna_zatvora_max.contains(provenPositive)) {
             retVal += "Okrivljenom se izriče MASKIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_max, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+        if (kazna_zatvora_cl_151_st2_min != null && kazna_zatvora_cl_151_st2_min.contains(provenPositive)) {
+            retVal += "Okrivljenom se izriče MINIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_min, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+
+        if (kazna_zatvora_cl_151_st2_max != null && kazna_zatvora_cl_151_st2_max.contains(provenPositive)) {
+            retVal += "Okrivljenom se izriče MASKIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_max, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+        if (kazna_zatvora_cl_152_st2_min != null && kazna_zatvora_cl_152_st2_min.contains(provenPositive)) {
+            retVal += "Okrivljenom se izriče MINIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_min, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+
+        if (kazna_zatvora_cl_152_st2_max != null && kazna_zatvora_cl_152_st2_max.contains(provenPositive)) {
+            retVal += "Okrivljenom se izriče MASKIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_max, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+        if (kazna_zatvora_cl_376_st2_min != null && kazna_zatvora_cl_376_st2_min.contains(provenPositive)) {
+            retVal += "Okrivljenom se izriče MINIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_min, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+
+        if (kazna_zatvora_cl_376_st2_max != null && kazna_zatvora_cl_376_st2_max.contains(provenPositive)) {
+            retVal += "Okrivljenom se izriče MASKIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_max, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+
+        if (kazna_zatvora_cl_376_st3_min != null && kazna_zatvora_cl_376_st3_min.contains(provenPositive)) {
+            retVal += "Okrivljenom se izriče MINIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_min, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+
+        if (kazna_zatvora_cl_376_st3_max != null && kazna_zatvora_cl_376_st3_max.contains(provenPositive)) {
+            retVal += "Okrivljenom se izriče MASKIMALNA zatvorska kazna od " + StringUtils.substringBetween(kazna_zatvora_max, "<export:value>", "</export:value>") + " meseci. \n\n";
+        }
+
+        if (sudska_opomena != null && sudska_opomena.contains(provenPositive)) {
+            String value = StringUtils.substringBetween(sudska_opomena, "<export:sudska_opomena>", "</export:sudska_opomena>");
+            if (value != null) {
+                value = value.replace("_", " ");
+                retVal += "Okrivljenom je presudjena: " + value + "  \n\n";
+            }
+        }
+        if (novcana_kazna_8_st1_min != null && novcana_kazna_8_st1_min.contains(provenPositive)) {
+            String value = StringUtils.substringBetween(novcana_kazna_8_st1_min, "<export:value>", "</export:value>");
+            if (value != null) {
+                value = value.replace("_", " ");
+                retVal += "Okrivljenom je optužen da plati MINIMALNO " + value + " e. \n\n";
+            }
+        }
+
+        if (novcana_kazna_8_st1_max != null && novcana_kazna_8_st1_max.contains(provenPositive)) {
+            String value = StringUtils.substringBetween(novcana_kazna_8_st1_max, "<export:value>", "</export:value>");
+            if (value != null) {
+                value = value.replace("_", " ");
+                retVal += "Okrivljenom je optužen da plati MAKSIMALNO " + value + " e. \n\n";
+            }
+        }
+
+        if (novcana_kazna_8_st2_min != null && novcana_kazna_8_st2_min.contains(provenPositive)) {
+            String value = StringUtils.substringBetween(novcana_kazna_8_st2_min, "<export:value>", "</export:value>");
+            if (value != null) {
+                value = value.replace("_", " ");
+                retVal += "Okrivljenom je optužen da plati MINIMALNO " + value + " e. \n\n";
+            }
+        }
+        if (novcana_kazna_8_st2_max != null && novcana_kazna_8_st2_max.contains(provenPositive)) {
+            String value = StringUtils.substringBetween(novcana_kazna_8_st2_max, "<export:value>", "</export:value>");
+            if (value != null) {
+                value = value.replace("_", " ");
+                retVal += "Okrivljenom je optužen da plati MAKSIMALNO " + value + " e. \n\n";
+            }
         }
 
         if (retVal.isEmpty()) {
