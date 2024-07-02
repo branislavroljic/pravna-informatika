@@ -7,13 +7,14 @@
        <lc:defendant>John</lc:defendant>
        <lc:victim>Johny</lc:victim>
         <lc:name>case 01</lc:name>
-	<lc:is_entity>individual</lc:is_entity>
+	<lc:is_entity>legal_entity</lc:is_entity>
 	<lc:teska_telesna_povreda>no</lc:teska_telesna_povreda>
-	<lc:laka_telesna_povreda>yes</lc:laka_telesna_povreda>
 	<lc:trajna_osakacenost>no</lc:trajna_osakacenost>
+	<lc:zivotna_opasnost>no</lc:zivotna_opasnost>
+	<lc:laka_telesna_povreda>no</lc:laka_telesna_povreda>
 	<lc:korisceno_oruzje>no</lc:korisceno_oruzje>
 	<lc:provokacija>no</lc:provokacija>
-	<lc:napad_ili_pretnja>no</lc:napad_ili_pretnja>
-	<lc:zivotna_opasnost>no</lc:zivotna_opasnost>
+	<lc:napad_ili_pretnja>yes</lc:napad_ili_pretnja>
+	<lc:javno_mesto>no</lc:javno_mesto>
     </lc:case>
 </rdf:RDF>

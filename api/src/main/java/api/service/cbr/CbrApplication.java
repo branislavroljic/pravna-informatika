@@ -20,14 +20,24 @@ import java.util.List;
 
 public class CbrApplication implements StandardCBRApplication {
 
-    Connector _connector;  /** Connector object */
-    CBRCaseBase _caseBase;  /** CaseBase object */
+    Connector _connector;
+    /**
+     * Connector object
+     */
+    CBRCaseBase _caseBase;
+    /**
+     * CaseBase object
+     */
 
-    NNConfig simConfig;  /** KNN configuration */
+    NNConfig simConfig;
+
+    /**
+     * KNN configuration
+     */
 
     @Override
     public void configure() throws ExecutionException {
-        _connector =  new CsvConnector();
+        _connector = new CsvConnector();
 
         _caseBase = new LinealCaseBase();  // Create a Lineal case base for in-memory organization
 
@@ -48,8 +58,8 @@ public class CbrApplication implements StandardCBRApplication {
                 PublicOfficial.NONE,
                 PublicOfficial.PUBLIC_OFFICIAL,
                 PublicOfficial.SPECIAL_PUBLIC_OFFICIAL));
-        slicnostTezinaFizickePovrede.setSimilarity( PublicOfficial.NONE, PublicOfficial.PUBLIC_OFFICIAL, 0.3);
-        slicnostTezinaFizickePovrede.setSimilarity( PublicOfficial.NONE, PublicOfficial.SPECIAL_PUBLIC_OFFICIAL, 0.1);
+        slicnostTezinaFizickePovrede.setSimilarity(PublicOfficial.NONE, PublicOfficial.PUBLIC_OFFICIAL, 0.3);
+        slicnostTezinaFizickePovrede.setSimilarity(PublicOfficial.NONE, PublicOfficial.SPECIAL_PUBLIC_OFFICIAL, 0.1);
         slicnostTezinaFizickePovrede.setSimilarity(PublicOfficial.SPECIAL_PUBLIC_OFFICIAL, PublicOfficial.PUBLIC_OFFICIAL, 0.5);
         Attribute publicOfficial = new Attribute("publicOfficial", CaseDescription.class);
         simConfig.addMapping(publicOfficial, slicnostSluzbenoLice);
@@ -63,41 +73,10 @@ public class CbrApplication implements StandardCBRApplication {
         Attribute isRecidivist = new Attribute("isRecidivist", CaseDescription.class);
         simConfig.addMapping(isRecidivist, new Equal());
 
-
-
-
-
-        /*TabularSimilarity slicnostKoriscenoOruzije = new TabularSimilarity(Arrays.asList(
-                "true",
-                "false"));
-        slicnostKoriscenoOruzije.setSimilarity("true", "false", 0.1);
-        simConfig.addMapping(new Attribute("isUsedWeapon", CaseDescription.class), slicnostKoriscenoOruzije);
-
-
-        TabularSimilarity slicnostTrajnoOstecenje = new TabularSimilarity(Arrays.asList(
-                "true",
-                "false"));
-        slicnostTrajnoOstecenje.setSimilarity("true", "false", 0.1);
-        simConfig.addMapping(new Attribute("isPermanentDamage", CaseDescription.class), slicnostTrajnoOstecenje);
-
-
-        TabularSimilarity slicnostProvociranje = new TabularSimilarity(Arrays.asList(
-                "true",
-                "false"));
-        slicnostProvociranje.setSimilarity("true", "false", 0.1);
-        simConfig.addMapping(new Attribute("isProvoked", CaseDescription.class), slicnostProvociranje);
-
-        TabularSimilarity slicnostOsudjivan = new TabularSimilarity(Arrays.asList(
-                "true",
-                "false"));
-        slicnostOsudjivan.setSimilarity("true", "false", 0.1);
-        simConfig.addMapping(new Attribute("isRecidivist", CaseDescription.class), slicnostOsudjivan);*/
-
         simConfig.setWeight(injurySeverity, 3.0);
         simConfig.setWeight(publicOfficial, 2.5);
         simConfig.setWeight(isUsedWeapon, 2.0);
         simConfig.setWeight(isPermanentDamage, 2.0);
-
 
 
         // Equal - returns 1 if both individuals are equal, otherwise returns 0
@@ -128,13 +107,14 @@ public class CbrApplication implements StandardCBRApplication {
         for (RetrievalResult nse : eval)
             System.out.println(nse.get_case().getDescription() + " -> " + nse.getEval());
     }
+
     public List<String> getCycle(CBRQuery query) throws ExecutionException {
         Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
         eval = SelectCases.selectTopKRR(eval, 5);
         List<String> cases = new ArrayList<>();
         for (RetrievalResult nse : eval)
             cases.add(nse.get_case().getDescription() + " -> " + nse.getEval());
-        return  cases;
+        return cases;
     }
 
     @Override
