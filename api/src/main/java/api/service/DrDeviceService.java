@@ -16,6 +16,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Objects;
 
+import static gate.util.Out.print;
+
 @Service
 @RequiredArgsConstructor
 public class DrDeviceService {
@@ -134,10 +136,11 @@ public class DrDeviceService {
                         "\t<lc:javno_mesto>" + javno_mesto + "</lc:javno_mesto>\n" +
                         "    </lc:case>\n" +
                         "</rdf:RDF>";
-
+        print("ovde sam");
         FileWriter writer = new FileWriter(BASE_PATH + "facts.rdf", false);
         writer.write(fileContent);
         writer.close();
+        print("opet");
     }
 
     private String formatResults() throws IOException {

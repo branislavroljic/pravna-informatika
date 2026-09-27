@@ -84,7 +84,7 @@ const judgmentTypeLabels = {
   WARNING: "Opomena",
 };
 
-const NewCaseForm = ({ setSimilarCases }: any) => {
+const NewCaseForm = ({ setSimilarCases, setSimilarByRule }: any) => {
   const openNotification = useNotificationStore(
     (state) => state.openNotification
   );
@@ -135,6 +135,36 @@ const NewCaseForm = ({ setSimilarCases }: any) => {
     return;
   };
 
+  const getSimilarByRules = async (input: NewCaseInput) => {
+    setLoading(true);
+    const baseUrl = new URL(
+      "drdev/recommend/byrules",
+      import.meta.env.VITE_API_URL
+    );
+    const result = await fetch(baseUrl, {
+      method: "POST",
+      body: JSON.stringify(input),
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${user?.token}`,
+      },
+    });
+
+    setLoading(false);
+    const res = await result.text();
+    setSimilarByRule(res);
+    if (!result.ok) {
+      openNotification({
+        isError: true,
+        primaryText: "Dogodila se greska",
+        secondaryText: (await result.json()).message,
+      });
+      return;
+    }
+
+    return;
+  };
+
   const addNewCase = async (input: NewCaseInput) => {
     setLoading(true);
     const baseUrl = new URL("/cases", import.meta.env.VITE_API_URL);
@@ -164,9 +194,11 @@ const NewCaseForm = ({ setSimilarCases }: any) => {
   };
 
   const onSubmit = (data: NewCaseInput) => {
-    console.log("tu samm");
     if (submitType === "getSimilarCases") {
       getSimilarCases(data);
+      getSimilarByRules(data);
+      setSimilarByRule("Učitavanje...");
+      setSimilarByRule("Učitavanje...");
     } else if (submitType === "addNewCase") {
       addNewCase(data);
     }

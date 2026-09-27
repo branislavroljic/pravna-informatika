@@ -11,6 +11,7 @@ import { useState } from "react";
 
 export default function NewCasePage() {
   const [similarCases, setSimilarCases] = useState<string[] | null>(null);
+  const [similarByRule, setSimilarByRule] = useState<string[] | null>(null);
 
   return (
     <PageContainer title="Presude" description="this is innerpage">
@@ -54,7 +55,10 @@ export default function NewCasePage() {
                     "Ukoliko unesete neophodne podatke rasuđivanja, klikom na relevantno dugme, dobićete savete na osnovu baze slučajeva i LegalRuleML sistema"
                   }
                 </Typography>
-                <NewCaseForm setSimilarCases={setSimilarCases} />
+                <NewCaseForm
+                  setSimilarCases={setSimilarCases}
+                  setSimilarByRule={setSimilarByRule}
+                />
               </CardContent>
             </BlankCard>
           </Scrollbar>
@@ -86,10 +90,8 @@ export default function NewCasePage() {
                     <Typography variant="h5" marginBottom={2}>
                       Rasuđivanje po pravilima
                     </Typography>
-                    {similarCases ? (
-                      similarCases.map((c) => (
-                        <Typography paragraph>{c}</Typography>
-                      ))
+                    {similarByRule ? (
+                      <Typography paragraph whiteSpace={'pre-line'}>{similarByRule}</Typography>
                     ) : (
                       <Typography>Nema preporuka</Typography>
                     )}

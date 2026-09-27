@@ -241,11 +241,11 @@
      <rdfs:domain rdf:resource='&export;novcana_kazna_8_st1_max'/>
 </rdf:Property>
 
-<export:commited_376_st1 rdf:about='&export;commited_376_st11'>
+<export:commited_152_st1 rdf:about='&export;commited_152_st11'>
      <export:defendant>John</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof1</defeasible:proof>
-</export:commited_376_st1>
+</export:commited_152_st1>
 
 <export:kazna_zatvora_min rdf:about='&export;kazna_zatvora_min1'>
      <export:value>0</export:value>
@@ -254,9 +254,21 @@
 </export:kazna_zatvora_min>
 
 <export:kazna_zatvora_max rdf:about='&export;kazna_zatvora_max1'>
-     <export:value>36</export:value>
+     <export:value>12</export:value>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof3</defeasible:proof>
 </export:kazna_zatvora_max>
+
+<export:novcana_kazna_152_st1_min rdf:about='&export;novcana_kazna_152_st1_min1'>
+     <export:value>600</export:value>
+     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof4</defeasible:proof>
+</export:novcana_kazna_152_st1_min>
+
+<export:novcana_kazna_152_st1_max rdf:about='&export;novcana_kazna_152_st1_max1'>
+     <export:value>8000</export:value>
+     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof5</defeasible:proof>
+</export:novcana_kazna_152_st1_max>
 
 </rdf:RDF>
