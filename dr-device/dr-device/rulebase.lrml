@@ -8,18 +8,11 @@
       <lrml:PrescriptiveStatement key="ps_cl_151_st1">
          <ruleml:Rule key=":rule_151_st1" closure="universal" strength="defeasible">
             <ruleml:if>
-               <ruleml:And>
-               <ruleml:Atom>
-                     <ruleml:Rel iri="lc:is_entity"/>
-                     <ruleml:Var type="lc:victim">Victim</ruleml:Var>
-                     <ruleml:Data xsi:type="xs:string">individual</ruleml:Data>
-                  </ruleml:Atom>
                   <ruleml:Atom>
                      <ruleml:Rel iri="lc:teska_telesna_povreda"/>
                      <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                      <ruleml:Data xsi:type="xs:string">yes</ruleml:Data>
                   </ruleml:Atom>
-               </ruleml:And>
             </ruleml:if>
             <ruleml:then>
                <ruleml:Atom>
@@ -171,13 +164,8 @@
                      </ruleml:Atom>
                      <ruleml:Atom>
                          <ruleml:Rel iri="lc:is_entity"/>
-                         <ruleml:Var type="lc:victim">Victim</ruleml:Var>
+                         <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                          <ruleml:Data xsi:type="xs:string">legal_entity</ruleml:Data>
-                     </ruleml:Atom>
-                     <ruleml:Atom>
-                        <ruleml:Rel iri="lc:javno_mesto"/>
-                        <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                        <ruleml:Data xsi:type="xs:string">no</ruleml:Data> 
                      </ruleml:Atom>
                  </ruleml:And>
              </ruleml:if>
@@ -246,21 +234,16 @@
        <lrml:PrescriptiveStatement key="ps_cl_376_st3">
          <ruleml:Rule key=":rule_376_st3" closure="universal" strength="defeasible">
             <ruleml:if>
+               <!-- Djelo iz st. 1 i 2 (napad na sluzbeno lice) prema posebnom sluzbenom licu -->
                <ruleml:And>
-                  <ruleml:Or>
                   <ruleml:Atom>
-                     <ruleml:Rel>commited_376_st1</ruleml:Rel>
-                     <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                     <ruleml:Rel iri="lc:napad_ili_pretnja"/>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data>
                   </ruleml:Atom>
-                  <ruleml:Atom>
-                     <ruleml:Rel>commited_376_st2</ruleml:Rel>
-                     <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                  </ruleml:Atom>
-                  </ruleml:Or>
                   <ruleml:Atom>
                      <ruleml:Rel iri="lc:is_entity"/>
-                     <ruleml:Var type="lc:victim">Victim</ruleml:Var>
-                     <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                      <ruleml:Data xsi:type="xs:string">special_legal_entity</ruleml:Data>
                   </ruleml:Atom>
                </ruleml:And>
@@ -281,21 +264,30 @@
          <ruleml:Rule key=":rule_8_st1" closure="universal" strength="defeasible">
             <ruleml:if>
                <ruleml:And>
-                   <ruleml:Atom>
-                     <ruleml:Rel iri="lc:provokacija" />
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:laka_telesna_povreda"/>
                      <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data> 
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
                   </ruleml:Atom>
-                     <ruleml:Atom>
-                     <ruleml:Rel iri="lc:javno_mesto" />
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:teska_telesna_povreda"/>
                      <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data> 
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
                   </ruleml:Atom>
-                   <ruleml:Atom>
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:javno_mesto"/>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data>
+                  </ruleml:Atom>
+                  <ruleml:Atom>
                      <ruleml:Rel iri="lc:is_entity"/>
-                     <ruleml:Var type="lc:victim">Victim</ruleml:Var>
-                     <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                      <ruleml:Data xsi:type="xs:string">individual</ruleml:Data>
+                  </ruleml:Atom>
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:korisceno_oruzje"/>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
                   </ruleml:Atom>
                </ruleml:And>
             </ruleml:if>
@@ -310,26 +302,34 @@
 
          
    <!-- Zakon o javnom redu i miru clan 8 stav 2 -->
-<!-- 
        <lrml:PrescriptiveStatement key="ps_cl_8_st2">
          <ruleml:Rule key=":rule_8_st2" closure="universal" strength="defeasible">
             <ruleml:if>
                <ruleml:And>
-                   <ruleml:Atom>
-                     <ruleml:Rel iri="lc:napad_ili_pretnja"/>
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:laka_telesna_povreda"/>
                      <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data> 
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
                   </ruleml:Atom>
-                     <ruleml:Atom>
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:teska_telesna_povreda"/>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
+                  </ruleml:Atom>
+                  <ruleml:Atom>
                      <ruleml:Rel iri="lc:javno_mesto"/>
                      <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data> 
+                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data>
                   </ruleml:Atom>
-                   <ruleml:Atom>
+                  <ruleml:Atom>
                      <ruleml:Rel iri="lc:is_entity"/>
-                     <ruleml:Var type="lc:victim">Victim</ruleml:Var>
-                     <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                      <ruleml:Data xsi:type="xs:string">individual</ruleml:Data>
+                  </ruleml:Atom>
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:korisceno_oruzje"/>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
                   </ruleml:Atom>
                </ruleml:And>
             </ruleml:if>
@@ -340,7 +340,7 @@
                </ruleml:Atom>
             </ruleml:then>
          </ruleml:Rule>
-      </lrml:PrescriptiveStatement> -->
+      </lrml:PrescriptiveStatement>
 
       <!-- Zakon o javnom redu i miru clan 10 stav 1 -->
 
@@ -348,21 +348,25 @@
          <ruleml:Rule key=":rule_10_st1" closure="universal" strength="defeasible">
             <ruleml:if>
                <ruleml:And>
-                   <ruleml:Atom>
-                     <ruleml:Rel iri="lc:provokacija"/>
-                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data> 
-                  </ruleml:Atom>
-                     <ruleml:Atom>
-                     <ruleml:Rel iri="lc:javno_mesto"/>
-                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                     <ruleml:Data xsi:type="xs:string">yes</ruleml:Data> 
-                  </ruleml:Atom>
-                   <ruleml:Atom>
+                  <ruleml:Atom>
                      <ruleml:Rel iri="lc:is_entity"/>
-                     <ruleml:Var type="lc:victim">Victim</ruleml:Var>
-                     <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                      <ruleml:Data xsi:type="xs:string">legal_entity</ruleml:Data>
+                  </ruleml:Atom>
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:laka_telesna_povreda"/>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
+                  </ruleml:Atom>
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:teska_telesna_povreda"/>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
+                  </ruleml:Atom>
+                  <ruleml:Atom>
+                     <ruleml:Rel iri="lc:korisceno_oruzje"/>
+                     <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                     <ruleml:Data xsi:type="xs:string">no</ruleml:Data>
                   </ruleml:Atom>
                </ruleml:And>
             </ruleml:if>
@@ -383,7 +387,7 @@
          <lrml:SuborderList>
             <lrml:Obligation>
                <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_min" />
+                  <ruleml:Rel iri=":kazna_zatvora_cl_151_st1_min" />
                   <ruleml:Var>Month</ruleml:Var>
                   <ruleml:Ind>6</ruleml:Ind>
                </ruleml:Atom>
@@ -394,7 +398,7 @@
          <lrml:SuborderList>
             <lrml:Obligation>
                <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_max" />
+                  <ruleml:Rel iri=":kazna_zatvora_cl_151_st1_max" />
                   <ruleml:Var>Month</ruleml:Var>
                   <ruleml:Ind>60</ruleml:Ind>
                </ruleml:Atom>
@@ -429,22 +433,11 @@
       </lrml:PenaltyStatement>
 
       <!--Clan 152 stav 1-->
-      <lrml:PenaltyStatement key="kazna_cl_152_st1_min">
-         <lrml:SuborderList>
-            <lrml:Obligation>
-               <ruleml:Atom>
-                    <ruleml:Rel iri=":kazna_zatvora_min" />
-                    <ruleml:Var>Month</ruleml:Var>
-                    <ruleml:Ind>0</ruleml:Ind> 
-               </ruleml:Atom>
-            </lrml:Obligation>
-         </lrml:SuborderList>
-      </lrml:PenaltyStatement>
       <lrml:PenaltyStatement key="kazna_cl_152_st1_max">
          <lrml:SuborderList>
             <lrml:Obligation>
                <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_max" />
+                  <ruleml:Rel iri=":kazna_zatvora_cl_152_st1_max" />
                   <ruleml:Var>Month</ruleml:Var>
                   <ruleml:Ind>12</ruleml:Ind>
                </ruleml:Atom>
@@ -476,17 +469,6 @@
       </lrml:PenaltyStatement>
 
       <!--Clan 152 stav 2-->
-      <lrml:PenaltyStatement key="kazna_cl_152_st2_min">
-         <lrml:SuborderList>
-            <lrml:Obligation>
-               <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_cl_152_st2_min" />
-                  <ruleml:Var>Month</ruleml:Var>
-                  <ruleml:Ind>0</ruleml:Ind>
-               </ruleml:Atom>
-            </lrml:Obligation>
-         </lrml:SuborderList>
-      </lrml:PenaltyStatement>
       <lrml:PenaltyStatement key="kazna_cl_152_st2_max">
          <lrml:SuborderList>
             <lrml:Obligation>
@@ -517,22 +499,11 @@
 
       
       <!--Clan 376 stav 1-->
-      <lrml:PenaltyStatement key="kazna_cl_376_st1_min">
-         <lrml:SuborderList>
-            <lrml:Obligation>
-               <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_min" />
-                  <ruleml:Var>Month</ruleml:Var>
-                  <ruleml:Ind>0</ruleml:Ind>
-               </ruleml:Atom>
-            </lrml:Obligation>
-         </lrml:SuborderList>
-      </lrml:PenaltyStatement>
       <lrml:PenaltyStatement key="kazna_cl_376_st1_max">
          <lrml:SuborderList>
             <lrml:Obligation>
                <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_max" />
+                  <ruleml:Rel iri=":kazna_zatvora_cl_376_st1_max" />
                   <ruleml:Var>Month</ruleml:Var>
                   <ruleml:Ind>36</ruleml:Ind>
                </ruleml:Atom>
@@ -590,24 +561,13 @@
       </lrml:PenaltyStatement>
 
            <!--Clan 8 zakon o javnom redu i miru stav 1-->
-      <lrml:PenaltyStatement key="kazna_cl_8_st1_min">
-         <lrml:SuborderList>
-            <lrml:Obligation>
-               <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_min" />
-                  <ruleml:Var>Month</ruleml:Var>
-                  <ruleml:Ind>0</ruleml:Ind>
-               </ruleml:Atom>
-            </lrml:Obligation>
-         </lrml:SuborderList>
-      </lrml:PenaltyStatement>
       <lrml:PenaltyStatement key="kazna_cl_8_st1_max">
          <lrml:SuborderList>
             <lrml:Obligation>
                <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_max" />
-                  <ruleml:Var>Month</ruleml:Var>
-                  <ruleml:Ind>1</ruleml:Ind>
+                  <ruleml:Rel iri=":kazna_zatvora_cl_8_st1_max" />
+                  <ruleml:Var>Day</ruleml:Var>
+                  <ruleml:Ind>30</ruleml:Ind>
                </ruleml:Atom>
             </lrml:Obligation>
          </lrml:SuborderList>
@@ -619,7 +579,7 @@
                <ruleml:Atom>
                   <ruleml:Rel iri=":novcana_kazna_8_st1_min" />
                   <ruleml:Var>Money</ruleml:Var>
-                  <ruleml:Ind>3_minimalne_zarade</ruleml:Ind>
+                  <ruleml:Ind>3</ruleml:Ind>
                </ruleml:Atom>
             </lrml:Obligation>
          </lrml:SuborderList>
@@ -630,43 +590,32 @@
                <ruleml:Atom>
                   <ruleml:Rel iri=":novcana_kazna_8_st1_max" />
                   <ruleml:Var>Money</ruleml:Var>
-                  <ruleml:Ind>18_minimalnih_zarada</ruleml:Ind>
+                  <ruleml:Ind>18</ruleml:Ind>
                </ruleml:Atom>
             </lrml:Obligation>
          </lrml:SuborderList>
       </lrml:PenaltyStatement>
 
       <!--Clan 8 zakon o javnom redu i miru stav 2-->
-      <!-- <lrml:PenaltyStatement key="kazna_cl_8_st2_min">
-         <lrml:SuborderList>
-            <lrml:Obligation>
-               <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_min" />
-                  <ruleml:Var>Month</ruleml:Var>
-                  <ruleml:Ind>0</ruleml:Ind>
-               </ruleml:Atom>
-            </lrml:Obligation>
-         </lrml:SuborderList>
-      </lrml:PenaltyStatement>
       <lrml:PenaltyStatement key="kazna_cl_8_st2_max">
          <lrml:SuborderList>
             <lrml:Obligation>
                <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_max" />
-                  <ruleml:Var>Month</ruleml:Var>
-                  <ruleml:Ind>2</ruleml:Ind>
+                  <ruleml:Rel iri=":kazna_zatvora_cl_8_st2_max" />
+                  <ruleml:Var>Day</ruleml:Var>
+                  <ruleml:Ind>60</ruleml:Ind>
                </ruleml:Atom>
             </lrml:Obligation>
          </lrml:SuborderList>
       </lrml:PenaltyStatement>
-      
+
       <lrml:PenaltyStatement key="kazna_cl_8_st2_min_novcana">
          <lrml:SuborderList>
             <lrml:Obligation>
                <ruleml:Atom>
                   <ruleml:Rel iri=":novcana_kazna_8_st2_min" />
                   <ruleml:Var>Money</ruleml:Var>
-                  <ruleml:Ind>10_minimalnih_zarada</ruleml:Ind>
+                  <ruleml:Ind>10</ruleml:Ind>
                </ruleml:Atom>
             </lrml:Obligation>
          </lrml:SuborderList>
@@ -677,31 +626,20 @@
                <ruleml:Atom>
                   <ruleml:Rel iri=":novcana_kazna_8_st2_max" />
                   <ruleml:Var>Money</ruleml:Var>
-                  <ruleml:Ind>20_minimalnih_zarada</ruleml:Ind>
-               </ruleml:Atom>
-            </lrml:Obligation>
-         </lrml:SuborderList>
-      </lrml:PenaltyStatement> -->
-
-        <!--Clan 10 zakon o javnom redu i miru stav 1-->
-      <lrml:PenaltyStatement key="kazna_cl_10_st1_min">
-         <lrml:SuborderList>
-            <lrml:Obligation>
-               <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_min" />
-                  <ruleml:Var>Month</ruleml:Var>
-                  <ruleml:Ind>0</ruleml:Ind>
+                  <ruleml:Ind>20</ruleml:Ind>
                </ruleml:Atom>
             </lrml:Obligation>
          </lrml:SuborderList>
       </lrml:PenaltyStatement>
+
+        <!--Clan 10 zakon o javnom redu i miru stav 1-->
       <lrml:PenaltyStatement key="kazna_cl_10_st1_max">
          <lrml:SuborderList>
             <lrml:Obligation>
                <ruleml:Atom>
-                  <ruleml:Rel iri=":kazna_zatvora_max" />
-                  <ruleml:Var>Month</ruleml:Var>
-                  <ruleml:Ind>2</ruleml:Ind>
+                  <ruleml:Rel iri=":kazna_zatvora_cl_10_st1_max" />
+                  <ruleml:Var>Day</ruleml:Var>
+                  <ruleml:Ind>60</ruleml:Ind>
                </ruleml:Atom>
             </lrml:Obligation>
          </lrml:SuborderList>
@@ -738,26 +676,7 @@
          </lrml:Reparation>
       </lrml:ReparationStatement>
 
-      <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_151_st2_min" />
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_151_st2_2" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
-      <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_151_st2_max" />
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_151_st2_2" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
-
       <!--Clan 152 stav 1-->
-      <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_152_st1_min" />
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_152_st1" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
       <lrml:ReparationStatement>
          <lrml:Reparation>
             <lrml:appliesPenalty keyref="#kazna_cl_152_st1_max" />
@@ -781,12 +700,6 @@
       <!--Clan 152 stav 2-->
       <lrml:ReparationStatement>
          <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_152_st2_min" />
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_152_st2" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
-      <lrml:ReparationStatement>
-         <lrml:Reparation>
             <lrml:appliesPenalty keyref="#kazna_cl_152_st2_max" />
             <lrml:toPrescriptiveStatement keyref="#ps_cl_152_st2" />
          </lrml:Reparation>
@@ -802,12 +715,6 @@
 
 
         <!--Clan 376 stav 1-->
-      <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_376_st1_min" />
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_376_st1" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
       <lrml:ReparationStatement>
          <lrml:Reparation>
             <lrml:appliesPenalty keyref="#kazna_cl_376_st1_max" />
@@ -829,19 +736,6 @@
          </lrml:Reparation>
       </lrml:ReparationStatement>
 
-      <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_376_st2_min" />
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_376_st2_2" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
-      <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_376_st2_max" />
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_376_st2_2" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
-
        <!--Clan 376 stav 3-->
       <lrml:ReparationStatement>
          <lrml:Reparation>
@@ -857,12 +751,6 @@
       </lrml:ReparationStatement>
 
  <!--Clan 8 stav 1 zakon o javnom redu i miru-->
-        <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_8_st1_min"/>
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_8_st1" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
       <lrml:ReparationStatement>
          <lrml:Reparation>
             <lrml:appliesPenalty keyref="#kazna_cl_8_st1_max"/>
@@ -884,12 +772,6 @@
       </lrml:ReparationStatement>
 
        <!--Clan 8 stav 2 zakon o javnom redu i miru-->
-        <!-- <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_8_st2_min"/>
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_8_st2" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
       <lrml:ReparationStatement>
          <lrml:Reparation>
             <lrml:appliesPenalty keyref="#kazna_cl_8_st2_max"/>
@@ -908,16 +790,10 @@
             <lrml:appliesPenalty keyref="#kazna_cl_8_st2_max_novcana"/>
             <lrml:toPrescriptiveStatement keyref="#ps_cl_8_st2" />
          </lrml:Reparation>
-      </lrml:ReparationStatement> -->
+      </lrml:ReparationStatement>
 
       
        <!--Clan 10 stav 1 zakon o javnom redu i miru-->
-        <lrml:ReparationStatement>
-         <lrml:Reparation>
-            <lrml:appliesPenalty keyref="#kazna_cl_10_st1_min"/>
-            <lrml:toPrescriptiveStatement keyref="#ps_cl_10_st1" />
-         </lrml:Reparation>
-      </lrml:ReparationStatement>
       <lrml:ReparationStatement>
          <lrml:Reparation>
             <lrml:appliesPenalty keyref="#kazna_cl_10_st1_max"/>
